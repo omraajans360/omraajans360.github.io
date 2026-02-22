@@ -5,111 +5,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OMRA Ajans 360 | İzmir Drone Çekimi</title>
-
 <meta name="description" content="İzmir drone çekimi, düğün drone çekimi, emlak ve işletme tanıtım filmi hizmetleri. OMRA Ajans 360 profesyonel havadan görüntüleme ajansı.">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0f0f0f;
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{background:#0b0b0b;color:white;}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{font-size:52px;margin-bottom:10px;}
+.hero p{font-size:22px;color:#c9a24c;margin-bottom:30px;}
+
+.btn{
+background:#25D366;
+padding:18px 36px;
+border-radius:12px;
 color:white;
+text-decoration:none;
+font-size:18px;
+font-weight:600;
 }
 
-header{
-background:#000;
-padding:60px 20px;
-text-align:center;
-}
+.section{padding:80px 20px;max-width:1100px;margin:auto;text-align:center;}
 
-h1{
-font-size:40px;
-margin-bottom:10px;
-}
-
-h2{
-color:#c7a15b;
-}
-
-.section{
-padding:60px 20px;
-max-width:1000px;
-margin:auto;
-text-align:center;
-}
+.section h2{font-size:36px;margin-bottom:20px;color:#c9a24c;}
 
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:25px;
 margin-top:40px;
 }
 
 .card{
-background:#1b1b1b;
-padding:25px;
-border-radius:12px;
+background:#161616;
+padding:30px;
+border-radius:14px;
+transition:.3s;
 }
 
-.whatsapp{
-display:inline-block;
-margin-top:30px;
-padding:18px 35px;
+.card:hover{transform:translateY(-8px);}
+
+.whatsapp-fixed{
+position:fixed;
+bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
+padding:15px 20px;
+border-radius:50px;
 text-decoration:none;
-font-size:18px;
-border-radius:10px;
+font-weight:bold;
 }
 
 footer{
 background:#000;
-padding:30px;
+padding:40px;
 text-align:center;
+color:#aaa;
 margin-top:60px;
-color:#999;
 }
+
 </style>
 
 </head>
 
 <body>
 
-<header>
+<section class="hero">
 <h1>OMRA Ajans 360</h1>
-<h2>İzmir’de Gökyüzünden Hikayenizi Anlatıyoruz.</h2>
-<a class="whatsapp" href="https://wa.me/905529226204?text=Merhaba,%20İzmir’de%20drone%20çekimi%20için%20bilgi%20almak%20istiyorum.">WhatsApp’tan Teklif Al</a>
-</header>
+<p>İzmir’de Gökyüzünden Hikayenizi Anlatıyoruz.</p>
+<a class="btn" href="https://wa.me/905529226204?text=Merhaba,%20İzmir’de%20drone%20çekimi%20için%20bilgi%20almak%20istiyorum.">WhatsApp’tan Teklif Al</a>
+</section>
 
-<div class="section">
-<h2>İzmir Drone Çekimi Hizmetleri</h2>
-<p>OMRA Ajans 360 olarak İzmir ve tüm ilçelerinde profesyonel drone çekimi ve tanıtım filmi hizmetleri sunuyoruz. Düğün, nişan, organizasyon, emlak, kafe, restoran ve işletmeler için yüksek çözünürlüklü havadan görüntüleme yapıyoruz.</p>
+<section class="section">
+<h2>Hizmetlerimiz</h2>
 
 <div class="services">
+
 <div class="card">
 <h3>Düğün Drone Çekimi</h3>
-<p>En özel günlerinizi sinematik açıyla kayıt altına alıyoruz.</p>
+<p>Düğün, nişan ve özel günlerinizi sinematik açıyla kayıt altına alıyoruz.</p>
 </div>
 
 <div class="card">
 <h3>İşletme Tanıtım Filmi</h3>
-<p>Kafe, restoran ve işletmeler için profesyonel tanıtım videoları.</p>
+<p>Kafe, restoran ve işletmeler için profesyonel tanıtım videoları hazırlıyoruz.</p>
 </div>
 
 <div class="card">
 <h3>Emlak Drone Çekimi</h3>
-<p>Satılık ve kiralık gayrimenkuller için dikkat çekici görüntüler.</p>
+<p>Gayrimenkul ilanlarınızı öne çıkaracak havadan görüntüleme hizmeti.</p>
 </div>
 
 <div class="card">
 <h3>Organizasyon Çekimleri</h3>
-<p>Açılış, lansman ve etkinliklerde profesyonel havadan çekim.</p>
-</div>
-</div>
+<p>Açılış, lansman ve etkinliklerinizi profesyonel ekipmanla kaydediyoruz.</p>
 </div>
 
+</div>
+</section>
+
+<a class="whatsapp-fixed" href="https://wa.me/905529226204?text=Merhaba,%20İzmir’de%20drone%20çekimi%20için%20bilgi%20almak%20istiyorum.">WhatsApp</a>
+
 <footer>
-<p>OMRA Ajans 360 | İzmir Drone Çekimi ve Tanıtım Filmi Hizmetleri</p>
+OMRA Ajans 360 | İzmir Drone Çekimi ve Tanıtım Filmi Hizmetleri
 </footer>
 
 </body>
