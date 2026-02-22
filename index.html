@@ -1,112 +1,501 @@
 <!DOCTYPE html>
-
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OMRA Ajans 360 | İzmir Drone Çekimi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>OMRA Ajans 360 | İzmir Drone Çekimi & Tanıtım Filmleri</title>
+  <meta name="description" content="İzmir drone çekimi, düğün drone çekimi, organizasyon, emlak ve işletme tanıtım filmi. OMRA Ajans 360 ile profesyonel havadan görüntüleme ve video prodüksiyon." />
 
-<style>
-body{margin:0;font-family:'Montserrat',sans-serif;background:#0a0a0a;color:white;}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:black;position:sticky;top:0;}
-nav h2{color:#d4a54b;}
-nav a{color:white;text-decoration:none;margin-left:20px;}
+  <!-- Open Graph (paylaşım görseli/başlığı) -->
+  <meta property="og:title" content="OMRA Ajans 360 | İzmir Drone Çekimi" />
+  <meta property="og:description" content="Düğün, organizasyon, emlak ve işletme tanıtım drone çekimleri. İzmir’in tüm ilçelerinde hizmet." />
+  <meta property="og:type" content="website" />
 
-.hero{
-height:90vh;
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
-.hero h1{font-size:56px;margin-bottom:10px;}
-.hero p{color:#d4a54b;font-size:22px;margin-bottom:30px;}
+  <style>
+    :root{
+      --bg:#070707;
+      --panel:#101010;
+      --panel2:#141414;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.72);
+      --gold:#caa84e;
+      --gold2:#e0c27a;
+      --line:rgba(202,168,78,.28);
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --radius: 18px;
+    }
 
-.btn{
-background:#25D366;
-padding:18px 40px;
-border-radius:12px;
-color:white;
-text-decoration:none;
-font-size:18px;
-font-weight:bold;
-}
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); }
+    a{ color:inherit; }
+    .container{ max-width:1100px; margin:0 auto; padding:0 20px; }
 
-.section{padding:80px 20px;max-width:1100px;margin:auto;text-align:center;}
+    /* Top bar */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+      min-height:56px;
+    }
+    .brand img{
+      height:48px;
+      width:auto;
+      display:block;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,.55));
+    }
+    .menu{
+      display:flex; gap:18px; align-items:center;
+      font-size:14px;
+      color:rgba(255,255,255,.86);
+    }
+    .menu a{
+      text-decoration:none;
+      padding:10px 10px;
+      border-radius:12px;
+      transition:.2s;
+    }
+    .menu a:hover{
+      background: rgba(202,168,78,.10);
+      color: #fff;
+    }
 
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:40px;}
+    /* Hero */
+    .hero{
+      position:relative;
+      padding:72px 0 44px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-120px -120px auto -120px;
+      height:520px;
+      background:
+        radial-gradient(closest-side, rgba(202,168,78,.22), rgba(202,168,78,0) 70%),
+        radial-gradient(closest-side, rgba(255,255,255,.08), rgba(255,255,255,0) 60%);
+      transform: translateY(-30px);
+      pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:22px;
+      align-items:stretch;
+      position:relative;
+    }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(16,16,16,.92), rgba(8,8,8,.88));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:13px;
+      color:rgba(255,255,255,.80);
+      letter-spacing:.4px;
+      margin-bottom:14px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(202,168,78,.12);
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:46px;
+      line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    .subtitle{
+      margin:0 0 22px;
+      color: var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width: 58ch;
+    }
 
-.card{background:#151515;padding:30px;border-radius:15px;}
+    .cta-row{
+      display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+      margin-top: 6px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      transition:.2s;
+      border:1px solid transparent;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, #25D366, #1ebe5d);
+      box-shadow: 0 14px 35px rgba(0,0,0,.45);
+    }
+    .btn-primary:hover{ transform: translateY(-1px) scale(1.01); }
+    .btn-ghost{
+      background: rgba(202,168,78,.10);
+      border-color: var(--line);
+      color:#fff;
+    }
+    .btn-ghost:hover{ background: rgba(202,168,78,.16); }
 
-.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px;margin-top:40px;}
-.portfolio img{width:100%;border-radius:10px;}
+    .hero-side{
+      background: linear-gradient(180deg, rgba(20,20,20,.92), rgba(10,10,10,.90));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.32);
+      color: rgba(255,255,255,.85);
+      font-size: 13px;
+    }
+    .pill strong{ color:#fff; }
+    .hero-side h3{
+      margin: 8px 0 10px;
+      font-size:16px;
+      color: rgba(255,255,255,.90);
+    }
+    .list{
+      display:grid;
+      gap:10px;
+      margin:0;
+      padding:0;
+      list-style:none;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      line-height:1.4;
+    }
+    .list li{
+      padding:10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
+    }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
+    /* Sections */
+    .section{
+      padding: 44px 0;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom: 18px;
+    }
+    .section h2{
+      margin:0;
+      font-size: 28px;
+      letter-spacing:-.4px;
+    }
+    .section p.lead{
+      margin:8px 0 0;
+      color: var(--muted);
+      max-width: 80ch;
+      line-height:1.7;
+      font-size: 14px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 4;
+      background: linear-gradient(180deg, rgba(16,16,16,.90), rgba(10,10,10,.86));
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.35);
+      min-height: 170px;
+    }
+    .card .title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      margin-bottom: 8px;
+    }
+    .badge{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border: 1px solid var(--line);
+      background: rgba(202,168,78,.10);
+      color: rgba(255,255,255,.88);
+      white-space:nowrap;
+    }
+    .card h3{
+      margin: 0;
+      font-size: 16px;
+    }
+    .card p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
 
-footer{background:black;padding:40px;text-align:center;margin-top:60px;color:#aaa;}
-</style>
+    /* Portfolio placeholders */
+    .shots{
+      grid-column: span 12;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .shot{
+      grid-column: span 4;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(80% 80% at 20% 20%, rgba(202,168,78,.18), rgba(0,0,0,0) 55%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      min-height: 190px;
+      position:relative;
+      overflow:hidden;
+    }
+    .shot::after{
+      content:"Çekim örneği (fotoğraf ekleyince otomatik değişir)";
+      position:absolute; left:14px; bottom:14px; right:14px;
+      font-size: 12px;
+      color: rgba(255,255,255,.72);
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.08);
+    }
 
+    /* Contact strip */
+    .strip{
+      background: linear-gradient(90deg, rgba(202,168,78,.16), rgba(0,0,0,0));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .strip .left{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .strip .left strong{ font-size: 14px; }
+    .strip .left span{ font-size: 12px; color: var(--muted); }
+
+    /* Fixed WhatsApp */
+    .wa{
+      position:fixed; right:18px; bottom:18px;
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #25D366, #1ebe5d);
+      color:#fff;
+      font-weight:700;
+      font-size: 13px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.55);
+      z-index: 60;
+    }
+
+    footer{
+      padding: 28px 0 40px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      margin-top: 18px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 36px; }
+      .menu{ display:none; }
+      .card{ grid-column: span 12; }
+      .shot{ grid-column: span 12; }
+      .brand img{ height:44px; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="OMRA Ajans 360">
+        
+          <img src="logo.png" alt="OMRA Ajans 360 Logo">
+        </a>
+        <div class="menu" aria-label="Menü">
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#portfoy">Portföy</a>
+          <a href="#iletisim">İletişim</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<nav>
-<h2>OMRA Ajans 360</h2>
-<div>
-<a href="#">Ana Sayfa</a>
-<a href="#hizmet">Hizmetler</a>
-<a href="#portfoy">Portföy</a>
-</div>
-</nav>
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <div class="kicker"><span class="dot"></span><span>İzmir • Drone Çekimi • Tanıtım Filmleri</span></div>
+            <h1>Drone Çekimi & Tanıtım Filmleri</h1>
+            <p class="subtitle">
+              OMRA Ajans 360 olarak İzmir’in tüm ilçelerinde düğün, organizasyon, emlak ve işletme tanıtımı için
+              profesyonel havadan görüntüleme ve video prodüksiyon hizmeti sunuyoruz.
+            </p>
 
-<section class="hero">
-<h1>Drone Çekimi & Tanıtım Filmleri</h1>
-<p>İzmir’de Gökyüzünden Hikayenizi Anlatıyoruz</p>
-<a class="btn" href="https://wa.me/905529226204?text=Merhaba,%20İzmir’de%20drone%20çekimi%20için%20bilgi%20almak%20istiyorum.">WhatsApp'tan Teklif Al</a>
-</section>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20için%20İzmir’de%20drone%20çekimi%20fiyat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener">
+                WhatsApp’tan Teklif Al
+              </a>
+              <a class="btn btn-ghost" href="#hizmetler">Hizmetleri Gör</a>
+            </div>
+          </div>
 
-<section class="section" id="hizmet">
-<h2>Hizmetlerimiz</h2>
-<div class="services">
-<div class="card"><h3>Düğün Drone Çekimi</h3><p>Sinematik düğün ve nişan çekimleri.</p></div>
-<div class="card"><h3>İşletme Tanıtım Filmi</h3><p>Kafe, restoran ve markalar için tanıtım videoları.</p></div>
-<div class="card"><h3>Emlak Çekimi</h3><p>Villa, daire ve arsa için havadan görüntüleme.</p></div>
-</div>
-</section>
+          <aside class="hero-side">
+            <div class="pill"><span class="dot" style="width:7px;height:7px;"></span><strong>Hızlı teklif</strong><span>— WhatsApp ile</span></div>
+            <div>
+              <h3>Neleri çekiyoruz?</h3>
+              <ul class="list">
+                <li><strong>Düğün / Nişan</strong> — sinematik drone çekimi</li>
+                <li><strong>İşletme</strong> — kafe, restoran, otel, mekan tanıtımı</li>
+                <li><strong>Emlak</strong> — villa, site, arsa, proje çekimleri</li>
+                <li><strong>Organizasyon</strong> — etkinlik, lansman, açılış</li>
+              </ul>
+            </div>
+            <div class="pill"><strong>Hizmet Bölgesi:</strong><span>İzmir (tüm ilçeler)</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-<section class="section" id="portfoy">
-<h2>Örnek Çekimler</h2>
-<div class="portfolio">
-<img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80">
-<img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2a59?auto=format&fit=crop&w=800&q=80">
-<img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80">
-</div>
-</section>
+    <section class="section" id="hizmetler">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Hizmetler</h2>
+            <p class="lead">Yerel SEO için hizmetleri net yazıyoruz: İzmir drone çekimi, düğün drone çekimi, emlak drone çekimi ve işletme tanıtım filmi.</p>
+          </div>
+        </div>
 
-<a class="whatsapp" href="https://wa.me/905529226204?text=Merhaba,%20drone%20çekimi%20için%20bilgi%20almak%20istiyorum.">WhatsApp</a>
+        <div class="grid">
+          <div class="card">
+            <div class="title">
+              <h3>Düğün Drone Çekimi</h3>
+              <span class="badge">Sinematik</span>
+            </div>
+            <p>Özel günlerinizi havadan etkileyici açıyla kayıt altına alır, kısa reels’ler ve uzun video çıktıları sunarız.</p>
+          </div>
 
-<footer>
-OMRA Ajans 360 | İzmir Drone Çekimi Hizmeti
-</footer>
+          <div class="card">
+            <div class="title">
+              <h3>Organizasyon Çekimi</h3>
+              <span class="badge">Etkinlik</span>
+            </div>
+            <p>Açılış, lansman, festival ve organizasyonlarda hızlı kurulum ve hızlı teslimat ile profesyonel görüntüler.</p>
+          </div>
 
+          <div class="card">
+            <div class="title">
+              <h3>Emlak Drone Çekimi</h3>
+              <span class="badge">Gayrimenkul</span>
+            </div>
+            <p>Villa, site ve arsa çekimleri ile ilanlarınızı öne çıkarırız. Konum, çevre ve geniş açı avantajı sağlar.</p>
+          </div>
+
+          <div class="card">
+            <div class="title">
+              <h3>Kafe / Restoran Çekimi</h3>
+              <span class="badge">Tanıtım</span>
+            </div>
+            <p>Mekanınızın atmosferini ve lokasyon avantajını gösteren, sosyal medya reklamlarına uygun tanıtım videoları.</p>
+          </div>
+
+          <div class="card">
+            <div class="title">
+              <h3>İşletme Tanıtım Filmi</h3>
+              <span class="badge">Kurumsal</span>
+            </div>
+            <p>Marka hikayenizi anlatan kurumsal tanıtım. Drone + yer çekimi kombinasyonu ile profesyonel görünüm.</p>
+          </div>
+
+          <div class="card">
+            <div class="title">
+              <h3>Reels / Sosyal Medya İçeriği</h3>
+              <span class="badge">Hızlı</span>
+            </div>
+            <p>Instagram Reels ve reklam formatlarına uygun kısa videolar. “Hemen paylaşılabilir” teslimat.</p>
+          </div>
+        </div>
+
+        <div class="strip" id="iletisim">
+          <div class="left">
+            <strong>Hızlı fiyat almak ister misiniz?</strong>
+            <span>Tarih + ilçe + çekim türünü yazın, size aynı gün dönüş yapalım.</span>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20için%20İzmir’de%20drone%20çekimi%20fiyat%20bilgisi%20almak%20istiyorum.%20Tarih:%20%20%20İlçe:%20%20%20Çekim:%20" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfoy">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Portföy</h2>
+            <p class="lead">Buraya kendi çekimlerinden 3–6 görsel eklediğimizde site çok daha “ajans” görünür. İstersen hemen ekleyebiliriz.</p>
+          </div>
+        </div>
+
+        <div class="shots">
+          <div class="shot"></div>
+          <div class="shot"></div>
+          <div class="shot"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div>© <span id="y"></span> OMRA Ajans 360 • İzmir Drone Çekimi & Tanıtım Filmi</div>
+      </div>
+    </footer>
+  </main>
+
+  <a class="wa" href="https://wa.me/905529226204?text=Merhaba,%20İzmir’de%20drone%20çekimi%20için%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
