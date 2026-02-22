@@ -51,11 +51,10 @@
       min-height:56px;
     }
     .brand img{
-     height:56px;
-      width:auto;
-      display:block;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,.55));
-    }
+     .brand img{
+  height:0px;
+  opacity:0;
+}
     .menu{
       display:flex; gap:18px; align-items:center;
       font-size:14px;
@@ -72,36 +71,39 @@
       color: #fff;
     }
 
-    /* Hero */
-    .hero{
-      position:relative;
-      padding:72px 0 44px;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:-120px -120px auto -120px;
-      height:520px;
-      background:
-        radial-gradient(closest-side, rgba(202,168,78,.22), rgba(202,168,78,0) 70%),
-        radial-gradient(closest-side, rgba(255,255,255,.08), rgba(255,255,255,0) 60%);
-      transform: translateY(-30px);
-      pointer-events:none;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:22px;
-      align-items:stretch;
-      position:relative;
-    }
-    .hero-card{
-      background: linear-gradient(180deg, rgba(16,16,16,.92), rgba(8,8,8,.88));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 34px;
-    }
+  /* Hero */
+.hero{
+  position:relative;
+  padding:120px 0 44px;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-120px -120px auto -120px;
+  height:520px;
+  background:
+    radial-gradient(closest-side, rgba(202,168,78,.22), rgba(202,168,78,0) 70%),
+    radial-gradient(closest-side, rgba(255,255,255,.08), rgba(255,255,255,0) 60%);
+  transform: translateY(-30px);
+  pointer-events:none;
+}
+
+/* Büyük logo */
+.hero-logo{
+  margin-bottom:25px;
+  text-align:center;
+}
+
+.hero-logo img{
+  width:420px;
+  max-width:85%;
+  display:block;
+  margin:auto;
+  filter: drop-shadow(0 25px 50px rgba(0,0,0,.8));
+}
+    
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
       font-size:13px;
@@ -367,6 +369,9 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-card">
+            <div class="hero-logo">
+  <img src="logo.png">
+</div>
             <div class="kicker"><span class="dot"></span><span>İzmir • Drone Çekimi • Tanıtım Filmleri</span></div>
             <h1>Drone Çekimi & Tanıtım Filmleri</h1>
             <p class="subtitle">
