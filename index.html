@@ -704,6 +704,46 @@ header.scrolled .brand img{
     height: 30px !important;
   }
 }
+    /* ===== HERO REVEAL ANIMATION ===== */
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(6px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease,
+    filter .7s ease;
+  transition-delay: var(--d, 0ms);
+}
+
+/* Aktif olunca görünür */
+.reveal.is-in{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Hareket istemeyen kullanıcılar için */
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+    .reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(6px);
+  transition: opacity .7s ease, transform .7s ease, filter .7s ease;
+  transition-delay: var(--d, 0ms);
+}
+.reveal.is-in{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
   </style>
 </head>
 
@@ -778,12 +818,27 @@ header.scrolled .brand img{
             <a class="btn btn-ghost" href="#portfoy">Portföyü Gör</a>
           </div>
 
-          <div class="trust">
-            <div class="trust-item"><strong>Randevulu Çalışma</strong><span>Çekim planı ve program WhatsApp üzerinden netleşir.</span></div>
-            <div class="trust-item"><strong>İzmir Geneli</strong><span>Tüm ilçelerde hizmet (mekana göre planlama).</span></div>
-            <div class="trust-item"><strong>Kurumsal Kurgu</strong><span>Reels / yatay / reklam formatlarında teslim.</span></div>
-            <div class="trust-item"><strong>Hızlı İletişim</strong><span>Teklif, plan ve teslim süreci tek kanaldan yönetilir.</span></div>
-          </div>
+<div class="trust">
+  <div class="trust-item reveal" style="--d: 330ms;">
+    <strong>Randevulu Çalışma</strong>
+    <span>Çekim planı ve program WhatsApp üzerinden netleşir.</span>
+  </div>
+
+  <div class="trust-item reveal" style="--d: 420ms;">
+    <strong>İzmir Geneli</strong>
+    <span>Tüm ilçelerde hizmet (mekana göre planlama).</span>
+  </div>
+
+  <div class="trust-item reveal" style="--d: 510ms;">
+    <strong>Kurumsal Kurgu</strong>
+    <span>Reels / yatay / reklam formatlarında teslim.</span>
+  </div>
+
+  <div class="trust-item reveal" style="--d: 600ms;">
+    <strong>Hızlı İletişim</strong>
+    <span>Teklif, plan ve teslim süreci tek kanaldan yönetilir.</span>
+  </div>
+</div>
         </div>
       </div>
     </section>
@@ -798,7 +853,7 @@ header.scrolled .brand img{
         </p>
 
         <div class="grid">
-          <div class="card">
+          <div class="card reveal" style="--d: 0ms;">
             <div class="top"><h3>Düğün / Nişan Drone Çekimi</h3><span class="badge">Sinematik</span></div>
             <p>Özel gününüz için mekan ve akışa uygun planla sinematik drone çekimleri.</p>
             <ul>
@@ -808,7 +863,7 @@ header.scrolled .brand img{
             </ul>
           </div>
 
-          <div class="card">
+        <div class="card reveal" style="--d: 90ms;">
             <div class="top"><h3>Organizasyon / Etkinlik</h3><span class="badge">Etkinlik</span></div>
             <p>Açılış, lansman, konser ve kalabalık etkinlikler için alanı güçlü gösteren çekimler.</p>
             <ul>
@@ -818,7 +873,7 @@ header.scrolled .brand img{
             </ul>
           </div>
 
-          <div class="card">
+          <div class="card reveal" style="--d: 180ms;">
             <div class="top"><h3>Emlak Drone Çekimi</h3><span class="badge">Gayrimenkul</span></div>
             <p>Villa, site, arsa ve projeler için konum + çevre avantajını net anlatan çekimler.</p>
             <ul>
@@ -828,7 +883,7 @@ header.scrolled .brand img{
             </ul>
           </div>
 
-          <div class="card">
+         <div class="card reveal" style="--d: 270ms;">
             <div class="top"><h3>Kafe / Restoran Tanıtımı</h3><span class="badge">Mekan</span></div>
             <p>Mekanın atmosferini, lokasyonunu ve yoğunluğunu reklam diliyle öne çıkaran içerikler.</p>
             <ul>
@@ -838,7 +893,7 @@ header.scrolled .brand img{
             </ul>
           </div>
 
-          <div class="card">
+          <div class="card reveal" style="--d: 360ms;">
             <div class="top"><h3>Otel / Tesis Tanıtımı</h3><span class="badge">Turizm</span></div>
             <p>Tesisin büyüklüğünü ve deneyimini havadan güçlü şekilde anlatan kurumsal tanıtım.</p>
             <ul>
@@ -848,7 +903,7 @@ header.scrolled .brand img{
             </ul>
           </div>
 
-          <div class="card">
+         <div class="card reveal" style="--d: 450ms;">
             <div class="top"><h3>İşletme Tanıtım Filmi</h3><span class="badge">Kurumsal</span></div>
             <p>Markanız için güven veren kurumsal anlatım: mekan + hizmet + deneyim odaklı kurgu.</p>
             <ul>
@@ -1085,6 +1140,24 @@ window.addEventListener("scroll", () => {
     header.classList.remove("scrolled");
   }
 });
+    // Hero reveal (page load)
+window.addEventListener("load", () => {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
+});
+    window.addEventListener("load", () => {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
+});
+    // Scroll reveal (section/cards)
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-in");
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 </script>
   </script>
 </body>
