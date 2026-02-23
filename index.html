@@ -923,22 +923,22 @@ header.scrolled .brand img{
         <p class="lead">Kurumsal iş akışı ile ilerliyoruz: planlama, çekim, kurgu ve teslim.</p>
 
         <div class="steps">
-          <div class="step">
+          <div class="step reveal" style="--d: 0ms;">
             <div class="step-no">1</div>
             <h3>Planlama (Randevu)</h3>
             <p>İlçe, tarih, çekim hedefi ve teslim formatları netleşir. Program oluşturulur.</p>
           </div>
-          <div class="step">
+          <div class="step reveal" style="--d: 120ms;">
             <div class="step-no">2</div>
             <h3>Çekim</h3>
             <p>Akışa uygun kadraj planı ile drone çekimi gerçekleştirilir.</p>
           </div>
-          <div class="step">
+          <div class="step reveal" style="--d: 240ms;">
             <div class="step-no">3</div>
             <h3>Kurgu</h3>
             <p>Renk düzenleme, stabilizasyon, tempo, müzik ve gerekli başlık/kapaklar hazırlanır.</p>
           </div>
-          <div class="step">
+          <div class="step reveal" style="--d: 360ms;">
             <div class="step-no">4</div>
             <h3>Teslim</h3>
             <p>Reels / yatay / reklam formatlarında teslim edilir. Gerekirse revize süreci yönetilir.</p>
@@ -954,9 +954,9 @@ header.scrolled .brand img{
         <p class="lead">Örnek çekimler (fotoğraf). İstersen ileride videodan daha fazla kare ekleyip galeriyi büyütürüz.</p>
 
         <div class="shots">
-          <div class="shot"><img src="p1.png" alt="Drone çekimi örneği 1"></div>
-          <div class="shot"><img src="p2.png" alt="Drone çekimi örneği 2"></div>
-          <div class="shot"><img src="p3.png" alt="Drone çekimi örneği 3"></div>
+          <div class="shot reveal" style="--d: 0ms;"><img src="p1.png" alt="Drone çekimi örneği 1"></div>
+          <div class="shot reveal" style="--d: 120ms;"><img src="p2.png" alt="Drone çekimi örneği 2"></div>
+          <div class="shot reveal" style="--d: 240ms;"><img src="p3.png" alt="Drone çekimi örneği 3"></div>
         </div>
       </div>
     </section>
@@ -968,19 +968,19 @@ header.scrolled .brand img{
         <p class="lead">Şimdilik örnek şablon. İlk gerçek yorumlar geldikçe güncelleyip daha güçlü hale getiririz.</p>
 
         <div class="testimonials">
-          <div class="quote">
+          <div class="quote reveal" style="--d: 0ms;">
             <p>“Çekimler profesyoneldi. Mekanımızı tam istediğimiz gibi yansıttılar ve iletişim çok hızlıydı.”</p>
             <div class="who">— Müşteri Adı Soyadı</div>
             <div class="where">İzmir • İşletme Tanıtımı</div>
           </div>
 
-          <div class="quote">
+          <div class="quote reveal" style="--d: 120ms;">
             <p>“Organizasyon boyunca planlı çalıştılar. Drone görüntüleri gerçekten premium duruyor.”</p>
             <div class="who">— Müşteri Adı Soyadı</div>
             <div class="where">İzmir • Etkinlik Çekimi</div>
           </div>
 
-          <div class="quote">
+          <div class="quote reveal" style="--d: 240ms;">
             <p>“Emlak ilanımız için çekim yaptırdık. Video ilanı çok öne çıkardı, teşekkür ederiz.”</p>
             <div class="who">— Müşteri Adı Soyadı</div>
             <div class="where">İzmir • Emlak Drone Çekimi</div>
@@ -1148,6 +1148,19 @@ window.addEventListener("load", () => {
   document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
 });
     // Scroll reveal (section/cards)
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-in");
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+</script>
+  <script>
+// Scroll reveal (görünce animasyon)
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
