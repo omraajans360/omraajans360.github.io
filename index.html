@@ -637,62 +637,54 @@ nav.desktop-nav a{
     padding: 10px 12px !important;
   }
 }
-    /* ===== MOBİL HEADER TEK SATIR + DAHA KÜÇÜK ===== */
+/* ===== MOBİL HEADER: 3 KOLON (MENÜ | LOGO | TEKLİF AL) ===== */
 @media (max-width: 900px){
 
-  /* header iç düzeni yatay yap */
-  .header-inner{
-    flex-direction: row !important;
-    justify-content: space-between !important;
+  header .header-inner{
+    display: grid !important;
+    grid-template-columns: auto 1fr auto !important;
     align-items: center !important;
+    gap: 10px !important;
     padding: 6px 0 !important;
   }
 
-  /* logo ortada kalsın */
-  .brand{
-    order: 2;
-    flex: 0 0 auto;
-    margin: 0 auto;
+  header .brand{
+    justify-content: center !important;
+    margin: 0 !important;
   }
-
-  /* logo boyutu küçülsün */
-  .brand img{
+  header .brand img{
     height: 38px !important;
   }
 
-  /* menü butonu sola */
-  .menu-row{
-    order: 1;
-    width: auto !important;
+  header .menu-row{
+    display: contents !important;
     padding: 0 !important;
   }
 
-  /* Menü yazısı butonu küçült */
-  .menu-toggle{
+  header .menu-toggle{
+    grid-column: 1 !important;
+    justify-self: start !important;
     font-size: 12px !important;
     padding: 8px 10px !important;
   }
 
-  /* Teklif al sağa */
-  .menu-row a{
+  header .menu-row .btn{
+    grid-column: 3 !important;
+    justify-self: end !important;
     font-size: 12px !important;
     padding: 8px 10px !important;
   }
 
-  /* desktop nav tamamen kapalı */
-  .desktop-nav{
-    display:none !important;
-  }
+  nav.desktop-nav{ display:none !important; }
 
-  /* açılan mobil menü header altından başlasın */
-  .mobile-nav{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #000;
-    padding: 10px 16px;
-    border-top: 1px solid rgba(255,255,255,.08);
+  nav.mobile-nav{
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(0,0,0,.96) !important;
+    padding: 10px 16px 12px !important;
+    border-top: 1px solid rgba(255,255,255,.08) !important;
   }
 }
   </style>
