@@ -35,29 +35,31 @@
       overflow-x:hidden;
     }
     a{ color:inherit; }
-    img{ max-width:100%; }
+    img{ max-width:100%; display:block; }
 
     .container{
-      width: min(1200px, calc(100% - 48px));
-      margin: 0 auto;
+      width:min(1200px, calc(100% - 48px));
+      margin:0 auto;
     }
 
-    /* ===== HEADER (Logo Ortada Büyük) ===== */
+    /* ===== HEADER ===== */
     header{
       position:sticky;
       top:0;
-      z-index:50;
+      z-index:9999; /* video üstünde */
       background: rgba(0,0,0,.78);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(10px);
     }
+
     .header-inner{
-      padding: 16px 0 10px;
+      padding: 14px 0 10px;
       display:flex;
       flex-direction:column;
       align-items:center;
       gap:10px;
     }
+
     .brand{
       display:flex;
       align-items:center;
@@ -65,21 +67,22 @@
       text-decoration:none;
     }
     .brand img{
-      height: 84px; /* büyük logo */
+      height: 84px;
       width:auto;
-      display:block;
       filter: drop-shadow(0 24px 60px rgba(0,0,0,.85));
     }
-    nav{
+
+    /* Desktop nav */
+    nav.desktop-nav{
       width:100%;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap: 16px;
+      gap: 10px;
       flex-wrap:wrap;
       padding-bottom: 10px;
     }
-    nav a{
+    nav.desktop-nav a{
       text-decoration:none;
       font-size:14px;
       color: rgba(255,255,255,.86);
@@ -87,12 +90,54 @@
       border-radius:12px;
       transition:.2s;
     }
-    nav a:hover{
+    nav.desktop-nav a:hover{
       background: rgba(202,168,78,.10);
       color:#fff;
     }
 
-    /* ===== VIDEO HERO (Kurumsal/Vitrin) ===== */
+    /* Mobile menu button */
+    .menu-row{
+      width:100%;
+      display:none;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding-bottom: 8px;
+    }
+    .menu-toggle{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(202,168,78,.10);
+      color:#fff;
+      font-weight:700;
+      cursor:pointer;
+      user-select:none;
+    }
+    .menu-toggle:active{ transform: translateY(1px); }
+
+    .mobile-nav{
+      display:none;
+      width:100%;
+      padding: 10px 0 12px;
+    }
+    .mobile-nav a{
+      display:block;
+      padding:12px 12px;
+      border-radius:12px;
+      text-decoration:none;
+      color: rgba(255,255,255,.88);
+    }
+    .mobile-nav a:hover{
+      background: rgba(202,168,78,.10);
+    }
+    header.mobile-open .mobile-nav{ display:block; }
+
+    /* ===== HERO VIDEO (YouTube background) ===== */
     .hero-video{
       position:relative;
       overflow:hidden;
@@ -100,38 +145,55 @@
       display:flex;
       align-items:center;
       padding: 44px 0;
+      isolation:isolate; /* katman yönetimi */
     }
-    .hero-video .video-wrap{
+
+    .video-wrap{
       position:absolute;
       inset:0;
       z-index:0;
       pointer-events:none;
       background:#000;
     }
-    .hero-video .video-wrap iframe{
+
+    /* Background cover yaklaşımı:
+       16:9 iframe'ı merkeze alıp, container'a taşacak şekilde büyütür */
+    .video-wrap iframe{
       position:absolute;
       top:50%;
       left:50%;
-      width: 200vw;
-      height: 112.5vw; /* 16:9 */
-      min-width: 177.78vh;
+      width: 100vw;
+      height: 56.25vw;         /* 16:9 */
+      min-width: 177.78vh;     /* 100vh * (16/9) */
       min-height: 100vh;
       transform: translate(-50%, -50%);
       border:0;
       filter: contrast(1.05) saturate(1.05);
     }
-    .hero-video .overlay{
+
+    .overlay{
       position:absolute;
       inset:0;
       z-index:1;
       background:
         radial-gradient(closest-side, rgba(202,168,78,.18), rgba(202,168,78,0) 70%),
-        linear-gradient(180deg, rgba(0,0,0,.70), rgba(0,0,0,.55));
+        linear-gradient(180deg, rgba(0,0,0,.72), rgba(0,0,0,.58));
+      pointer-events:none;
     }
-    .hero-inner{
-      position:relative;
-      z-index:2;
+
+    /* Mobilde video yerine poster (stabil) */
+    .hero-video.has-poster{
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.68), rgba(0,0,0,.62)),
+        radial-gradient(closest-side, rgba(202,168,78,.14), rgba(202,168,78,0) 70%),
+        url("hero-poster.jpg");
+      background-size: cover;
+      background-position:center;
+      background-repeat:no-repeat;
     }
+    .hero-video.has-poster .video-wrap{ display:none; }
+
+    .hero-inner{ position:relative; z-index:2; }
     .hero-card{
       background: linear-gradient(180deg, rgba(16,16,16,.86), rgba(8,8,8,.82));
       border: 1px solid rgba(255,255,255,.08);
@@ -181,6 +243,7 @@
       justify-content:center;
       margin-top: 12px;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -220,10 +283,7 @@
       border-radius: 16px;
       padding: 12px 14px;
     }
-    .trust-item strong{
-      display:block;
-      font-size: 13px;
-    }
+    .trust-item strong{ display:block; font-size: 13px; }
     .trust-item span{
       display:block;
       margin-top:4px;
@@ -233,9 +293,7 @@
     }
 
     /* Sections */
-    .section{
-      padding: 44px 0;
-    }
+    .section{ padding: 44px 0; }
     .section h2{
       margin:0 0 10px;
       font-size:28px;
@@ -280,10 +338,7 @@
       color: rgba(255,255,255,.88);
       white-space:nowrap;
     }
-    .card h3{
-      margin:0;
-      font-size:15px;
-    }
+    .card h3{ margin:0; font-size:15px; }
     .card p{
       margin:10px 0 0;
       color: var(--muted);
@@ -417,6 +472,38 @@
       margin-top: 10px;
     }
 
+    /* Contact card */
+    .contact{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    .panel{
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--r);
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.22);
+    }
+    .field{ display:grid; gap:6px; margin-top:10px; }
+    label{ font-size:12px; color: rgba(255,255,255,.78); font-weight:700; }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      color:#fff;
+      outline:none;
+      font-family:inherit;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(202,168,78,.50);
+      box-shadow: 0 0 0 4px rgba(202,168,78,.15);
+    }
+    textarea{ min-height:110px; resize:vertical; }
+
     /* Footer */
     footer{
       padding: 28px 0 40px;
@@ -442,33 +529,75 @@
       font-weight:700;
       font-size: 13px;
       box-shadow: 0 18px 40px rgba(0,0,0,.55);
-      z-index: 60;
+      z-index: 10000;
     }
 
-    /* Responsive */
+    /* ===== Responsive ===== */
     @media (max-width: 900px){
-      .container{ width: min(1200px, calc(100% - 28px)); }
-      .brand img{ height: 64px; }
-      h1{ font-size: 34px; }
+      .container{ width:min(1200px, calc(100% - 28px)); }
+
+      .brand img{ height: 56px; }
+
+      /* Desktop nav kapat, mobil menü aç */
+      nav.desktop-nav{ display:none; }
+      .menu-row{ display:flex; }
+
+      h1{ font-size: 32px; }
+      .hero-card{ padding:18px; }
+
       .trust{ grid-template-columns: 1fr 1fr; }
-      .grid{ grid-template-columns: repeat(12, 1fr); }
       .card{ grid-column: span 12; }
       .steps{ grid-template-columns: 1fr; }
       .shots{ grid-template-columns: 1fr; }
       .testimonials{ grid-template-columns: 1fr; }
       .hero-video{ min-height: 68vh; }
+
+      /* Mobilde CTA butonlar tam genişlik */
+      .cta-row .btn{ width:100%; }
+
+      .contact{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 380px){
+      h1{ font-size: 28px; }
+      .trust{ grid-template-columns: 1fr; }
+    }
+
+    /* Kullanıcı "reduce motion" isterse video yerine poster */
+    @media (prefers-reduced-motion: reduce){
+      .hero-video{ background:#000; }
+      .video-wrap{ display:none !important; }
     }
   </style>
 </head>
 
 <body>
-  <header>
+  <header id="top">
     <div class="container">
       <div class="header-inner">
         <a class="brand" href="#top" aria-label="OMRA Ajans 360">
           <img src="logo.png" alt="OMRA Ajans 360 Logo">
         </a>
-        <nav aria-label="Menü">
+
+        <!-- Mobile row -->
+        <div class="menu-row">
+          <button class="menu-toggle" id="menuToggle" aria-label="Menü">☰ Menü</button>
+          <a class="btn btn-ghost" href="#iletisim" style="padding:10px 12px;border-radius:12px;">Teklif Al</a>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="desktop-nav" aria-label="Menü">
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#surec">Süreç</a>
+          <a href="#portfoy">Portföy</a>
+          <a href="#yorumlar">Yorumlar</a>
+          <a href="#sss">SSS</a>
+          <a href="#instagram">Instagram</a>
+          <a href="#iletisim">İletişim</a>
+        </nav>
+
+        <!-- Mobile nav -->
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobil Menü">
           <a href="#hizmetler">Hizmetler</a>
           <a href="#surec">Süreç</a>
           <a href="#portfoy">Portföy</a>
@@ -481,9 +610,9 @@
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <!-- VIDEO HERO -->
-    <section class="hero-video" aria-label="Omra Ajans 360 Video Hero">
+    <section class="hero-video" id="hero" aria-label="Omra Ajans 360 Video Hero">
       <div class="video-wrap" aria-hidden="true">
         <iframe
           src="https://www.youtube-nocookie.com/embed/-7VPkpk3DE4?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&loop=1&playlist=-7VPkpk3DE4"
@@ -502,12 +631,12 @@
           <p class="subtitle">
             OMRA Ajans 360 olarak İzmir’in tüm ilçelerinde <strong>düğün-nişan</strong>, <strong>organizasyon-etkinlik</strong>, <strong>emlak</strong>,
             <strong>kafe-restoran</strong>, <strong>otel</strong> ve <strong>işletme tanıtımı</strong> için planlı ve randevulu drone çekimleri gerçekleştiriyoruz.
-            İşimizi sevdiğimiz için her projeye özenle yaklaşıyor; markanızı veya özel anınızı sinematik bir dille anlatıyoruz.
+            Markanızı veya özel anınızı sinematik bir dille anlatıyoruz.
           </p>
 
-          <div class="cta-row" id="iletisim">
+          <div class="cta-row">
             <a class="btn btn-primary"
-               href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20için%20İzmir%E2%80%99de%20drone%20%C3%A7ekimi%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
+               href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20İzmir%E2%80%99de%20drone%20%C3%A7ekimi%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
                target="_blank" rel="noopener">WhatsApp’tan Teklif Al</a>
             <a class="btn btn-ghost" href="#portfoy">Portföyü Gör</a>
           </div>
@@ -630,7 +759,7 @@
     <section class="section" id="portfoy">
       <div class="container">
         <h2>Portföy</h2>
-        <p class="lead">Örnek çekimler</p>
+        <p class="lead">Örnek çekimler (fotoğraf). İstersen ileride videodan daha fazla kare ekleyip galeriyi büyütürüz.</p>
 
         <div class="shots">
           <div class="shot"><img src="p1.png" alt="Drone çekimi örneği 1"></div>
@@ -644,24 +773,24 @@
     <section class="section" id="yorumlar">
       <div class="container">
         <h2>Müşteri Yorumları</h2>
-        <p class="lead">Sizin Görüşlerinizle Büyümeye Devam Ediyoruz.</p>
+        <p class="lead">Şimdilik örnek şablon. İlk gerçek yorumlar geldikçe güncelleyip daha güçlü hale getiririz.</p>
 
         <div class="testimonials">
           <div class="quote">
             <p>“Çekimler profesyoneldi. Mekanımızı tam istediğimiz gibi yansıttılar ve iletişim çok hızlıydı.”</p>
-            <div class="who">Esim Pınar</div>
+            <div class="who">— Müşteri Adı Soyadı</div>
             <div class="where">İzmir • İşletme Tanıtımı</div>
           </div>
 
           <div class="quote">
             <p>“Organizasyon boyunca planlı çalıştılar. Drone görüntüleri gerçekten premium duruyor.”</p>
-            <div class="who">Kamil Tan </div>
+            <div class="who">— Müşteri Adı Soyadı</div>
             <div class="where">İzmir • Etkinlik Çekimi</div>
           </div>
 
           <div class="quote">
             <p>“Emlak ilanımız için çekim yaptırdık. Video ilanı çok öne çıkardı, teşekkür ederiz.”</p>
-            <div class="who">Eren Kaya</div>
+            <div class="who">— Müşteri Adı Soyadı</div>
             <div class="where">İzmir • Emlak Drone Çekimi</div>
           </div>
         </div>
@@ -672,11 +801,11 @@
     <section class="section" id="sss">
       <div class="container">
         <h2>Sık Sorulan Sorular</h2>
-        <p class="lead"></p>
+        <p class="lead">Bu bölüm hem müşteriyi ikna eder hem de SEO açısından Google’da görünürlüğü güçlendirir.</p>
 
         <details>
           <summary>İzmir’de hangi ilçelere hizmet veriyorsunuz?</summary>
-          <p>İzmir’in tüm ilçelerinde hizmet veriyoruz. Çekim türüne ve lokasyona göre randevu planı WhatsApp üzerinden belirlenir.</p>
+          <p>İzmir’in tüm ilçelerinde hizmet veriyoruz. Çekim türüne ve lokasyona göre randevu planı WhatsApp üzerinden netleşir.</p>
         </details>
 
         <details>
@@ -701,13 +830,65 @@
       <div class="container">
         <h2>Instagram</h2>
         <p class="lead">
-          @omraajans360 hesabımızdan paylaşımlar.
+          @omraajans360 hesabımızdaki paylaşımlar. Elfsight embed kodunu aşağıdaki kutuya yapıştırdığında akış otomatik güncellenir.
         </p>
 
         <div class="ig-box">
-         <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-35a555d3-c4a6-4dcc-ab09-c0fa48aede4d" data-elfsight-app-lazy></div>
+          <!-- ✅ ELFSIGHT EMBED KODUNU BURAYA YAPIŞTIR -->
+          <div style="color: rgba(255,255,255,.86); font-weight:700;">Instagram akışı eklenecek</div>
+          <div class="ig-note">Elfsight panelinden aldığın embed kodunu buraya yapıştır → Commit → Ctrl+F5.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="iletisim">
+      <div class="container">
+        <h2>İletişim / Teklif</h2>
+        <p class="lead">İlçe + tarih + hizmet yaz; hızlıca netleştirelim. İstersen formdan da gönderebilirsin.</p>
+
+        <div class="contact">
+          <div class="panel">
+            <div style="font-weight:700; margin-bottom:8px;">WhatsApp ile en hızlı</div>
+            <a class="btn btn-primary" style="width:100%;"
+               href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
+               target="_blank" rel="noopener">WhatsApp’tan Teklif Al</a>
+
+            <div style="height:12px;"></div>
+
+            <form id="contactForm">
+              <div class="field">
+                <label for="name">Ad Soyad</label>
+                <input id="name" name="name" placeholder="Örn: Ömer Kılıç" required>
+              </div>
+              <div class="field">
+                <label for="phone">Telefon</label>
+                <input id="phone" name="phone" placeholder="+90 5xx xxx xx xx">
+              </div>
+              <div class="field">
+                <label for="msg">Mesaj</label>
+                <textarea id="msg" name="msg" placeholder="İlçe, tarih ve çekim türünü yazın."></textarea>
+              </div>
+              <button class="btn btn-ghost" style="width:100%;" type="submit">Formu Gönder (Demo)</button>
+              <div id="toast" style="display:none;margin-top:10px;color:rgba(255,255,255,.82);font-size:12px;">
+                ✅ Mesaj alındı (demo). Gerçek gönderim için form entegrasyonu bağlanır.
+              </div>
+            </form>
+          </div>
+
+          <div class="panel">
+            <div style="font-weight:700;">Hızlı Bilgi</div>
+            <p style="margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.7;">
+              <strong>Konum:</strong> İzmir (tüm ilçeler)<br>
+              <strong>Çalışma:</strong> Randevulu<br>
+              <strong>Teslim:</strong> Reels (9:16), Yatay (16:9), Reklam formatları
+            </p>
+            <div style="height:10px;"></div>
+            <div style="color:rgba(255,255,255,.72);font-size:12px;line-height:1.7;">
+              Not: Mobilde video bazı cihazlarda sorun çıkardığı için bu sürümde mobilde poster kullanıyoruz.
+              İstersen “mobilde de video oynasın” diye ayarlayabiliriz ama stabilite düşebilir.
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -724,7 +905,40 @@
      target="_blank" rel="noopener">WhatsApp</a>
 
   <script>
+    // Footer year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const headerEl = document.querySelector("header");
+    const toggleBtn = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    if (toggleBtn && headerEl) {
+      toggleBtn.addEventListener("click", () => headerEl.classList.toggle("mobile-open"));
+    }
+    if (mobileNav && headerEl) {
+      mobileNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => headerEl.classList.remove("mobile-open")));
+    }
+
+    // Demo form
+    const form = document.getElementById("contactForm");
+    const toast = document.getElementById("toast");
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      toast.style.display = "block";
+      setTimeout(() => toast.style.display = "none", 3200);
+      form.reset();
+    });
+
+    // Mobile: disable iframe background video (stabil)
+    const isMobile = window.matchMedia("(max-width: 900px)").matches;
+    if (isMobile) {
+      const hero = document.getElementById("hero");
+      hero?.classList.add("has-poster");
+      // İstersen iframe'ı tamamen kaldır (performans için):
+      const iframe = document.querySelector(".video-wrap iframe");
+      if (iframe) iframe.remove();
+    }
   </script>
 </body>
 </html>
