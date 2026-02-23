@@ -637,6 +637,64 @@ nav.desktop-nav a{
     padding: 10px 12px !important;
   }
 }
+    /* ===== MOBİL HEADER TEK SATIR + DAHA KÜÇÜK ===== */
+@media (max-width: 900px){
+
+  /* header iç düzeni yatay yap */
+  .header-inner{
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 6px 0 !important;
+  }
+
+  /* logo ortada kalsın */
+  .brand{
+    order: 2;
+    flex: 0 0 auto;
+    margin: 0 auto;
+  }
+
+  /* logo boyutu küçülsün */
+  .brand img{
+    height: 38px !important;
+  }
+
+  /* menü butonu sola */
+  .menu-row{
+    order: 1;
+    width: auto !important;
+    padding: 0 !important;
+  }
+
+  /* Menü yazısı butonu küçült */
+  .menu-toggle{
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+  }
+
+  /* Teklif al sağa */
+  .menu-row a{
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+  }
+
+  /* desktop nav tamamen kapalı */
+  .desktop-nav{
+    display:none !important;
+  }
+
+  /* açılan mobil menü header altından başlasın */
+  .mobile-nav{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000;
+    padding: 10px 16px;
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+}
   </style>
 </head>
 
