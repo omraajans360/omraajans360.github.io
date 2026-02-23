@@ -600,7 +600,6 @@
 
 /* PC varsayılan: hamburger yok, yatay menü var */
 .menu-row { display: none !important; }
-.mobile-nav { display: none !important; }
 .desktop-nav { display: flex !important; }
 
 /* Header yüksekliğini düşür (PC) */
@@ -618,73 +617,76 @@ nav.desktop-nav a{
   padding: 8px 10px !important;    /* linkleri daha kompakt */
   font-size: 13px !important;
 }
-    @media (max-width: 900px){
-  /* Mobilde: hamburger görünsün, yatay menü gizlensin */
-  .menu-row { display: flex !important; }
-  .desktop-nav { display: none !important; }
 
-  /* Mobil header yüksekliğini daha da düşür */
-  header .header-inner{
-    padding: 8px 0 6px !important;
-    gap: 6px !important;
-  }
-  header .brand img{
-    height: 44px !important;       /* mobilde daha küçük */
-  }
-
-  /* Mobil menü linkleri biraz daha sıkı */
-  .mobile-nav a{
-    padding: 10px 12px !important;
-  }
+/* ===== HEADER YÜKSEKLİĞİ GENEL (PC + Mobil) ===== */
+header .header-inner{
+  padding: 6px 0 6px !important;
+  gap: 6px !important;
 }
-/* ===== MOBİL HEADER: 3 KOLON (MENÜ | LOGO | TEKLİF AL) ===== */
+
+/* Mobil bar varsayılan kapalı (PC’de görünmesin) */
+.mobile-bar{ display:none; }
+
+/* PC’de logo boyutu */
+header .brand img{
+  height: 54px !important;
+}
+
+/* ===== MOBİL: Menü | Logo | Teklif aynı hizada ===== */
 @media (max-width: 900px){
+  /* Mobilde desktop nav gizle */
+  nav.desktop-nav{ display:none !important; }
 
-  header .header-inner{
-    display: grid !important;
-    grid-template-columns: auto 1fr auto !important;
-    align-items: center !important;
+  /* Mobil bar aç */
+  .mobile-bar{
+    display:flex !important;
+    align-items:center !important;
+    justify-content: space-between !important;
     gap: 10px !important;
-    padding: 6px 0 !important;
+    width:100% !important;
   }
 
-  header .brand{
-    justify-content: center !important;
-    margin: 0 !important;
+  /* Logo ortada kalsın */
+  .mobile-bar .brand{
+    flex: 1 1 auto;
+    display:flex;
+    justify-content:center;
   }
-  header .brand img{
+
+  /* Mobil logo küçült */
+  .mobile-bar .brand img{
     height: 38px !important;
   }
 
-  header .menu-row{
-    display: contents !important;
-    padding: 0 !important;
-  }
-
-  header .menu-toggle{
-    grid-column: 1 !important;
-    justify-self: start !important;
+  /* Sol buton sabit genişlik */
+  .mobile-bar .menu-toggle{
+    flex: 0 0 auto;
     font-size: 12px !important;
     padding: 8px 10px !important;
   }
 
-  header .menu-row .btn{
-    grid-column: 3 !important;
-    justify-self: end !important;
+  /* Sağ teklif butonu sabit genişlik */
+  .mobile-bar .teklif-btn{
+    flex: 0 0 auto;
     font-size: 12px !important;
     padding: 8px 10px !important;
+    border-radius:12px !important;
   }
 
-  nav.desktop-nav{ display:none !important; }
-
+  /* Açılır mobil menü header altından aç */
   nav.mobile-nav{
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    width: 100% !important;
+    position:absolute !important;
+    top:100% !important;
+    left:0 !important;
+    width:100% !important;
     background: rgba(0,0,0,.96) !important;
     padding: 10px 16px 12px !important;
     border-top: 1px solid rgba(255,255,255,.08) !important;
+  }
+
+  /* Mobile nav linkleri sıkı */
+  nav.mobile-nav a{
+    padding: 10px 12px !important;
   }
 }
   </style>
@@ -693,39 +695,40 @@ nav.desktop-nav a{
 <body>
   <header id="top">
     <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="#top" aria-label="OMRA Ajans 360">
-          <img src="logo.png" alt="OMRA Ajans 360 Logo">
-        </a>
+<div class="header-inner">
+  <!-- Mobil üst satır: Menü | Logo | Teklif -->
+  <div class="mobile-bar">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü">☰ Menü</button>
 
-        <!-- Mobile row -->
-        <div class="menu-row">
-          <button class="menu-toggle" id="menuToggle" aria-label="Menü">☰ Menü</button>
-          <a class="btn btn-ghost" href="#iletisim" style="padding:10px 12px;border-radius:12px;">Teklif Al</a>
-        </div>
+    <a class="brand" href="#top" aria-label="OMRA Ajans 360">
+      <img src="logo.png" alt="OMRA Ajans 360 Logo">
+    </a>
 
-        <!-- Desktop nav -->
-        <nav class="desktop-nav" aria-label="Menü">
-          <a href="#hizmetler">Hizmetler</a>
-          <a href="#surec">Süreç</a>
-          <a href="#portfoy">Portföy</a>
-          <a href="#yorumlar">Yorumlar</a>
-          <a href="#sss">SSS</a>
-          <a href="#instagram">Instagram</a>
-          <a href="#iletisim">İletişim</a>
-        </nav>
+    <a class="btn btn-ghost teklif-btn" href="#iletisim">Teklif Al</a>
+  </div>
 
-        <!-- Mobile nav -->
-        <nav class="mobile-nav" id="mobileNav" aria-label="Mobil Menü">
-          <a href="#hizmetler">Hizmetler</a>
-          <a href="#surec">Süreç</a>
-          <a href="#portfoy">Portföy</a>
-          <a href="#yorumlar">Yorumlar</a>
-          <a href="#sss">SSS</a>
-          <a href="#instagram">Instagram</a>
-          <a href="#iletisim">İletişim</a>
-        </nav>
-      </div>
+  <!-- Desktop nav -->
+  <nav class="desktop-nav" aria-label="Menü">
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#surec">Süreç</a>
+    <a href="#portfoy">Portföy</a>
+    <a href="#yorumlar">Yorumlar</a>
+    <a href="#sss">SSS</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobil Menü">
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#surec">Süreç</a>
+    <a href="#portfoy">Portföy</a>
+    <a href="#yorumlar">Yorumlar</a>
+    <a href="#sss">SSS</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+</div>
     </div>
   </header>
 
@@ -988,7 +991,7 @@ nav.desktop-nav a{
                 <label for="msg">Mesaj</label>
                 <textarea id="msg" name="msg" placeholder="İlçe, tarih ve çekim türünü yazın."></textarea>
               </div>
-              <button class="btn btn-ghost" style="width:100%;" type="submit">Formu Gönder (Demo)</button>
+              <button class="btn btn-ghost" style="width:100%;" type="submit">Formu Gönder</button>
               <div id="toast" style="display:none;margin-top:10px;color:rgba(255,255,255,.82);font-size:12px;">
                 ✅ Mesaj alındı (demo). Gerçek gönderim için form entegrasyonu bağlanır.
               </div>
