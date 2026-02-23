@@ -596,6 +596,47 @@
       linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.45)) !important;
   }
 }
+    /* ===== HEADER HEIGHT + MENU DISPLAY FIX ===== */
+
+/* PC varsayılan: hamburger yok, yatay menü var */
+.menu-row { display: none !important; }
+.mobile-nav { display: none !important; }
+.desktop-nav { display: flex !important; }
+
+/* Header yüksekliğini düşür (PC) */
+header .header-inner{
+  padding: 8px 0 6px !important;   /* eski 16/10'u kısalt */
+  gap: 6px !important;
+}
+header .brand img{
+  height: 52px !important;         /* logo küçülsün */
+}
+nav.desktop-nav{
+  padding-bottom: 6px !important;
+}
+nav.desktop-nav a{
+  padding: 8px 10px !important;    /* linkleri daha kompakt */
+  font-size: 13px !important;
+}
+    @media (max-width: 900px){
+  /* Mobilde: hamburger görünsün, yatay menü gizlensin */
+  .menu-row { display: flex !important; }
+  .desktop-nav { display: none !important; }
+
+  /* Mobil header yüksekliğini daha da düşür */
+  header .header-inner{
+    padding: 8px 0 6px !important;
+    gap: 6px !important;
+  }
+  header .brand img{
+    height: 44px !important;       /* mobilde daha küçük */
+  }
+
+  /* Mobil menü linkleri biraz daha sıkı */
+  .mobile-nav a{
+    padding: 10px 12px !important;
+  }
+}
   </style>
 </head>
 
