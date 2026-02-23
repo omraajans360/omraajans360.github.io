@@ -1048,23 +1048,24 @@ header.scrolled .brand img{
 
             <div style="height:12px;"></div>
 
-            <form id="contactForm">
+         <form action="https://formspree.io/f/mbdapbjq" method="POST">
               <div class="field">
                 <label for="name">Ad Soyad</label>
-                <input id="name" name="name" placeholder="Örn: Ömer Kılıç" required>
+                <input id="name" name="name" placeholder="Ad Soyad" required>
               </div>
               <div class="field">
                 <label for="phone">Telefon</label>
-                <input id="phone" name="phone" placeholder="+90 5xx xxx xx xx">
+                <input id="phone" name="phone" placeholder="+90 5xx xxx xx xx" required>
               </div>
               <div class="field">
                 <label for="msg">Mesaj</label>
-                <textarea id="msg" name="msg" placeholder="İlçe, tarih ve çekim türünü yazın."></textarea>
+               <textarea id="msg" name="message" placeholder="İlçe, tarih ve çekim türünü yazın." required></textarea>
               </div>
               <button class="btn btn-ghost" style="width:100%;" type="submit">Formu Gönder</button>
               <div id="toast" style="display:none;margin-top:10px;color:rgba(255,255,255,.82);font-size:12px;">
-                ✅ Mesaj alındı (demo). Gerçek gönderim için form entegrasyonu bağlanır.
+                ✅ Mesaj alındı. En kısa sürede tarafınıza geri dönüş sağlanacaktır.
               </div>
+           <input type="hidden" name="_next" value="https://omraajans360.github.io/#iletisim">
             </form>
           </div>
 
@@ -1112,15 +1113,6 @@ header.scrolled .brand img{
       mobileNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => headerEl.classList.remove("mobile-open")));
     }
 
-    // Demo form
-    const form = document.getElementById("contactForm");
-    const toast = document.getElementById("toast");
-    form?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      toast.style.display = "block";
-      setTimeout(() => toast.style.display = "none", 3200);
-      form.reset();
-    });
 
     // Mobile: disable iframe background video (stabil)
     const isMobile = window.matchMedia("(max-width: 900px)").matches;
