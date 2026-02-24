@@ -744,6 +744,35 @@ header.scrolled .brand img{
   transform: translateY(0);
   filter: blur(0);
 }
+    /* ===== DESKTOP HEADER FIX ===== */
+@media (min-width: 901px){
+
+  .header-inner{
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .brand{
+    order: 0 !important;
+    margin: 0 auto !important;
+    display:flex !important;
+    justify-content:center !important;
+  }
+
+  .brand img{
+    height: 58px !important;
+  }
+
+  .menu-row{
+    display:none !important;
+  }
+
+  .desktop-nav{
+    display:flex !important;
+    justify-content:center !important;
+    width:100%;
+  }
+}
   </style>
 </head>
 
