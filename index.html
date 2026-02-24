@@ -1071,6 +1071,53 @@ details:hover,
     0 0 6px rgba(202,168,78,.6),
     0 0 18px rgba(202,168,78,.35);
 }
+    /* ===== BACK TO TOP (MOBİL) ===== */
+#backToTop{
+  position: fixed;
+  right: 18px;
+  bottom: 78px; /* WhatsApp butonunun üstünde dursun */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(145deg,#caa84e,#e3c46b);
+  color:#000;
+  font-size:18px;
+  font-weight:bold;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.45),
+    0 0 20px rgba(202,168,78,.35);
+
+  opacity:0;
+  visibility:hidden;
+  transform: translateY(15px);
+  transition: all .3s ease;
+  z-index:9999;
+}
+
+/* görünür hali */
+#backToTop.show{
+  opacity:1;
+  visibility:visible;
+  transform: translateY(0);
+}
+
+/* sadece mobilde görünsün */
+@media (min-width: 901px){
+  #backToTop{ display:none; }
+}
+
+/* hover efekti */
+#backToTop:active{
+  transform: scale(.92);
+}
   </style>
 </head>
 
@@ -1525,6 +1572,25 @@ details:hover,
       }
     });
   }
+  /* Back To Top */
+const backBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if(window.scrollY > 500){
+    backBtn.classList.add("show");
+  }else{
+    backBtn.classList.remove("show");
+  }
+});
+
+backBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
 </script>
+  <!-- Back To Top Button -->
+<button id="backToTop" aria-label="En üste dön">▲</button>
 </body>
 </html>
