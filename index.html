@@ -788,14 +788,25 @@ header.scrolled .brand img{
   border: 1px solid rgba(255,255,255,.06);
   overflow:hidden;
   position: relative;
-  background:
-    linear-gradient(90deg, rgba(10,10,10,.92), rgba(10,10,10,.45)),
-    radial-gradient(closest-side, rgba(202,168,78,.12), rgba(202,168,78,0) 70%),
-    var(--img);
+  background: var(--img);
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.2);
-  opacity: .92;
+}
+
+/* gerçek karartmayı pseudo layer ile yapıyoruz */
+.card--media .card-media::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(7,7,7,1) 0%, rgba(7,7,7,.95) 35%, rgba(7,7,7,.70) 70%, rgba(7,7,7,.55) 100%);
+  z-index:1;
+  pointer-events:none;
+}
+    .card--media .card-content{
+  position:relative;
+  z-index:2;
+}
 }
 
 /* Mobilde alt alta */
