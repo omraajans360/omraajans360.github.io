@@ -1129,6 +1129,46 @@ section#hizmetler .card.card--media .card-media{
     0 0 0 1px rgba(202,168,78,.10),
     0 0 16px rgba(202,168,78,.05) !important;
 }
+    /* ===== BACK TO TOP (MOBİL) ===== */
+#backToTop{
+  position: fixed;
+  right: 18px;
+  bottom: 78px; /* WhatsApp'ın üstü */
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(202,168,78,.35);
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.45),
+    0 0 24px rgba(202,168,78,.18);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+  z-index: 10001; /* WhatsApp (10000) üstü */
+}
+
+#backToTop.show{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Sadece mobilde görünsün */
+@media (min-width: 901px){
+  #backToTop{ display:none; }
+}
   </style>
 </head>
 
@@ -1600,8 +1640,20 @@ backBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+  // Back To Top (Mobil)
+const backBtn = document.getElementById("backToTop");
+
+if (backBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 450) backBtn.classList.add("show");
+    else backBtn.classList.remove("show");
+  });
+
+  backBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 </script>
-  <!-- Back To Top Button -->
-<button id="backToTop" aria-label="En üste dön">▲</button>
+  <button id="backToTop" aria-label="En üste dön" type="button">▲</button>
 </body>
 </html>
