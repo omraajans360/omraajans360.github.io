@@ -1169,6 +1169,10 @@ section#hizmetler .card.card--media .card-media{
 @media (min-width: 901px){
   #backToTop{ display:none; }
 }
+    /* Hizmetler kartında border kesin olsun */
+section#hizmetler .card.card--media{
+  border: 1px solid rgba(255,255,255,.06) !important;
+}
   </style>
 </head>
 
@@ -1623,23 +1627,6 @@ section#hizmetler .card.card--media .card-media{
       }
     });
   }
-  /* Back To Top */
-const backBtn = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  if(window.scrollY > 500){
-    backBtn.classList.add("show");
-  }else{
-    backBtn.classList.remove("show");
-  }
-});
-
-backBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
   // Back To Top (Mobil)
 const backBtn = document.getElementById("backToTop");
 
