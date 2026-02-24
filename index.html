@@ -803,6 +803,41 @@ header.scrolled .brand img{
   .card--media{ grid-template-columns: 1fr; }
   .card--media .card-media{ height: 160px; opacity: .90; }
 }
+    /* ===== PC: LOGO GÖRÜNMÜYOR SORUNU (KESİN OVERRIDE) ===== */
+@media (min-width: 901px){
+
+  header .header-inner{
+    display:flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px 0 !important;
+    gap: 6px !important;
+  }
+
+  header .brand{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    width:100% !important;
+    margin: 0 !important;
+    order: 0 !important;
+    position: relative !important;
+    z-index: 99999 !important;
+  }
+
+  header .brand img{
+    display:block !important;
+    height: 58px !important;
+    width: auto !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  header .menu-row{ display:none !important; }
+  header nav.desktop-nav{ display:flex !important; }
+}
   </style>
 </head>
 
