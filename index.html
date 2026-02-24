@@ -954,6 +954,66 @@ nav.desktop-nav{
     .card--media .card-media{
   transform: translateZ(0);
 }
+    /* ===== HİZMETLER: KISIK ALTIN ÇERÇEVE (HOVER'DA BÜYÜME YOK) ===== */
+#hizmetler .card--media .card-media{
+  /* çok ince ve kısık altın hat */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05),
+    0 0 0 1.5px rgba(202,168,78,.18),
+    0 0 22px rgba(202,168,78,.06);
+  transition: box-shadow .25s ease; /* sadece glow değişsin */
+  transform: none !important;       /* asla büyümesin/yükselmesin */
+}
+
+/* Hover: sadece çok hafif artsın, hareket yok */
+#hizmetler .card--media:hover .card-media{
+  transform: none !important;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 0 1.5px rgba(202,168,78,.26),
+    0 0 28px rgba(202,168,78,.10);
+}
+    /* ===== GLOBAL PREMIUM CARD GLOW ===== */
+/* Süreç, Yorumlar, SSS, İletişim kartları */
+
+.step,
+.quote,
+details,
+.panel{
+  position: relative;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 18px;
+  overflow: hidden;
+
+  /* ana ince çerçeve */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05),
+    0 0 0 1.2px rgba(202,168,78,.14),
+    0 0 20px rgba(202,168,78,.05);
+
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+
+/* hover: sadece hafif parıltı artar (hareket yok) */
+.step:hover,
+.quote:hover,
+details:hover,
+.panel:hover{
+  border-color: rgba(202,168,78,.35);
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.07),
+    0 0 0 1.5px rgba(202,168,78,.28),
+    0 0 28px rgba(202,168,78,.10);
+}
+    details[open]{
+  border-color: rgba(202,168,78,.35);
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.07),
+    0 0 0 1.5px rgba(202,168,78,.28),
+    0 0 28px rgba(202,168,78,.10);
+}
   </style>
 </head>
 
