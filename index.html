@@ -1088,6 +1088,20 @@ section#hizmetler .card.card--media .card-media{
 @media (min-width: 901px){
   #backToTop{ display:none; }
 }
+    /* ===== HİZMETLER GÖRSEL KARARTMAYI TAMAMEN KALDIR ===== */
+#hizmetler .card--media .card-media::before{
+  display:none !important;
+}
+
+#hizmetler .card--media .card-media::after{
+  display:none !important;
+}
+    #hizmetler .card--media .card-media{
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 0 1.2px rgba(202,168,78,.18),
+    0 0 22px rgba(202,168,78,.10) !important;
+}
   </style>
 </head>
 
