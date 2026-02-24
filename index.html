@@ -531,18 +531,19 @@
 
     /* ===== Responsive ===== */
     @media (max-width: 900px){
-        .hero-video{
+  .hero-video{
     background-image: url("hero-poster.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   .hero-video .video-wrap{ display:none !important; }
-      
-      .container{ width:min(1200px, calc(100% - 28px)); }
 
-      .brand img{ height: 56px; }
+  .container{ width:min(1200px, calc(100% - 28px)); }
+  .brand img{ height: 56px; }
 
+  /* diğer mobil kuralların da buraya girmeli */
+}
       /* Desktop nav kapat, mobil menü aç */
       nav.desktop-nav{ display:none; }
       .menu-row{ display:flex; }
@@ -1101,6 +1102,14 @@ section#hizmetler .card.card--media .card-media{
     0 0 0 1px rgba(255,255,255,.06),
     0 0 0 1.2px rgba(202,168,78,.18),
     0 0 22px rgba(202,168,78,.10) !important;
+}
+    /* === HİZMETLER: FOTOĞRAF ÜSTÜ KARARTMAYI TAM KAPAT === */
+#hizmetler .card--media .card-media::before,
+#hizmetler .card--media .card-media::after{
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
 }
   </style>
 </head>
