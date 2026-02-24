@@ -783,6 +783,12 @@ header.scrolled .brand img{
 
 .card--media .card-content{ min-width:0; }
 
+.card--media .card-content{
+  min-width:0;
+  position:relative;
+  z-index:2;
+}
+
 .card--media .card-media{
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,.06);
@@ -793,7 +799,7 @@ header.scrolled .brand img{
   background-position: center;
 }
 
-/* gerçek karartmayı pseudo layer ile yapıyoruz */
+/* gerçek karartma katmanı */
 .card--media .card-media::before{
   content:"";
   position:absolute;
@@ -803,10 +809,13 @@ header.scrolled .brand img{
   z-index:1;
   pointer-events:none;
 }
-    .card--media .card-content{
-  position:relative;
+    .card--media .card-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  box-shadow: inset 0 0 80px rgba(0,0,0,.55);
   z-index:2;
-}
+  pointer-events:none;
 }
 
 /* Mobilde alt alta */
