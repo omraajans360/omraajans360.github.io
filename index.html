@@ -838,48 +838,122 @@ header.scrolled .brand img{
   header .menu-row{ display:none !important; }
   header nav.desktop-nav{ display:flex !important; }
 }
+    /* ===== HEADER FINAL (PC + MOBİL) ===== */
+
+/* Ortak */
+header .header-inner{
+  position: relative;
+}
+
+/* PC: logo + yatay menü */
+.brand-desktop{ display:flex; justify-content:center; }
+.brand-desktop img{ height: 58px; width:auto; }
+
+/* Mobil bar PC’de kapalı */
+.mobile-bar{ display:none; }
+.brand-mobile{ display:none; }
+
+/* Mobil açılır menü default kapalı */
+.mobile-nav{ display:none; }
+header.mobile-open .mobile-nav{ display:block; }
+
+/* PC nav açık */
+nav.desktop-nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ===== MOBİL ===== */
+@media (max-width: 900px){
+
+  /* PC logo kapat */
+  .brand-desktop{ display:none !important; }
+
+  /* Mobil bar aç */
+  .mobile-bar{
+    display:flex !important;
+    align-items:center;
+    justify-content: space-between;
+    gap:10px;
+    width:100%;
+    padding: 6px 0;
+  }
+
+  /* Mobil logo sadece mobilde */
+  .brand-mobile{ display:flex !important; justify-content:center; flex:1; }
+  .brand-mobile img{ height: 40px; width:auto; }
+
+  /* Desktop nav kapat */
+  nav.desktop-nav{ display:none !important; }
+
+  /* Açılır mobil menü header altına */
+  nav.mobile-nav{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background: rgba(0,0,0,.96);
+    padding: 10px 16px 12px;
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+
+  nav.mobile-nav a{
+    display:block;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+}
   </style>
 </head>
 
 <body>
-  <header id="top">
-    <div class="container">
-<div class="header-inner">
-  <!-- Mobil üst satır: Menü | Logo | Teklif -->
-  <div class="mobile-bar">
-    <button class="menu-toggle" id="menuToggle" aria-label="Menü">☰ Menü</button>
+<header id="top">
+  <div class="container">
+    <div class="header-inner">
 
-    <a class="brand" href="#top" aria-label="OMRA Ajans 360">
-      <img src="logo.png" alt="OMRA Ajans 360 Logo">
-    </a>
+      <!-- PC LOGO (üstte büyük) -->
+      <a class="brand brand-desktop" href="#top" aria-label="OMRA Ajans 360">
+        <img src="logo.png" alt="OMRA Ajans 360 Logo">
+      </a>
 
-    <a class="btn btn-ghost teklif-btn" href="#iletisim">Teklif Al</a>
-  </div>
+      <!-- MOBİL ÜST BAR: Menü | Logo | Teklif -->
+      <div class="mobile-bar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Menü">☰ Menü</button>
 
-  <!-- Desktop nav -->
-  <nav class="desktop-nav" aria-label="Menü">
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#surec">Süreç</a>
-    <a href="#portfoy">Portföy</a>
-    <a href="#yorumlar">Yorumlar</a>
-    <a href="#sss">SSS</a>
-    <a href="#instagram">Instagram</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
+        <a class="brand brand-mobile" href="#top" aria-label="OMRA Ajans 360">
+          <img src="logo.png" alt="OMRA Ajans 360 Logo">
+        </a>
 
-  <!-- Mobile nav -->
-  <nav class="mobile-nav" id="mobileNav" aria-label="Mobil Menü">
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#surec">Süreç</a>
-    <a href="#portfoy">Portföy</a>
-    <a href="#yorumlar">Yorumlar</a>
-    <a href="#sss">SSS</a>
-    <a href="#instagram">Instagram</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
-</div>
+        <a class="btn btn-ghost teklif-btn" href="#iletisim">Teklif Al</a>
+      </div>
+
+      <!-- DESKTOP NAV -->
+      <nav class="desktop-nav" aria-label="Menü">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#surec">Süreç</a>
+        <a href="#portfoy">Portföy</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#sss">SSS</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+
+      <!-- MOBILE NAV -->
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobil Menü">
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#surec">Süreç</a>
+        <a href="#portfoy">Portföy</a>
+        <a href="#yorumlar">Yorumlar</a>
+        <a href="#sss">SSS</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <!-- VIDEO HERO -->
