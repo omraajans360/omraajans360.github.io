@@ -538,7 +538,7 @@
     background-repeat: no-repeat;
   }
   .hero-video .video-wrap{ display:none !important; }
-}
+      
       .container{ width:min(1200px, calc(100% - 28px)); }
 
       .brand img{ height: 56px; }
@@ -811,20 +811,7 @@ header.scrolled .brand img{
     /* yumuşak dış glow */
     0 0 38px rgba(202,168,78,.12);
 }
-    .card--media .card-media{
-  transition: box-shadow .35s ease, transform .35s ease;
-}
-
-.card--media:hover .card-media{
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.08),
-    0 0 0 2px rgba(202,168,78,.55),
-    0 8px 30px rgba(202,168,78,.30),
-    0 0 70px rgba(202,168,78,.22);
-}
-
+  
 /* gerçek karartma katmanı */
 .card--media .card-media::before{
   content:"";
@@ -955,16 +942,7 @@ nav.desktop-nav{
   transform: translateZ(0);
 }
   
-/* Hover: sadece çok hafif artsın, hareket yok */
-#hizmetler .card--media:hover .card-media{
-  transform: none !important;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.06),
-    0 0 0 1.5px rgba(202,168,78,.26),
-    0 0 28px rgba(202,168,78,.10);
-}
-    /* ===== GLOBAL PREMIUM CARD GLOW ===== */
-/* Süreç, Yorumlar, SSS, İletişim kartları */
+
 
 .step,
 .quote,
@@ -1004,25 +982,8 @@ details:hover,
     0 0 0 1.5px rgba(202,168,78,.28),
     0 0 28px rgba(202,168,78,.10);
 }
-/* Sağdaki görsel panelin (card-media) parıltısı çok kısık olsun */
-#hizmetler .card--media .card-media{
-  transform: none !important; /* translateY vs iptal */
-  transition: box-shadow .25s ease, border-color .25s ease;
 
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.05),
-    0 0 0 1.5px rgba(202,168,78,.14),
-    0 0 18px rgba(202,168,78,.05) !important;
-}
 
-/* Hover: sadece çok hafif artsın, büyüme yok */
-#hizmetler .card--media:hover .card-media{
-  transform: none !important;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.06),
-    0 0 0 1.5px rgba(202,168,78,.22),
-    0 0 24px rgba(202,168,78,.08) !important;
-}
     /* ===== HERO TRUST KARTLARI (ÜSTTEKİ 4 KUTU) ===== */
 
 .trust-item{
@@ -1052,48 +1013,6 @@ details:hover,
   box-shadow:
     0 0 6px rgba(202,168,78,.6),
     0 0 18px rgba(202,168,78,.35);
-}
-    /* ===== BACK TO TOP (MOBİL) ===== */
-#backToTop{
-  position: fixed;
-  right: 18px;
-  bottom: 78px; /* WhatsApp butonunun üstünde dursun */
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-
-  background: linear-gradient(145deg,#caa84e,#e3c46b);
-  color:#000;
-  font-size:18px;
-  font-weight:bold;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,.45),
-    0 0 20px rgba(202,168,78,.35);
-
-  opacity:0;
-  visibility:hidden;
-  transform: translateY(15px);
-  transition: all .3s ease;
-  z-index:9999;
-}
-
-/* görünür hali */
-#backToTop.show{
-  opacity:1;
-  visibility:visible;
-  transform: translateY(0);
-}
-
-/* sadece mobilde görünsün */
-@media (min-width: 901px){
-  #backToTop{ display:none; }
 }
 
 /* hover efekti */
@@ -1168,10 +1087,6 @@ section#hizmetler .card.card--media .card-media{
 /* Sadece mobilde görünsün */
 @media (min-width: 901px){
   #backToTop{ display:none; }
-}
-    /* Hizmetler kartında border kesin olsun */
-section#hizmetler .card.card--media{
-  border: 1px solid rgba(255,255,255,.06) !important;
 }
   </style>
 </head>
@@ -1549,7 +1464,7 @@ section#hizmetler .card.card--media{
   <a class="wa"
      href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
      target="_blank" rel="noopener">WhatsApp</a>
-
+  <button id="backToTop" aria-label="En üste dön" type="button">▲</button>
 <script>
   // Footer year
   document.getElementById("y").textContent = new Date().getFullYear();
@@ -1641,6 +1556,5 @@ if (backBtn) {
   });
 }
 </script>
-  <button id="backToTop" aria-label="En üste dön" type="button">▲</button>
 </body>
 </html>
