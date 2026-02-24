@@ -796,7 +796,33 @@ header.scrolled .brand img{
   background: var(--img);
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.06); /* border yerine sahte border */
+  transform: translateZ(0);
+
+  /* ince dış hat */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.05),
+
+    /* altın kenar çizgisi */
+    0 0 0 1.5px rgba(202,168,78,.35),
+
+    /* çok hafif sıcak yansıma */
+    0 4px 18px rgba(202,168,78,.18),
+
+    /* yumuşak dış glow */
+    0 0 38px rgba(202,168,78,.12);
+}
+    .card--media .card-media{
+  transition: box-shadow .35s ease, transform .35s ease;
+}
+
+.card--media:hover .card-media{
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.08),
+    0 0 0 2px rgba(202,168,78,.55),
+    0 8px 30px rgba(202,168,78,.30),
+    0 0 70px rgba(202,168,78,.22);
 }
 
 /* gerçek karartma katmanı */
