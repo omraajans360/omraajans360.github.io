@@ -1122,27 +1122,41 @@
     height: 180px !important;
   }
 }
-
-/* ===================================================
-   HİZMET GÜVEN ETİKETİ (YENİ)
-   =================================================== */
+/* ===== HİZMET GÜVEN ROZETLERİ — ALTIN PREMIUM ===== */
 
 .service-meta{
   display:flex;
-  gap:14px;
+  justify-content:center;
+  gap:10px;
   flex-wrap:wrap;
-  margin-top:8px;
-  margin-bottom:8px;
-  font-size:12px;
-  color:rgba(255,255,255,.78);
+  margin:10px 0 14px;
 }
 
 .service-meta span{
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(202,168,78,.22);
-  padding:6px 10px;
+  font-size:12px;
+  padding:7px 14px;
   border-radius:999px;
-  backdrop-filter: blur(4px);
+  color:#fff;
+
+  /* sinematik etiketi ile aynı stil */
+  background: rgba(202,168,78,.10);
+  border: 1px solid rgba(202,168,78,.45);
+
+  box-shadow:
+    0 0 0 1px rgba(202,168,78,.20),
+    0 0 18px rgba(202,168,78,.25),
+    inset 0 0 10px rgba(202,168,78,.18);
+
+  letter-spacing:.3px;
+}
+    #hizmetler .card .top{
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+}
+
+#hizmetler .card h3{
+  text-align:center;
 }
 
 /* Başlıkları ortala */
@@ -1173,6 +1187,115 @@
   max-width:70ch;
   margin-left:auto;
   margin-right:auto;
+}
+    /* ===================================================
+   SÜREÇ — TIMELINE + BOŞLUK DOLDURMA (PC + Mobil)
+   =================================================== */
+
+/* Süreç kutularını daha premium yap */
+#surec .steps{
+  margin-top: 18px;
+}
+
+/* Adım kartı: solda içerik, sağda ikon/visual */
+#surec .step{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding: 20px;
+  position: relative;
+  overflow:hidden;
+}
+
+/* Soldaki metin alanı */
+#surec .step-left{
+  min-width:0;
+}
+
+/* Sağdaki ikon kutusu */
+#surec .step-visual{
+  flex: 0 0 auto;
+  width: 86px;
+  height: 86px;
+  border-radius: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background: rgba(202,168,78,.10);
+  border: 1px solid rgba(202,168,78,.45);
+
+  box-shadow:
+    0 0 0 1px rgba(202,168,78,.18),
+    0 0 20px rgba(202,168,78,.22),
+    inset 0 0 18px rgba(202,168,78,.12);
+}
+
+/* Emoji ikon boyutu */
+#surec .step-emoji{
+  font-size: 34px;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+}
+
+/* PC’de Timeline çizgisi: adımların solunda ince altın çizgi */
+@media (min-width: 901px){
+  #surec .steps{
+    position: relative;
+  }
+
+  /* Dikey çizgi */
+  #surec .steps::before{
+    content:"";
+    position:absolute;
+    left: 18px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(202,168,78,0),
+      rgba(202,168,78,.35),
+      rgba(202,168,78,0)
+    );
+  }
+
+  /* Adım numarası çizgiye otursun */
+  #surec .step-no{
+    position: relative;
+  }
+  #surec .step-no::before{
+    content:"";
+    position:absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(202,168,78,.95);
+    box-shadow: 0 0 0 6px rgba(202,168,78,.12);
+  }
+}
+
+/* Mobilde ikon kutusu alt satıra düşsün (boşluk kalkar) */
+@media (max-width: 900px){
+  #surec .step{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #surec .step-visual{
+    width: 100%;
+    height: 62px;
+    border-radius: 16px;
+    justify-content:flex-start;
+    padding-left: 14px;
+  }
+
+  #surec .step-emoji{
+    font-size: 28px;
+  }
 }
   </style>
 </head>
@@ -1398,14 +1521,18 @@
       <div class="grid">
         <div class="card card--media reveal" style="--d: 0ms; --img:url('srv-dugun.jpg');">
           <div class="card-content">
-            <div class="top"><h3>Düğün / Nişan Drone Çekimi</h3><span class="badge">Sinematik</span></div>
-            <div class="service-meta">
-              <span>✔ İzmir Geneli</span>
-  <span>✔ Planlı Çekim</span>
-  <span>✔ Teslim: 3-8 Gün</span>
+           <div class="top">
+  <h3>Düğün / Nişan Drone Çekimi</h3>
+  <span class="badge">Sinematik</span>
 </div>
-       
-            <p>Özel gününüz için mekan ve akışa uygun planla sinematik drone çekimleri.</p>
+
+<div class="service-meta">
+  <span>İzmir Geneli</span>
+  <span>Planlı Çekim</span>
+  <span>Teslim: 3-8 Gün</span>
+</div>
+
+<p>Özel gününüz için mekan ve akışa uygun planla sinematik drone çekimleri.</p>
             <ul>
               <li>Giriş / yürüyüş / dış mekan sahneleri</li>
               <li>Reels formatında kısa klipler</li>
@@ -1419,12 +1546,10 @@
           <div class="card-content">
             <div class="top"><h3>Organizasyon / Etkinlik</h3><span class="badge">Etkinlik</span></div>
             <div class="service-meta">
-             
-  <span>✔ İzmir Geneli</span>
-  <span>✔ Planlı Çekim</span>
-  <span>✔ Teslim: 3-8 Gün</span>
+<span>İzmir Geneli</span>
+  <span>Planlı Çekim</span>
+  <span>Teslim: 3-8 Gün</span>
 </div>
-            
             <p>Açılış, lansman, konser ve kalabalık etkinlikler için alanı güçlü gösteren çekimler.</p>
             <ul>
               <li>Kalabalık ve mekan ölçeği vurgusu</li>
@@ -1439,10 +1564,9 @@
           <div class="card-content">
             <div class="top"><h3>Emlak Drone Çekimi</h3><span class="badge">Gayrimenkul</span></div>
             <div class="service-meta">
-              
-  <span>✔ İzmir Geneli</span>
-  <span>✔ Planlı Çekim</span>
-  <span>✔ Teslim: 3-8 Gün</span>
+<span>İzmir Geneli</span>
+  <span>Planlı Çekim</span>
+  <span>Teslim: 3-8 Gün</span>
 </div>
             
             <p>Villa, site, arsa ve projeler için konum + çevre avantajını net anlatan çekimler.</p>
@@ -1459,12 +1583,10 @@
           <div class="card-content">
             <div class="top"><h3>Kafe / Restoran Tanıtımı</h3><span class="badge">Mekan</span></div>
             <div class="service-meta">
-             
-  <span>✔ İzmir Geneli</span>
-  <span>✔ Planlı Çekim</span>
-  <span>✔ Teslim: 3-8 Gün</span>
+   <span>İzmir Geneli</span>
+  <span>Planlı Çekim</span>
+  <span>Teslim: 3-8 Gün</span>
 </div>
-           
             <p>Mekanın atmosferini, lokasyonunu ve yoğunluğunu reklam diliyle öne çıkaran içerikler.</p>
             <ul>
               <li>Gündüz/gece konsept çekimi</li>
@@ -1479,9 +1601,9 @@
           <div class="card-content">
             <div class="top"><h3>Otel / Tesis Tanıtımı</h3><span class="badge">Turizm</span></div>
             <div class="service-meta">  
-  <span>✔ İzmir Geneli</span>
-  <span>✔ Planlı Çekim</span>
-  <span>✔ Teslim: 3-8 Gün</span>
+<span>İzmir Geneli</span>
+  <span>Planlı Çekim</span>
+  <span>Teslim: 3-8 Gün</span>
 </div>
             <p>Tesisin büyüklüğünü ve deneyimini havadan güçlü şekilde anlatan kurumsal tanıtım.</p>
             <ul>
@@ -1498,9 +1620,9 @@
             <div class="top"><h3>İşletme Tanıtım Filmi</h3><span class="badge">Kurumsal</span></div>
             <div class="service-meta">
               <center>
-  <span>✔ İzmir Geneli</span>
-  <span>✔ Planlı Çekim</span>
-  <span>✔ Teslim: 3-8 Gün</span>
+<span>İzmir Geneli</span>
+  <span>Planlı Çekim</span>
+  <span>Teslim: 3-8 Gün</span>
 </div>
             </center>
             <p>Markanız için güven veren kurumsal anlatım: mekan + hizmet + deneyim odaklı kurgu.</p>
@@ -1526,12 +1648,17 @@
       </div>
 
       <div class="steps">
-        <div class="step reveal" style="--d: 0ms;">
-          <div class="step-left">
-            <div class="step-no">1</div>
-            <h3>Planlama (Randevu)</h3>
-            <p>İlçe, tarih, çekim hedefi ve teslim formatları netleşir. Program oluşturulur.</p>
-          </div>
+<div class="step reveal" style="--d: 0ms;">
+  <div class="step-left">
+    <div class="step-no">1</div>
+    <h3>Planlama (Randevu)</h3>
+    <p>İlçe, tarih, çekim hedefi ve teslim formatları netleşir. Program oluşturulur.</p>
+  </div>
+
+  <div class="step-visual" aria-hidden="true" title="Planlama">
+    <span class="step-emoji">🗓️</span>
+  </div>
+</div>
           <div class="step-visual" aria-hidden="true" title="Planlama">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M7 3v3M17 3v3" stroke="rgba(202,168,78,.95)" stroke-width="2" stroke-linecap="round"/>
@@ -1542,12 +1669,17 @@
           </div>
         </div>
 
-        <div class="step reveal" style="--d: 120ms;">
-          <div class="step-left">
-            <div class="step-no">2</div>
-            <h3>Çekim</h3>
-            <p>Akışa uygun kadraj planı ile drone çekimi gerçekleştirilir.</p>
-          </div>
+       <div class="step reveal" style="--d: 120ms;">
+  <div class="step-left">
+    <div class="step-no">2</div>
+    <h3>Çekim</h3>
+    <p>Akışa uygun kadraj planı ile drone çekimi gerçekleştirilir.</p>
+  </div>
+
+  <div class="step-visual" aria-hidden="true" title="Çekim">
+    <span class="step-emoji">🚁</span>
+  </div>
+</div>
           <div class="step-visual" aria-hidden="true" title="Çekim">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M8 13c0-2 2-4 4-4s4 2 4 4v3H8v-3Z" stroke="rgba(202,168,78,.85)" stroke-width="2"/>
@@ -1558,12 +1690,17 @@
           </div>
         </div>
 
-        <div class="step reveal" style="--d: 240ms;">
-          <div class="step-left">
-            <div class="step-no">3</div>
-            <h3>Kurgu</h3>
-            <p>Renk düzenleme, stabilizasyon, tempo, müzik ve gerekli başlık/kapaklar hazırlanır.</p>
-          </div>
+       <div class="step reveal" style="--d: 240ms;">
+  <div class="step-left">
+    <div class="step-no">3</div>
+    <h3>Kurgu</h3>
+    <p>Renk düzenleme, stabilizasyon, tempo, müzik ve gerekli başlık/kapaklar hazırlanır.</p>
+  </div>
+
+  <div class="step-visual" aria-hidden="true" title="Kurgu">
+    <span class="step-emoji">🎬</span>
+  </div>
+</div>
           <div class="step-visual" aria-hidden="true" title="Kurgu">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M4 6h10a2 2 0 0 1 2 2v10H6a2 2 0 0 1-2-2V6Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
@@ -1574,11 +1711,16 @@
         </div>
 
         <div class="step reveal" style="--d: 360ms;">
-          <div class="step-left">
-            <div class="step-no">4</div>
-            <h3>Teslim</h3>
-            <p>Reels / yatay / reklam formatlarında teslim edilir. Gerekirse revize süreci yönetilir.</p>
-          </div>
+  <div class="step-left">
+    <div class="step-no">4</div>
+    <h3>Teslim</h3>
+    <p>Reels / yatay / reklam formatlarında teslim edilir. Gerekirse revize süreci yönetilir.</p>
+  </div>
+
+  <div class="step-visual" aria-hidden="true" title="Teslim">
+    <span class="step-emoji">✅</span>
+  </div>
+</div>
           <div class="step-visual" aria-hidden="true" title="Teslim">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M7 12l3 3 7-7" stroke="rgba(202,168,78,.95)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
