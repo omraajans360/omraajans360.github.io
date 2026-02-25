@@ -1088,6 +1088,92 @@
       .brand-mobile{ display:none; }
       #backToTop{ display:none; }
     }
+    /* ===================================================
+   HİZMETLER BÖLÜMÜ — TAM GENİŞLİK ŞERİT TASARIM
+   =================================================== */
+
+/* Grid'i tek kolona çevir */
+#hizmetler .grid{
+  grid-template-columns: 1fr !important;
+}
+
+/* Kartlar tam genişlik */
+#hizmetler .card{
+  grid-column: 1 / -1 !important;
+  padding: 24px !important;
+}
+
+/* PC’de sağ görsel - sol metin */
+@media (min-width: 901px){
+
+  #hizmetler .card--media{
+    grid-template-columns: 1.3fr .7fr !important;
+    align-items: center;
+  }
+
+  #hizmetler .card--media .card-media{
+    min-height: 240px;
+  }
+}
+
+/* Mobilde görsel daha kısa */
+@media (max-width: 900px){
+  #hizmetler .card--media .card-media{
+    height: 180px !important;
+  }
+}
+
+/* ===================================================
+   HİZMET GÜVEN ETİKETİ (YENİ)
+   =================================================== */
+
+.service-meta{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:8px;
+  margin-bottom:8px;
+  font-size:12px;
+  color:rgba(255,255,255,.78);
+}
+
+.service-meta span{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(202,168,78,.22);
+  padding:6px 10px;
+  border-radius:999px;
+  backdrop-filter: blur(4px);
+}
+
+/* Başlıkları ortala */
+#hizmetler .card h3{
+  text-align:center;
+  width:100%;
+}
+
+#hizmetler .card .top{
+  justify-content:center !important;
+  flex-direction:column;
+  gap:6px;
+}
+
+#hizmetler .badge{
+  align-self:center;
+}
+
+/* Metin daha okunur */
+#hizmetler .card p{
+  max-width:80ch;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+#hizmetler .card ul{
+  max-width:70ch;
+  margin-left:auto;
+  margin-right:auto;
+}
   </style>
 </head>
 
@@ -1313,6 +1399,11 @@
         <div class="card card--media reveal" style="--d: 0ms; --img:url('srv-dugun.jpg');">
           <div class="card-content">
             <div class="top"><h3>Düğün / Nişan Drone Çekimi</h3><span class="badge">Sinematik</span></div>
+            <div class="service-meta">
+  <span>✔ İzmir Geneli</span>
+  <span>✔ Planlı Çekim</span>
+  <span>✔ Teslim: 3-8 Gün</span>
+</div>
             <p>Özel gününüz için mekan ve akışa uygun planla sinematik drone çekimleri.</p>
             <ul>
               <li>Giriş / yürüyüş / dış mekan sahneleri</li>
@@ -1326,6 +1417,11 @@
         <div class="card card--media reveal" style="--d: 90ms; --img:url('srv-etkinlik.jpg');">
           <div class="card-content">
             <div class="top"><h3>Organizasyon / Etkinlik</h3><span class="badge">Etkinlik</span></div>
+            <div class="service-meta">
+  <span>✔ İzmir Geneli</span>
+  <span>✔ Planlı Çekim</span>
+  <span>✔ Teslim: 3-8 Gün</span>
+</div>
             <p>Açılış, lansman, konser ve kalabalık etkinlikler için alanı güçlü gösteren çekimler.</p>
             <ul>
               <li>Kalabalık ve mekan ölçeği vurgusu</li>
@@ -1339,6 +1435,11 @@
         <div class="card card--media reveal" style="--d: 180ms; --img:url('srv-emlak.jpg');">
           <div class="card-content">
             <div class="top"><h3>Emlak Drone Çekimi</h3><span class="badge">Gayrimenkul</span></div>
+            <div class="service-meta">
+  <span>✔ İzmir Geneli</span>
+  <span>✔ Planlı Çekim</span>
+  <span>✔ Teslim: 3-8 Gün</span>
+</div>
             <p>Villa, site, arsa ve projeler için konum + çevre avantajını net anlatan çekimler.</p>
             <ul>
               <li>Konum/çevre/ulaşım vurgusu</li>
@@ -1352,6 +1453,11 @@
         <div class="card card--media reveal" style="--d: 270ms; --img:url('srv-kafe.jpg');">
           <div class="card-content">
             <div class="top"><h3>Kafe / Restoran Tanıtımı</h3><span class="badge">Mekan</span></div>
+            <div class="service-meta">
+  <span>✔ İzmir Geneli</span>
+  <span>✔ Planlı Çekim</span>
+  <span>✔ Teslim: 3-8 Gün</span>
+</div>
             <p>Mekanın atmosferini, lokasyonunu ve yoğunluğunu reklam diliyle öne çıkaran içerikler.</p>
             <ul>
               <li>Gündüz/gece konsept çekimi</li>
@@ -1365,6 +1471,11 @@
         <div class="card card--media reveal" style="--d: 360ms; --img:url('srv-otel.jpg');">
           <div class="card-content">
             <div class="top"><h3>Otel / Tesis Tanıtımı</h3><span class="badge">Turizm</span></div>
+            <div class="service-meta">
+  <span>✔ İzmir Geneli</span>
+  <span>✔ Planlı Çekim</span>
+  <span>✔ Teslim: 3-8 Gün</span>
+</div>
             <p>Tesisin büyüklüğünü ve deneyimini havadan güçlü şekilde anlatan kurumsal tanıtım.</p>
             <ul>
               <li>Havuz, çevre, sosyal alanlar</li>
@@ -1378,6 +1489,11 @@
         <div class="card card--media reveal" style="--d: 450ms; --img:url('srv-kurumsal.jpg');">
           <div class="card-content">
             <div class="top"><h3>İşletme Tanıtım Filmi</h3><span class="badge">Kurumsal</span></div>
+            <div class="service-meta">
+  <span>✔ İzmir Geneli</span>
+  <span>✔ Planlı Çekim</span>
+  <span>✔ Teslim: 3-8 Gün</span>
+</div>
             <p>Markanız için güven veren kurumsal anlatım: mekan + hizmet + deneyim odaklı kurgu.</p>
             <ul>
               <li>Reklam kurgusu (15/30/60 sn)</li>
