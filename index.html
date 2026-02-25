@@ -1197,41 +1197,6 @@
   margin-top: 18px;
 }
 
-/* Adım kartı: solda içerik, sağda ikon/visual */
-#surec .step{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  padding: 20px;
-  position: relative;
-  overflow:hidden;
-}
-
-/* Soldaki metin alanı */
-#surec .step-left{
-  min-width:0;
-}
-
-/* Sağdaki ikon kutusu */
-#surec .step-visual{
-  flex: 0 0 auto;
-  width: 86px;
-  height: 86px;
-  border-radius: 18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background: rgba(202,168,78,.10);
-  border: 1px solid rgba(202,168,78,.45);
-
-  box-shadow:
-    0 0 0 1px rgba(202,168,78,.18),
-    0 0 20px rgba(202,168,78,.22),
-    inset 0 0 18px rgba(202,168,78,.12);
-}
-
 /* Emoji ikon boyutu */
 #surec .step-emoji{
   font-size: 34px;
@@ -1295,6 +1260,121 @@
 
   #surec .step-emoji{
     font-size: 28px;
+  }
+}
+    /* ===================================================
+   GERÇEK ZIG-ZAG TIMELINE SÜREÇ TASARIMI
+   =================================================== */
+
+/* süreç alanı ortalanır */
+#surec .steps{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  position:relative;
+}
+
+/* ortadaki altın timeline çizgisi */
+@media (min-width: 901px){
+  #surec .steps::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:2px;
+    transform:translateX(-50%);
+    background:linear-gradient(
+      180deg,
+      rgba(202,168,78,0),
+      rgba(202,168,78,.45),
+      rgba(202,168,78,0)
+    );
+  }
+}
+
+/* kartlar */
+#surec .step{
+  width:48%;
+  padding:22px;
+  position:relative;
+}
+
+/* SOL taraftakiler */
+@media (min-width:901px){
+  #surec .step:nth-child(odd){
+    align-self:flex-start;
+    margin-right:auto;
+  }
+}
+
+/* SAĞ taraftakiler */
+@media (min-width:901px){
+  #surec .step:nth-child(even){
+    align-self:flex-end;
+    margin-left:auto;
+  }
+}
+
+/* numara noktası timeline'a bağlanır */
+@media (min-width:901px){
+  #surec .step-no{
+    position:absolute;
+    top:18px;
+    width:34px;
+    height:34px;
+    border-radius:12px;
+    background: rgba(202,168,78,.12);
+    border:1px solid rgba(202,168,78,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+  }
+
+  /* sol kartlar */
+  #surec .step:nth-child(odd) .step-no{
+    right:-55px;
+  }
+
+  /* sağ kartlar */
+  #surec .step:nth-child(even) .step-no{
+    left:-55px;
+  }
+}
+
+/* ikon kutusu */
+#surec .step-visual{
+  margin-top:14px;
+  width:80px;
+  height:80px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background: rgba(202,168,78,.10);
+  border:1px solid rgba(202,168,78,.45);
+
+  box-shadow:
+    0 0 0 1px rgba(202,168,78,.20),
+    0 0 20px rgba(202,168,78,.25),
+    inset 0 0 14px rgba(202,168,78,.12);
+}
+
+/* mobilde alt alta normal akış */
+@media (max-width:900px){
+  #surec .step{
+    width:100%;
+  }
+
+  #surec .steps::before{
+    display:none;
+  }
+
+  #surec .step-no{
+    position:static;
+    margin-bottom:8px;
   }
 }
   </style>
