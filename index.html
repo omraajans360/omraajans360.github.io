@@ -1377,6 +1377,230 @@
     margin-bottom:8px;
   }
 }
+    /* ===================================================
+   SÜREÇ — GRID TIMELINE (PC: sağ/sol hizalı, Mobil: alt alta)
+   =================================================== */
+
+/* adımları grid timeline yap */
+#surec .steps{
+  display:grid !important;
+  gap: 26px !important;
+  position: relative !important;
+}
+
+/* PC: 3 kolon (sol kart | çizgi | sağ kart) */
+@media (min-width: 901px){
+  #surec .steps{
+    grid-template-columns: 1fr 64px 1fr !important;
+    align-items: start !important;
+  }
+
+  /* orta çizgi */
+  #surec .steps::before{
+    content:"" !important;
+    position:absolute !important;
+    left:50% !important;
+    top:0 !important;
+    bottom:0 !important;
+    width:2px !important;
+    transform: translateX(-50%) !important;
+    background: linear-gradient(
+      180deg,
+      rgba(202,168,78,0),
+      rgba(202,168,78,.45),
+      rgba(202,168,78,0)
+    ) !important;
+  }
+
+  /* kartlar sol/sağ */
+  #surec .step{
+    width:auto !important;
+    margin:0 !important;
+  }
+
+  /* 1,3 sol */
+  #surec .step:nth-child(odd){
+    grid-column: 1 !important;
+  }
+
+  /* 2,4 sağ */
+  #surec .step:nth-child(even){
+    grid-column: 3 !important;
+  }
+
+  /* kartların çizgiye yaklaşması */
+  #surec .step:nth-child(odd){ justify-self: end !important; }
+  #surec .step:nth-child(even){ justify-self: start !important; }
+
+  /* numarayı çizgiye sabitle */
+  #surec .step-no{
+    position:absolute !important;
+    top:18px !important;
+  }
+
+  #surec .step:nth-child(odd) .step-no{ right:-56px !important; }
+  #surec .step:nth-child(even) .step-no{ left:-56px !important; }
+}
+
+/* mobil: tek kolon */
+@media (max-width: 900px){
+  #surec .steps{
+    grid-template-columns: 1fr !important;
+  }
+  #surec .steps::before{ display:none !important; }
+
+  #surec .step{
+    width:100% !important;
+  }
+
+  #surec .step-no{
+    position: static !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* ===================================================
+   STEP İÇ DÜZEN — ikon her zaman sağda, boşluk dolu
+   =================================================== */
+
+#surec .step{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap: 18px !important;
+  padding: 22px !important;
+  position: relative !important;
+}
+
+#surec .step-left{
+  min-width: 0 !important;
+}
+
+#surec .step-visual{
+  flex: 0 0 auto !important;
+  width: 84px !important;
+  height: 84px !important;
+  border-radius: 18px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  background: rgba(202,168,78,.10) !important;
+  border: 1px solid rgba(202,168,78,.45) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(202,168,78,.20),
+    0 0 20px rgba(202,168,78,.25),
+    inset 0 0 14px rgba(202,168,78,.12) !important;
+}
+
+#surec .step-emoji{
+  font-size: 34px !important;
+}
+
+/* mobilde ikon alt şerit gibi */
+@media (max-width: 900px){
+  #surec .step{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  #surec .step-visual{
+    width: 100% !important;
+    height: 60px !important;
+    justify-content:flex-start !important;
+    padding-left: 14px !important;
+  }
+
+  #surec .step-emoji{
+    font-size: 28px !important;
+  }
+}
+    /* ===================================================
+   SÜREÇ — PROFESYONEL TİPOGRAFİ AYARI
+   =================================================== */
+
+/* Başlıklar */
+#surec .step h3{
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  margin: 0 0 8px;
+  color: #fff;
+
+  /* hafif premium ışık */
+  text-shadow: 0 0 14px rgba(202,168,78,.18);
+}
+
+/* Açıklama metni */
+#surec .step p{
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.78);
+  max-width: 46ch;
+}
+
+/* kart iç boşluk dengesi */
+#surec .step-left{
+  padding-right: 8px;
+}
+
+/* kartların hover davranışı (çok önemli) */
+#surec .step{
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+#surec .step:hover{
+  border-color: rgba(202,168,78,.38);
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 0 1.5px rgba(202,168,78,.28),
+    0 0 36px rgba(202,168,78,.12);
+}
+
+/* ikon kutusu hover'da hafif parlar */
+#surec .step:hover .step-visual{
+  box-shadow:
+    0 0 0 1px rgba(202,168,78,.30),
+    0 0 28px rgba(202,168,78,.35),
+    inset 0 0 16px rgba(202,168,78,.18);
+}
+
+/* numara kutusu daha net */
+#surec .step-no{
+  font-size: 14px;
+  color:#fff;
+  background: rgba(202,168,78,.14);
+  border:1px solid rgba(202,168,78,.45);
+  box-shadow:
+    0 0 0 4px rgba(202,168,78,.10);
+}
+    /* portföy yazı etiketi */
+.cap{
+  position:absolute;
+  left:10px;
+  bottom:10px;
+  padding:6px 12px;
+  font-size:12px;
+  border-radius:999px;
+
+  background: rgba(0,0,0,.55);
+  border:1px solid rgba(202,168,78,.35);
+  backdrop-filter: blur(6px);
+}
+
+/* buton tam kapsasın */
+.shot{
+  position:relative;
+}
+
+.shot-btn{
+  position:relative;
+  display:block;
+  width:100%;
+  height:100%;
+}
   </style>
 </head>
 
@@ -1936,18 +2160,24 @@
 
       <!-- ✅ 3’lü ızgara: yeni görseller eklendikçe otomatik alt satıra iner -->
       <div class="shots" id="portfolioGrid">
-        <div class="shot reveal" style="--d: 0ms;" data-cat="dugun">
-          <img src="p1.png" alt="Düğün / Nişan drone çekimi örneği" data-full="p1.png">
-          <div class="cap">Düğün / Nişan</div>
-        </div>
+       <div class="shot reveal" style="--d: 0ms;" data-cat="dugun">
+  <button class="shot-btn" type="button" data-full="p1.png" aria-label="Düğün / Nişan görselini büyüt">
+    <img src="p1.png" alt="Düğün / Nişan drone çekimi örneği">
+    <div class="cap">Düğün / Nişan</div>
+  </button>
+</div>
         <div class="shot reveal" style="--d: 120ms;" data-cat="emlak">
-          <img src="p2.png" alt="Emlak drone çekimi örneği" data-full="p2.png">
-          <div class="cap">Emlak</div>
-        </div>
+  <button class="shot-btn" type="button" data-full="p2.png" aria-label="Emlak görselini büyüt">
+    <img src="p2.png" alt="Emlak drone çekimi örneği">
+    <div class="cap">Emlak</div>
+  </button>
+</div>
         <div class="shot reveal" style="--d: 240ms;" data-cat="etkinlik">
-          <img src="p3.png" alt="Etkinlik drone çekimi örneği" data-full="p3.png">
-          <div class="cap">Etkinlik</div>
-        </div>
+  <button class="shot-btn" type="button" data-full="p3.png" aria-label="Etkinlik görselini büyüt">
+    <img src="p3.png" alt="Etkinlik drone çekimi örneği">
+    <div class="cap">Etkinlik</div>
+  </button>
+</div>
 
         <!-- Yeni görsel eklemek için örnek:
         <div class="shot" data-cat="otel">
@@ -2290,6 +2520,50 @@
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
   });
+  // ✅ Portföy Lightbox (Sağlam sürüm)
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+function openLightbox(src, altText="") {
+  if (!lightbox || !lightboxImg || !src) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = altText || "Portföy görseli";
+  lightbox.classList.add("open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  if (lightboxImg) {
+    lightboxImg.src = "";
+    lightboxImg.alt = "";
+  }
+}
+
+/* Event delegation: butonun içindeki her tıklamayı yakalar */
+document.getElementById("portfolioGrid")?.addEventListener("click", (e) => {
+  const btn = e.target.closest(".shot-btn");
+  if (!btn) return;
+
+  const src = btn.getAttribute("data-full");
+  const img = btn.querySelector("img");
+  openLightbox(src, img?.alt || "");
+});
+
+/* Kapatma: arka plan veya X */
+lightbox?.addEventListener("click", (e) => {
+  const t = e.target;
+  if (t?.dataset?.close) closeLightbox();
+});
+
+/* ESC ile kapat */
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+});
 </script>
 </body>
 </html>
