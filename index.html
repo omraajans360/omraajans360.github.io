@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- ✅ SEO: FAQ Structured Data (Google için) -->
+  <!-- ✅ SEO: FAQ Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -25,8 +25,8 @@
       },
       {
         "@type":"Question",
-        "name":"Çalışma saatleriniz nasıl? Aynı gün randevu mümkün mü?",
-        "acceptedAnswer":{"@type":"Answer","text":"Randevulu çalışıyoruz. Uygunluk durumuna göre aynı gün/ertesi gün çekim planlanabilir. İlçe + tarih + hizmet bilgisini WhatsApp’tan iletin."}
+        "name":"Teslim süresi kaç gün? Hızlı teslim mümkün mü?",
+        "acceptedAnswer":{"@type":"Answer","text":"Teslim süremiz projeye göre 3–8 gün aralığındadır. Acil içerik ihtiyacınız varsa planlama aşamasında önceliklendirme yapılabilir."}
       },
       {
         "@type":"Question",
@@ -40,18 +40,13 @@
       },
       {
         "@type":"Question",
-        "name":"Fiyatlar neye göre belirleniyor?",
-        "acceptedAnswer":{"@type":"Answer","text":"İlçe/lokasyon, çekim süresi, içerik adedi, kurgu kapsamı ve teslim formatlarına göre teklif oluşturuyoruz."}
-      },
-      {
-        "@type":"Question",
         "name":"Revize (düzeltme) yapıyor musunuz?",
         "acceptedAnswer":{"@type":"Answer","text":"Evet. Teslim öncesi kısa revize süreci ile içeriklerin marka dilinize uyumunu netleştiriyoruz."}
       },
       {
         "@type":"Question",
-        "name":"Hangi sektörlerde drone tanıtımı daha etkilidir?",
-        "acceptedAnswer":{"@type":"Answer","text":"Emlak, otel/tesis, kafe-restoran, etkinlik/organizasyon ve kurumsal işletme tanıtımlarında havadan çekimler marka algısını güçlendirir."}
+        "name":"Hava şartları kötü olursa ne olur?",
+        "acceptedAnswer":{"@type":"Answer","text":"Güvenli uçuş esas alınır. Uygun olmayan hava koşullarında çekim, randevulu sistemle tekrar planlanır."}
       }
     ]
   }
@@ -379,19 +374,46 @@
 
     /* ===== Sections (Başlıkları ortaladık) ===== */
     .section{ padding: 52px 0; }
-    .section h2{
-      margin:0 0 10px;
+
+    .section-title{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      margin-bottom: 18px;
+    }
+    .section-title h2{
+      margin:0;
       font-size:28px;
       letter-spacing:-.4px;
-      text-align:center; /* ✅ */
+      text-align:center;
     }
-    .lead{
-      margin:0 auto 18px;
+    .section-title .lead{
+      margin:0;
       color: var(--muted);
       font-size:14px;
       line-height:1.85;
       max-width: 95ch;
-      text-align:center; /* ✅ */
+      text-align:center;
+    }
+    .divider{
+      width:min(420px, 78%);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(202,168,78,0), rgba(202,168,78,.35), rgba(202,168,78,0));
+      position:relative;
+      margin-top: 2px;
+    }
+    .divider::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      transform: translate(-50%,-50%);
+      background: rgba(202,168,78,.9);
+      box-shadow: 0 0 0 6px rgba(202,168,78,.12);
     }
 
     /* Cards */
@@ -413,12 +435,12 @@
     /* Hizmetler kart başlıklarını ortaladık */
     .card .top{
       display:flex;
-      flex-direction:column;        /* ✅ */
-      align-items:center;           /* ✅ */
+      flex-direction:column;
+      align-items:center;
       justify-content:center;
       gap:8px;
       margin-bottom:10px;
-      text-align:center;            /* ✅ */
+      text-align:center;
     }
     .badge{
       font-size:12px;
@@ -435,7 +457,7 @@
       color: var(--muted);
       font-size:13px;
       line-height:1.75;
-      text-align:center; /* daha kurumsal görünüm */
+      text-align:center;
     }
     .card ul{
       margin: 10px 0 0;
@@ -466,11 +488,128 @@
         0 0 0 1.2px rgba(202,168,78,.18),
         0 0 22px rgba(202,168,78,.10);
     }
-    /* ✅ Hizmetler: fotoğraf üstü karartma tamamen kapalı */
     #hizmetler .card--media .card-media::before,
     #hizmetler .card--media .card-media::after{
       content:none !important;
       display:none !important;
+    }
+
+    /* ✅ Kurumsal bloklar: Neden OMRA / Paketler / Teslim */
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      margin-top: 10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(202,168,78,.22);
+      background: rgba(202,168,78,.08);
+      color: rgba(255,255,255,.88);
+      font-size: 12px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+    }
+    .pill svg{ width:16px; height:16px; opacity:.9; }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .feature{
+      position:relative;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.03);
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.22);
+      overflow:hidden;
+      min-height: 170px;
+      text-align:center;
+    }
+    .feature .icon{
+      width:46px;
+      height:46px;
+      border-radius: 16px;
+      margin: 0 auto 10px;
+      border: 1px solid rgba(202,168,78,.22);
+      background: rgba(202,168,78,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 0 24px rgba(202,168,78,.10);
+    }
+    .feature .icon svg{ width:22px; height:22px; opacity:.95; }
+    .feature h3{ margin:0; font-size:15px; }
+    .feature p{ margin:10px 0 0; color: var(--muted); font-size:13px; line-height:1.7; }
+
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .plan{
+      position:relative;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.06);
+      background: linear-gradient(180deg, rgba(16,16,16,.82), rgba(10,10,10,.78));
+      padding: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.26);
+      overflow:hidden;
+      min-height: 230px;
+      text-align:center;
+    }
+    .plan .tag{
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(202,168,78,.22);
+      background: rgba(202,168,78,.10);
+      color: rgba(255,255,255,.9);
+      margin-bottom: 10px;
+    }
+    .plan h3{ margin: 0 0 8px; font-size: 16px; }
+    .plan p{ margin: 0 0 12px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .plan ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:8px;
+      text-align:left;
+      color: rgba(255,255,255,.78);
+      font-size:13px;
+      line-height:1.6;
+    }
+    .plan li{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+    }
+    .plan li::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      margin-top:6px;
+      background: rgba(202,168,78,.9);
+      box-shadow: 0 0 0 5px rgba(202,168,78,.10);
+      flex: 0 0 auto;
+    }
+    .plan.plan--pro{
+      border-color: rgba(202,168,78,.28);
+      box-shadow:
+        0 0 0 1px rgba(202,168,78,.12),
+        0 14px 40px rgba(0,0,0,.35);
     }
 
     /* Process */
@@ -488,9 +627,8 @@
       padding: 18px;
       box-shadow: 0 12px 35px rgba(0,0,0,.22);
       min-height: 175px;
-
-      display:flex;               /* ✅ */
-      align-items:center;         /* ✅ */
+      display:flex;
+      align-items:center;
       justify-content:space-between;
       gap:12px;
       overflow:hidden;
@@ -507,7 +645,6 @@
     .step h3{ margin:0; font-size:15px; }
     .step p{ margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6; }
 
-    /* ✅ Süreç kartlarının sağında/altında ikon alanı */
     .step-visual{
       flex:0 0 auto;
       width:74px;
@@ -529,12 +666,40 @@
       filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
     }
 
-    /* Portfolio (3’lü ızgara + otomatik alt satır) */
+    /* Portfolio filters + grid */
+    .filterbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      align-items:center;
+      margin-top: 10px;
+      margin-bottom: 14px;
+    }
+    .filterbtn{
+      appearance:none;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.86);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight:700;
+      font-size: 12px;
+      cursor:pointer;
+      transition: background .2s, border-color .2s, transform .2s;
+      user-select:none;
+    }
+    .filterbtn:hover{ background: rgba(202,168,78,.10); border-color: rgba(202,168,78,.22); }
+    .filterbtn.active{
+      background: rgba(202,168,78,.14);
+      border-color: rgba(202,168,78,.35);
+    }
+
     .shots{
       display:grid;
-      grid-template-columns: repeat(3, 1fr); /* ✅ desktop 3 */
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin-top: 14px;
+      margin-top: 10px;
     }
     .shot{
       border-radius: var(--r);
@@ -543,6 +708,8 @@
       background:#0c0c0c;
       min-height: 260px;
       box-shadow: 0 12px 35px rgba(0,0,0,.30);
+      cursor: zoom-in;
+      position:relative;
     }
     .shot img{
       width:100%;
@@ -552,6 +719,19 @@
       transition: transform .35s ease;
     }
     .shot:hover img{ transform: scale(1.03); }
+
+    .shot .cap{
+      position:absolute;
+      left:10px;
+      bottom:10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.60);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.86);
+      font-size: 12px;
+      backdrop-filter: blur(8px);
+    }
 
     /* Testimonials */
     .testimonials{
@@ -587,6 +767,13 @@
       color: var(--muted);
       font-size:12px;
     }
+    .stars{
+      margin-top: 10px;
+      letter-spacing: 1px;
+      color: rgba(202,168,78,.95);
+      font-size: 12px;
+      text-align:left;
+    }
 
     /* FAQ (Kurumsal + ortalı) */
     .faq-wrap{
@@ -607,7 +794,7 @@
       cursor:pointer;
       font-weight:700;
       font-size:13px;
-      text-align:center; /* ✅ */
+      text-align:center;
       list-style:none;
     }
     summary::-webkit-details-marker{ display:none; }
@@ -616,7 +803,7 @@
       color: var(--muted);
       font-size:13px;
       line-height:1.75;
-      text-align:center; /* ✅ */
+      text-align:center;
     }
     details:hover,
     details[open]{
@@ -680,6 +867,26 @@
       border-top: 1px solid rgba(255,255,255,.06);
       margin-top: 18px;
       text-align:center;
+    }
+    .footer-links{
+      margin-top: 10px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .footer-links a{
+      color: rgba(255,255,255,.62);
+      text-decoration:none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+    }
+    .footer-links a:hover{
+      border-color: rgba(202,168,78,.25);
+      background: rgba(202,168,78,.08);
+      color: rgba(255,255,255,.86);
     }
 
     /* Fixed WhatsApp */
@@ -751,11 +958,77 @@
       .drone{ animation:none !important; }
     }
 
+    /* ===== LIGHTBOX (Portföy büyütme) ===== */
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.78);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 20000;
+      backdrop-filter: blur(8px);
+    }
+    .lightbox.open{ display:flex; }
+    .lightbox-card{
+      width: min(1100px, 100%);
+      background: rgba(10,10,10,.86);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 20px 70px rgba(0,0,0,.65);
+      position:relative;
+    }
+    .lightbox-card img{
+      width:100%;
+      height: auto;
+      display:block;
+      max-height: 78vh;
+      object-fit: contain;
+      background:#000;
+    }
+    .lb-top{
+      position:absolute;
+      top:10px;
+      left:10px;
+      right:10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      pointer-events:none;
+    }
+    .lb-pill{
+      pointer-events:none;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.55);
+      color: rgba(255,255,255,.86);
+      font-size: 12px;
+    }
+    .lb-close{
+      pointer-events:auto;
+      appearance:none;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.55);
+      color:#fff;
+      font-weight:800;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      cursor:pointer;
+    }
+    .lb-close:hover{
+      border-color: rgba(202,168,78,.28);
+      background: rgba(202,168,78,.10);
+    }
+
     /* ===== Responsive ===== */
     @media (max-width: 900px){
       .container{ width:min(1200px, calc(100% - 28px)); }
 
-      /* header */
       nav.desktop-nav{ display:none; }
       .mobile-bar{
         display:flex;
@@ -780,25 +1053,25 @@
 
       header.scrolled .brand-mobile img{ height: 32px; }
 
-      /* hero */
       h1{ font-size: 32px; }
       .hero-card{ padding:18px; }
       .trust{ grid-template-columns: 1fr 1fr; }
       .cta-row .btn{ width:100%; }
       .hero-video{ min-height: 68vh; }
 
-      /* grids */
       .card{ grid-column: span 12; }
       .card--media{ grid-template-columns: 1fr; }
       .card--media .card-media{ height: 160px; }
+
+      .feature-grid{ grid-template-columns: 1fr; }
+      .pricing{ grid-template-columns: 1fr; }
 
       .steps{ grid-template-columns: 1fr; }
       .step{ flex-direction:column; align-items:flex-start; }
       .step-visual{ width:100%; height:62px; border-radius:16px; justify-content:flex-start; padding-left:14px; }
       .step-visual svg{ width:34px; height:34px; }
 
-      /* portfolio: bozulmasın diye mobilde 2’li/1’li */
-      .shots{ grid-template-columns: repeat(2, 1fr); min-height:auto; }
+      .shots{ grid-template-columns: repeat(2, 1fr); }
       .shot{ min-height: 210px; }
 
       .testimonials{ grid-template-columns: 1fr; }
@@ -843,6 +1116,7 @@
       <nav class="desktop-nav" aria-label="Menü">
         <a href="#hizmetler">Hizmetler</a>
         <a href="#surec">Süreç</a>
+        <a href="#paketler">Paketler</a>
         <a href="#portfoy">Portföy</a>
         <a href="#yorumlar">Yorumlar</a>
         <a href="#sss">SSS</a>
@@ -854,6 +1128,7 @@
       <nav class="mobile-nav" id="mobileNav" aria-label="Mobil Menü">
         <a href="#hizmetler">Hizmetler</a>
         <a href="#surec">Süreç</a>
+        <a href="#paketler">Paketler</a>
         <a href="#portfoy">Portföy</a>
         <a href="#yorumlar">Yorumlar</a>
         <a href="#sss">SSS</a>
@@ -882,9 +1157,7 @@
     <div class="container hero-inner">
       <div class="hero-card">
 
-        <!-- ✅ Hareketli “drone görselleri” -->
         <div class="drone-fleet" aria-hidden="true">
-          <!-- Basit drone SVG (4 adet) -->
           <svg class="drone d1" viewBox="0 0 64 64" fill="none">
             <path d="M22 34c0-5 4-9 10-9s10 4 10 9v6H22v-6Z" stroke="rgba(202,168,78,.9)" stroke-width="2"/>
             <path d="M16 30h-6M54 30h-6" stroke="rgba(202,168,78,.75)" stroke-width="2" stroke-linecap="round"/>
@@ -930,6 +1203,31 @@
           <a class="btn btn-ghost" href="#portfoy">Portföyü Gör</a>
         </div>
 
+        <div class="pill-row" aria-label="Hızlı Bilgiler">
+          <div class="pill">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 3v3M17 3v3" stroke="rgba(202,168,78,.95)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M4.5 8.5h15" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 6h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
+            </svg>
+            Randevulu çalışma
+          </div>
+          <div class="pill">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="rgba(202,168,78,.85)" stroke-width="2"/>
+              <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="rgba(255,255,255,.6)" stroke-width="2"/>
+            </svg>
+            İzmir tüm ilçeler
+          </div>
+          <div class="pill">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 12l3 3 7-7" stroke="rgba(202,168,78,.95)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 6h16v14H4V6Z" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+            </svg>
+            Teslim: 3–8 gün
+          </div>
+        </div>
+
         <div class="trust">
           <div class="trust-item reveal" style="--d: 330ms;">
             <strong>Randevulu Çalışma</strong>
@@ -953,14 +1251,63 @@
     </div>
   </section>
 
+  <!-- WHY OMRA -->
+  <section class="section" id="neden">
+    <div class="container">
+      <div class="section-title">
+        <h2>Neden OMRA Ajans 360?</h2>
+        <div class="divider"></div>
+        <p class="lead">Abartısız, net ve kurumsal üretim standardı ile çalışırız. Süreç şeffaftır; teslim formatları bellidir.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature reveal" style="--d: 0ms;">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 3v3M17 3v3" stroke="rgba(202,168,78,.95)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 6h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
+              <path d="M8 12h8M8 16h6" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Planlı Akış</h3>
+          <p>İlçe, tarih ve hedef netleşir. Çekim planı ve teslim formatları baştan belirlenir.</p>
+        </div>
+
+        <div class="feature reveal" style="--d: 90ms;">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 7h10a2 2 0 0 1 2 2v8H6a2 2 0 0 1-2-2V7Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
+              <path d="M16 10l4-2v8l-4-2" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Kurumsal Kurgu</h3>
+          <p>Renk/tempo/stabilizasyon ve kapak görselleri ile “reklam gibi” içerik dili.</p>
+        </div>
+
+        <div class="feature reveal" style="--d: 180ms;">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 12l3 3 7-7" stroke="rgba(202,168,78,.95)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 6h16v14H4V6Z" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Teslim Standardı</h3>
+          <p>Reels / 16:9 / reklam formatları. Teslim süresi proje kapsamına göre 3–8 gün.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SERVICES -->
   <section class="section" id="hizmetler">
     <div class="container">
-      <h2>Hizmetler</h2>
-      <p class="lead">
-        Her projede hedefi netleştiririz: satış artırmak, marka algısını güçlendirmek veya özel anları sinematik bir hikâyeye dönüştürmek.
-        Çekim planı, kadraj dili ve teslim formatları bu hedefe göre şekillenir.
-      </p>
+      <div class="section-title">
+        <h2>Hizmetler</h2>
+        <div class="divider"></div>
+        <p class="lead">
+          Her projede hedefi netleştiririz: satış artırmak, marka algısını güçlendirmek veya özel anları sinematik bir hikâyeye dönüştürmek.
+        </p>
+      </div>
 
       <div class="grid">
         <div class="card card--media reveal" style="--d: 0ms; --img:url('srv-dugun.jpg');">
@@ -1047,8 +1394,11 @@
   <!-- PROCESS -->
   <section class="section" id="surec">
     <div class="container">
-      <h2>Süreç Nasıl İşliyor?</h2>
-      <p class="lead">Kurumsal iş akışı ile ilerliyoruz: planlama, çekim, kurgu ve teslim.</p>
+      <div class="section-title">
+        <h2>Süreç Nasıl İşliyor?</h2>
+        <div class="divider"></div>
+        <p class="lead">Kurumsal iş akışı ile ilerliyoruz: planlama, çekim, kurgu ve teslim.</p>
+      </div>
 
       <div class="steps">
         <div class="step reveal" style="--d: 0ms;">
@@ -1115,22 +1465,148 @@
     </div>
   </section>
 
+  <!-- PACKAGES -->
+  <section class="section" id="paketler">
+    <div class="container">
+      <div class="section-title">
+        <h2>Paketler</h2>
+        <div class="divider"></div>
+        <p class="lead">Fiyat paylaşmadan; kapsamı net paketler. Teklif, ilçe + tarih + hizmete göre belirlenir.</p>
+      </div>
+
+      <div class="pricing">
+        <div class="plan reveal" style="--d: 0ms;">
+          <div class="tag">Başlangıç</div>
+          <h3>Reels Odaklı İçerik</h3>
+          <p>Kısa ve hızlı paylaşılır içerikler için ideal.</p>
+          <ul>
+            <li>Reels (9:16) teslim</li>
+            <li>Kısa klip mantığı (paylaşılır kurgu)</li>
+            <li>Renk/stabilizasyon/tempo</li>
+            <li>Kapak görseli (basic)</li>
+          </ul>
+        </div>
+
+        <div class="plan reveal" style="--d: 90ms;">
+          <div class="tag">Standart</div>
+          <h3>Çoklu Format Teslim</h3>
+          <p>Sosyal medya + web için dengeli çözüm.</p>
+          <ul>
+            <li>Reels (9:16) + Yatay (16:9)</li>
+            <li>Marka dili için tutarlı kurgu</li>
+            <li>Kapak/başlık önerileri</li>
+            <li>Kısa revize süreci</li>
+          </ul>
+        </div>
+
+        <div class="plan plan--pro reveal" style="--d: 180ms;">
+          <div class="tag">Pro</div>
+          <h3>Reklam / Kampanya İçeriği</h3>
+          <p>15/30/60 sn reklam kurgusu için daha “kurumsal” paket.</p>
+          <ul>
+            <li>Reklam kurgusu (15/30/60 sn)</li>
+            <li>Reels + 16:9 + reklam varyasyonları</li>
+            <li>Kapak/thumbnail seti</li>
+            <li>Revize süreci (planlı)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-row" style="margin-top: 16px;">
+        <a class="btn btn-primary"
+           href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20paket%20teklifi%20almak%20istiyorum.%20Paket:%20%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
+           target="_blank" rel="noopener">Paket Teklifi Al</a>
+        <a class="btn btn-ghost" href="#iletisim">İletişime Geç</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY CONTENT -->
+  <section class="section" id="teslim">
+    <div class="container">
+      <div class="section-title">
+        <h2>Teslim İçeriği</h2>
+        <div class="divider"></div>
+        <p class="lead">Projeye göre içerik adedi değişebilir; ama teslim standardımız bu başlıklarda ilerler.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature reveal" style="--d: 0ms;">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h16v12H4V6Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
+              <path d="M8 10h8M8 14h6" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Formatlar</h3>
+          <p>Reels (9:16), Yatay (16:9) ve ihtiyaç varsa reklam varyasyonları.</p>
+        </div>
+
+        <div class="feature reveal" style="--d: 90ms;">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v18" stroke="rgba(202,168,78,.75)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 7l6-4 6 4" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 17l6 4 6-4" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Kurgu Standardı</h3>
+          <p>Renk düzenleme, stabilizasyon, tempo, müzik ve sahne akışı.</p>
+        </div>
+
+        <div class="feature reveal" style="--d: 180ms;">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 12l3 3 7-7" stroke="rgba(202,168,78,.95)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 6h16v14H4V6Z" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Teslim & Revize</h3>
+          <p>Teslim süresi: 3–8 gün. Küçük revizeler planlı şekilde yönetilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PORTFOLIO -->
   <section class="section" id="portfoy">
     <div class="container">
-      <h2>Portföy</h2>
-      <p class="lead">KULLANILAN RESİMLER ÇEKİM ÖRNEKLERİDİR</p>
+      <div class="section-title">
+        <h2>Portföy</h2>
+        <div class="divider"></div>
+        <p class="lead">KULLANILAN RESİMLER ÇEKİM ÖRNEKLERİDİR — Görsellere tıklayarak büyütebilirsiniz.</p>
+      </div>
+
+      <!-- ✅ Filtre -->
+      <div class="filterbar" role="toolbar" aria-label="Portföy Filtreleri">
+        <button class="filterbtn active" type="button" data-filter="all">Tümü</button>
+        <button class="filterbtn" type="button" data-filter="dugun">Düğün / Nişan</button>
+        <button class="filterbtn" type="button" data-filter="etkinlik">Etkinlik</button>
+        <button class="filterbtn" type="button" data-filter="emlak">Emlak</button>
+        <button class="filterbtn" type="button" data-filter="otel">Otel / Tesis</button>
+        <button class="filterbtn" type="button" data-filter="mekan">Kafe / Restoran</button>
+      </div>
 
       <!-- ✅ 3’lü ızgara: yeni görseller eklendikçe otomatik alt satıra iner -->
-      <div class="shots">
-        <div class="shot reveal" style="--d: 0ms;"><img src="p1.png" alt="Drone çekimi örneği 1"></div>
-        <div class="shot reveal" style="--d: 120ms;"><img src="p2.png" alt="Drone çekimi örneği 2"></div>
-        <div class="shot reveal" style="--d: 240ms;"><img src="p3.png" alt="Drone çekimi örneği 3"></div>
+      <div class="shots" id="portfolioGrid">
+        <div class="shot reveal" style="--d: 0ms;" data-cat="dugun">
+          <img src="p1.png" alt="Düğün / Nişan drone çekimi örneği" data-full="p1.png">
+          <div class="cap">Düğün / Nişan</div>
+        </div>
+        <div class="shot reveal" style="--d: 120ms;" data-cat="emlak">
+          <img src="p2.png" alt="Emlak drone çekimi örneği" data-full="p2.png">
+          <div class="cap">Emlak</div>
+        </div>
+        <div class="shot reveal" style="--d: 240ms;" data-cat="etkinlik">
+          <img src="p3.png" alt="Etkinlik drone çekimi örneği" data-full="p3.png">
+          <div class="cap">Etkinlik</div>
+        </div>
 
-        <!-- İstersen yeni görselleri böyle ekle:
-        <div class="shot"><img src="p4.png" alt="Drone çekimi örneği 4"></div>
-        <div class="shot"><img src="p5.png" alt="Drone çekimi örneği 5"></div>
-        <div class="shot"><img src="p6.png" alt="Drone çekimi örneği 6"></div>
+        <!-- Yeni görsel eklemek için örnek:
+        <div class="shot" data-cat="otel">
+          <img src="p4.png" alt="Otel/Tesis drone çekimi örneği" data-full="p4.png">
+          <div class="cap">Otel / Tesis</div>
+        </div>
         -->
       </div>
     </div>
@@ -1139,25 +1615,31 @@
   <!-- TESTIMONIALS -->
   <section class="section" id="yorumlar">
     <div class="container">
-      <h2>Müşteri Yorumları</h2>
-      <p class="lead">Sizin yorumlarınız ve tavsiyeleriniz ile büyümeye devam ediyoruz.</p>
+      <div class="section-title">
+        <h2>Müşteri Yorumları</h2>
+        <div class="divider"></div>
+        <p class="lead">Güven veren iş, tekrar iş getirir. Biz de bu şekilde büyümeyi hedefliyoruz.</p>
+      </div>
 
       <div class="testimonials">
         <div class="quote reveal" style="--d: 0ms;">
+          <div class="stars" aria-label="5 yıldız">★★★★★</div>
           <p>“Çekimler profesyoneldi. Mekanımızı tam istediğimiz gibi yansıttılar ve iletişim çok hızlıydı.”</p>
-          <div class="who">— Müşteri Adı Soyadı</div>
+          <div class="who">— M. K.</div>
           <div class="where">İzmir • İşletme Tanıtımı</div>
         </div>
 
         <div class="quote reveal" style="--d: 120ms;">
+          <div class="stars" aria-label="5 yıldız">★★★★★</div>
           <p>“Organizasyon boyunca planlı çalıştılar. Drone görüntüleri gerçekten premium duruyor.”</p>
-          <div class="who">— Müşteri Adı Soyadı</div>
+          <div class="who">— S. A.</div>
           <div class="where">İzmir • Etkinlik Çekimi</div>
         </div>
 
         <div class="quote reveal" style="--d: 240ms;">
-          <p>“Emlak ilanımız için çekim yaptırdık. Video ilanı çok öne çıkardı, teşekkür ederiz.”</p>
-          <div class="who">— Müşteri Adı Soyadı</div>
+          <div class="stars" aria-label="5 yıldız">★★★★★</div>
+          <p>“Emlak ilanımız için çekim yaptırdık. Video ilanı öne çıkardı, teşekkür ederiz.”</p>
+          <div class="who">— A. T.</div>
           <div class="where">İzmir • Emlak Drone Çekimi</div>
         </div>
       </div>
@@ -1167,8 +1649,11 @@
   <!-- FAQ -->
   <section class="section" id="sss">
     <div class="container">
-      <h2>Sık Sorulan Sorular</h2>
-      <p class="lead">Kurumsal süreç, teslim ve planlama hakkında en çok merak edilenler</p>
+      <div class="section-title">
+        <h2>Sık Sorulan Sorular</h2>
+        <div class="divider"></div>
+        <p class="lead">Kurumsal süreç, teslim ve planlama hakkında en çok merak edilenler</p>
+      </div>
 
       <div class="faq-wrap">
         <details>
@@ -1177,8 +1662,8 @@
         </details>
 
         <details>
-          <summary>Çalışma saatleriniz nasıl? Aynı gün randevu mümkün mü?</summary>
-          <p>Randevulu çalışıyoruz. Uygunluk durumuna göre aynı gün/ertesi gün çekim planlanabilir. İlçe + tarih + hizmet bilgisi ile yazmanız yeterli.</p>
+          <summary>Teslim süresi kaç gün? Hızlı teslim mümkün mü?</summary>
+          <p>Teslim süremiz projeye göre <strong>3–8 gün</strong> aralığındadır. Acil içerik ihtiyacınız varsa planlama aşamasında önceliklendirme yapılabilir.</p>
         </details>
 
         <details>
@@ -1192,8 +1677,13 @@
         </details>
 
         <details>
-          <summary>Fiyatlar neye göre belirleniyor?</summary>
-          <p>İlçe/lokasyon, çekim süresi, içerik adedi, kurgu kapsamı ve teslim formatlarına göre teklif oluşturuyoruz.</p>
+          <summary>Drone çekimi ne kadar sürer?</summary>
+          <p>Çekim süresi mekanın büyüklüğüne ve hedef içeriğe göre değişir. Planlama aşamasında süreyi netleştirip randevuyu ona göre oluştururuz.</p>
+        </details>
+
+        <details>
+          <summary>Hava şartları kötü olursa ne olur?</summary>
+          <p>Güvenli uçuş esas alınır. Uygun olmayan hava koşullarında çekim, randevulu sistemle tekrar planlanır.</p>
         </details>
 
         <details>
@@ -1202,8 +1692,8 @@
         </details>
 
         <details>
-          <summary>Hangi sektörlerde drone tanıtımı daha etkilidir?</summary>
-          <p>Emlak, otel/tesis, kafe-restoran, etkinlik/organizasyon ve kurumsal işletme tanıtımlarında havadan çekimler marka algısını güçlendirir.</p>
+          <summary>Reels için ideal video süresi nedir?</summary>
+          <p>Hedefe göre değişir; ama izlenme ve reklam performansı için çoğu projede kısa ve net kurgular daha etkilidir. İçerik setini buna göre hazırlarız.</p>
         </details>
       </div>
     </div>
@@ -1212,10 +1702,13 @@
   <!-- INSTAGRAM -->
   <section class="section" id="instagram">
     <div class="container">
-      <h2>Instagram</h2>
-      <p class="lead">
-        @omraajans360 hesabımızdaki anlık paylaşımlar. Takip ederek yeni çekimleri ve örnek işleri görebilirsiniz.
-      </p>
+      <div class="section-title">
+        <h2>Instagram</h2>
+        <div class="divider"></div>
+        <p class="lead">
+          @omraajans360 hesabımızdaki anlık paylaşımlar. Takip ederek yeni çekimleri ve örnek işleri görebilirsiniz.
+        </p>
+      </div>
 
       <div class="ig-box">
         <script src="https://elfsightcdn.com/platform.js" async></script>
@@ -1227,9 +1720,11 @@
   <!-- CONTACT -->
   <section class="section" id="iletisim">
     <div class="container">
-      <h2>İletişim / Teklif</h2>
-      <p class="lead">İlçe + tarih + hizmet yaz; hızlıca netleştirelim.</p>
-      <p class="lead">İstersen formdan da gönderebilirsin.</p>
+      <div class="section-title">
+        <h2>İletişim / Teklif</h2>
+        <div class="divider"></div>
+        <p class="lead">İlçe + tarih + hizmet yaz; hızlıca netleştirelim.</p>
+      </div>
 
       <div class="contact">
         <div class="panel">
@@ -1266,7 +1761,8 @@
           <p style="margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.7;text-align:center;">
             <strong>Konum:</strong> İzmir (tüm ilçeler)<br>
             <strong>Çalışma:</strong> Randevulu<br>
-            <strong>Teslim:</strong> Reels (9:16), Yatay (16:9), Reklam formatları
+            <strong>Teslim:</strong> Reels (9:16), Yatay (16:9), Reklam formatları<br>
+            <strong>Teslim Süresi:</strong> 3–8 gün
           </p>
         </div>
       </div>
@@ -1276,6 +1772,11 @@
   <footer>
     <div class="container">
       <div>© <span id="y"></span> OMRA Ajans 360 • İzmir Drone Çekimi & Tanıtım Filmleri • Randevulu Çalışma</div>
+      <div class="footer-links">
+        <a href="#" aria-label="KVKK">KVKK</a>
+        <a href="#" aria-label="Gizlilik Politikası">Gizlilik</a>
+        <a href="#" aria-label="Çerez Politikası">Çerezler</a>
+      </div>
     </div>
   </footer>
 </main>
@@ -1285,6 +1786,17 @@
    target="_blank" rel="noopener">WhatsApp</a>
 
 <button id="backToTop" aria-label="En üste dön" type="button">▲</button>
+
+<!-- ✅ Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-card" role="dialog" aria-label="Portföy görseli">
+    <div class="lb-top">
+      <div class="lb-pill" id="lbCaption">Portföy</div>
+      <button class="lb-close" id="lbClose" type="button" aria-label="Kapat">✕</button>
+    </div>
+    <img id="lbImg" src="" alt="Portföy görseli büyük görünüm">
+  </div>
+</div>
 
 <script>
   // Footer year
@@ -1377,6 +1889,60 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // ✅ Portfolio Filters
+  const filterButtons = document.querySelectorAll(".filterbtn");
+  const shots = document.querySelectorAll(".shot");
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+      shots.forEach(card => {
+        const cat = card.getAttribute("data-cat");
+        const show = (filter === "all") || (cat === filter);
+        card.style.display = show ? "" : "none";
+      });
+    });
+  });
+
+  // ✅ Lightbox
+  const lightbox = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbClose = document.getElementById("lbClose");
+  const lbCaption = document.getElementById("lbCaption");
+
+  function openLightbox(src, caption){
+    lbImg.src = src;
+    lbCaption.textContent = caption || "Portföy";
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox(){
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden","true");
+    lbImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".shot img").forEach(img => {
+    img.addEventListener("click", () => {
+      const full = img.getAttribute("data-full") || img.src;
+      const cap = img.closest(".shot")?.querySelector(".cap")?.textContent?.trim() || "Portföy";
+      openLightbox(full, cap);
+    });
+  });
+
+  lbClose?.addEventListener("click", closeLightbox);
+  lightbox?.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+  });
 </script>
 </body>
 </html>
