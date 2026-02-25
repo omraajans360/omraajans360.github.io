@@ -1189,205 +1189,6 @@
   margin-right:auto;
 }
 
-    /* ===================================================
-   SÜREÇ — GRID TIMELINE (PC: sağ/sol hizalı, Mobil: alt alta)
-   =================================================== */
-
-/* adımları grid timeline yap */
-#surec .steps{
-  display:grid !important;
-  gap: 26px !important;
-  position: relative !important;
-}
-
-/* PC: 3 kolon (sol kart | çizgi | sağ kart) */
-@media (min-width: 901px){
-  #surec .steps{
-    grid-template-columns: 1fr 64px 1fr !important;
-    align-items: start !important;
-  }
-
-  /* orta çizgi */
-  #surec .steps::before{
-    content:"" !important;
-    position:absolute !important;
-    left:50% !important;
-    top:0 !important;
-    bottom:0 !important;
-    width:2px !important;
-    transform: translateX(-50%) !important;
-    background: linear-gradient(
-      180deg,
-      rgba(202,168,78,0),
-      rgba(202,168,78,.45),
-      rgba(202,168,78,0)
-    ) !important;
-  }
-
-  /* kartlar sol/sağ */
-  #surec .step{
-    width:auto !important;
-    margin:0 !important;
-  }
-
-  /* 1,3 sol */
-  #surec .step:nth-child(odd){
-    grid-column: 1 !important;
-  }
-
-  /* 2,4 sağ */
-  #surec .step:nth-child(even){
-    grid-column: 3 !important;
-  }
-
-  /* kartların çizgiye yaklaşması */
-  #surec .step:nth-child(odd){ justify-self: end !important; }
-  #surec .step:nth-child(even){ justify-self: start !important; }
-
-  /* numarayı çizgiye sabitle */
-  #surec .step-no{
-    position:absolute !important;
-    top:18px !important;
-  }
-
-  #surec .step:nth-child(odd) .step-no{ right:-56px !important; }
-  #surec .step:nth-child(even) .step-no{ left:-56px !important; }
-}
-
-/* mobil: tek kolon */
-@media (max-width: 900px){
-  #surec .steps{
-    grid-template-columns: 1fr !important;
-  }
-  #surec .steps::before{ display:none !important; }
-
-  #surec .step{
-    width:100% !important;
-  }
-
-  #surec .step-no{
-    position: static !important;
-    margin-bottom: 8px !important;
-  }
-}
-
-/* ===================================================
-   STEP İÇ DÜZEN — ikon her zaman sağda, boşluk dolu
-   =================================================== */
-
-#surec .step{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  gap: 18px !important;
-  padding: 22px !important;
-  position: relative !important;
-}
-
-#surec .step-left{
-  min-width: 0 !important;
-}
-
-#surec .step-visual{
-  flex: 0 0 auto !important;
-  width: 84px !important;
-  height: 84px !important;
-  border-radius: 18px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-
-  background: rgba(202,168,78,.10) !important;
-  border: 1px solid rgba(202,168,78,.45) !important;
-
-  box-shadow:
-    0 0 0 1px rgba(202,168,78,.20),
-    0 0 20px rgba(202,168,78,.25),
-    inset 0 0 14px rgba(202,168,78,.12) !important;
-}
-
-#surec .step-emoji{
-  font-size: 34px !important;
-}
-
-/* mobilde ikon alt şerit gibi */
-@media (max-width: 900px){
-  #surec .step{
-    flex-direction: column !important;
-    align-items: flex-start !important;
-  }
-
-  #surec .step-visual{
-    width: 100% !important;
-    height: 60px !important;
-    justify-content:flex-start !important;
-    padding-left: 14px !important;
-  }
-
-  #surec .step-emoji{
-    font-size: 28px !important;
-  }
-}
-    /* ===================================================
-   SÜREÇ — PROFESYONEL TİPOGRAFİ AYARI
-   =================================================== */
-
-/* Başlıklar */
-#surec .step h3{
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: .2px;
-  margin: 0 0 8px;
-  color: #fff;
-
-  /* hafif premium ışık */
-  text-shadow: 0 0 14px rgba(202,168,78,.18);
-}
-
-/* Açıklama metni */
-#surec .step p{
-  font-size: 14px;
-  line-height: 1.75;
-  color: rgba(255,255,255,.78);
-  max-width: 46ch;
-}
-
-/* kart iç boşluk dengesi */
-#surec .step-left{
-  padding-right: 8px;
-}
-
-/* kartların hover davranışı (çok önemli) */
-#surec .step{
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-
-#surec .step:hover{
-  border-color: rgba(202,168,78,.38);
-
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.06),
-    0 0 0 1.5px rgba(202,168,78,.28),
-    0 0 36px rgba(202,168,78,.12);
-}
-
-/* ikon kutusu hover'da hafif parlar */
-#surec .step:hover .step-visual{
-  box-shadow:
-    0 0 0 1px rgba(202,168,78,.30),
-    0 0 28px rgba(202,168,78,.35),
-    inset 0 0 16px rgba(202,168,78,.18);
-}
-
-/* numara kutusu daha net */
-#surec .step-no{
-  font-size: 14px;
-  color:#fff;
-  background: rgba(202,168,78,.14);
-  border:1px solid rgba(202,168,78,.45);
-  box-shadow:
-    0 0 0 4px rgba(202,168,78,.10);
-}
     /* portföy yazı etiketi */
 .cap{
   position:absolute;
@@ -1413,6 +1214,194 @@
   background:transparent;
   cursor: zoom-in;
   text-align:inherit;
+}
+    /* ===================================================
+   OMRA AJANS 360 — SÜREÇ TIMELINE FINAL
+   =================================================== */
+
+/* timeline alanı */
+#surec .steps{
+  display:grid;
+  gap:40px;
+  position:relative;
+  margin-top:30px;
+}
+
+/* PC görünümü (sağlı sollu timeline) */
+@media (min-width:901px){
+
+  /* 3 kolon: kart | çizgi | kart */
+  #surec .steps{
+    grid-template-columns: 1fr 80px 1fr;
+    align-items:start;
+  }
+
+  /* ortadaki altın çizgi */
+  #surec .steps::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:2px;
+    transform:translateX(-50%);
+    background:linear-gradient(
+      180deg,
+      rgba(202,168,78,0),
+      rgba(202,168,78,.65),
+      rgba(202,168,78,0)
+    );
+  }
+
+  /* SOL KARTLAR (1 ve 3) */
+  #surec .step:nth-of-type(odd){
+    grid-column:1;
+    justify-self:end;
+  }
+
+  /* SAĞ KARTLAR (2 ve 4) */
+  #surec .step:nth-of-type(even){
+    grid-column:3;
+    justify-self:start;
+  }
+
+  /* numara balonunu ortadaki çizgiye oturt */
+  #surec .step-no{
+    position:absolute;
+    top:20px;
+    z-index:3;
+  }
+
+  #surec .step:nth-of-type(odd) .step-no{
+    right:-44px;
+  }
+
+  #surec .step:nth-of-type(even) .step-no{
+    left:-44px;
+  }
+}
+
+/* Mobil görünüm */
+@media (max-width:900px){
+
+  #surec .steps{
+    grid-template-columns:1fr;
+  }
+
+  #surec .steps::before{
+    display:none;
+  }
+
+  #surec .step{
+    width:100%;
+  }
+
+  #surec .step-no{
+    position:static;
+    margin-bottom:10px;
+  }
+}
+
+/* kart görünümü */
+#surec .step{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:24px;
+  position:relative;
+  border-radius:18px;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+/* hover efekti */
+#surec .step:hover{
+  border-color:rgba(202,168,78,.45);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.08),
+    0 0 0 1.5px rgba(202,168,78,.35),
+    0 0 42px rgba(202,168,78,.18);
+  transform:translateY(-2px);
+}
+
+/* numara kutusu */
+#surec .step-no{
+  width:36px;
+  height:36px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:14px;
+  color:#fff;
+
+  background:rgba(202,168,78,.18);
+  border:1px solid rgba(202,168,78,.45);
+  box-shadow:0 0 0 6px rgba(202,168,78,.12);
+}
+
+/* metin alanı */
+#surec .step-left{
+  min-width:0;
+  padding-right:6px;
+}
+
+#surec .step h3{
+  font-size:18px;
+  font-weight:700;
+  margin:0 0 8px;
+  text-shadow:0 0 14px rgba(202,168,78,.18);
+}
+
+#surec .step p{
+  font-size:14px;
+  line-height:1.75;
+  color:rgba(255,255,255,.78);
+  max-width:46ch;
+}
+
+/* ikon kutusu */
+#surec .step-visual{
+  flex:0 0 auto;
+  width:86px;
+  height:86px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(202,168,78,.10);
+  border:1px solid rgba(202,168,78,.45);
+
+  box-shadow:
+    0 0 0 1px rgba(202,168,78,.20),
+    0 0 22px rgba(202,168,78,.25),
+    inset 0 0 14px rgba(202,168,78,.14);
+}
+
+/* mobilde ikon altta şerit gibi */
+@media (max-width:900px){
+  #surec .step{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  #surec .step-visual{
+    width:100%;
+    height:60px;
+    justify-content:flex-start;
+    padding-left:14px;
+  }
+
+  #surec .step-visual svg{
+    width:34px;
+    height:34px;
+  }
 }
   </style>
 </head>
@@ -1754,83 +1743,80 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="section" id="surec">
-    <div class="container">
-      <div class="section-title">
-        <h2>Süreç Nasıl İşliyor?</h2>
-        <div class="divider"></div>
-        <p class="lead">Kurumsal iş akışı ile ilerliyoruz: planlama, çekim, kurgu ve teslim.</p>
-      </div>
-
-      <div class="steps">
-<div class="step reveal" style="--d: 0ms;">
-  <div class="step-left">
-    <div class="step-no">1</div>
-    <h3>Planlama (Randevu)</h3>
-    <p>İlçe, tarih, çekim hedefi ve teslim formatları netleşir. Program oluşturulur.</p>
-  </div>
-</div>
-          <div class="step-visual" aria-hidden="true" title="Planlama">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M7 3v3M17 3v3" stroke="rgba(202,168,78,.95)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M4.5 8.5h15" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M6 6h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
-              <path d="M8 12h4M8 16h7" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
-
-       <div class="step reveal" style="--d: 120ms;">
-  <div class="step-left">
-    <div class="step-no">2</div>
-    <h3>Çekim</h3>
-    <p>Akışa uygun kadraj planı ile drone çekimi gerçekleştirilir.</p>
-  </div>
-</div>
-          <div class="step-visual" aria-hidden="true" title="Çekim">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M8 13c0-2 2-4 4-4s4 2 4 4v3H8v-3Z" stroke="rgba(202,168,78,.85)" stroke-width="2"/>
-              <path d="M6 11H3M21 11h-3" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="2.8" cy="11" r="2" stroke="rgba(202,168,78,.65)" stroke-width="2"/>
-              <circle cx="21.2" cy="11" r="2" stroke="rgba(202,168,78,.65)" stroke-width="2"/>
-            </svg>
-          </div>
-        </div>
-
-       <div class="step reveal" style="--d: 240ms;">
-  <div class="step-left">
-    <div class="step-no">3</div>
-    <h3>Kurgu</h3>
-    <p>Renk düzenleme, stabilizasyon, tempo, müzik ve gerekli başlık/kapaklar hazırlanır.</p>
-  </div>
-</div>
-          <div class="step-visual" aria-hidden="true" title="Kurgu">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 6h10a2 2 0 0 1 2 2v10H6a2 2 0 0 1-2-2V6Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
-              <path d="M16 10l4-2v10l-4-2" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M7 10h6M7 14h6" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
-
-        <div class="step reveal" style="--d: 360ms;">
-  <div class="step-left">
-    <div class="step-no">4</div>
-    <h3>Teslim</h3>
-    <p>Reels / yatay / reklam formatlarında teslim edilir. Gerekirse revize süreci yönetilir.</p>
-  </div>
-</div>
-          <div class="step-visual" aria-hidden="true" title="Teslim">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M7 12l3 3 7-7" stroke="rgba(202,168,78,.95)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 6h16v14H4V6Z" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
-            </svg>
-          </div>
-        </div>
-      </div>
+<!-- PROCESS -->
+<section class="section" id="surec">
+  <div class="container">
+    <div class="section-title">
+      <h2>Süreç Nasıl İşliyor?</h2>
+      <div class="divider"></div>
+      <p class="lead">Kurumsal iş akışı ile ilerliyoruz: planlama, çekim, kurgu ve teslim.</p>
     </div>
-  </section>
+
+  <div class="steps">
+
+  <div class="step reveal" style="--d: 0ms;">
+    <div class="step-left">
+      <div class="step-no">1</div>
+      <h3>Planlama (Randevu)</h3>
+      <p>İlçe, tarih, çekim hedefi ve teslim formatları netleşir. Program oluşturulur.</p>
+    </div>
+    <div class="step-visual" aria-hidden="true" title="Planlama">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M7 3v3M17 3v3" stroke="rgba(202,168,78,.95)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4.5 8.5h15" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M6 6h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
+        <path d="M8 12h4M8 16h7" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="step reveal" style="--d: 120ms;">
+    <div class="step-left">
+      <div class="step-no">2</div>
+      <h3>Çekim</h3>
+      <p>Akışa uygun kadraj planı ile drone çekimi gerçekleştirilir.</p>
+    </div>
+    <div class="step-visual" aria-hidden="true" title="Çekim">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M8 13c0-2 2-4 4-4s4 2 4 4v3H8v-3Z" stroke="rgba(202,168,78,.85)" stroke-width="2"/>
+        <path d="M6 11H3M21 11h-3" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="2.8" cy="11" r="2" stroke="rgba(202,168,78,.65)" stroke-width="2"/>
+        <circle cx="21.2" cy="11" r="2" stroke="rgba(202,168,78,.65)" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="step reveal" style="--d: 240ms;">
+    <div class="step-left">
+      <div class="step-no">3</div>
+      <h3>Kurgu</h3>
+      <p>Renk düzenleme, stabilizasyon, tempo, müzik ve gerekli başlık/kapaklar hazırlanır.</p>
+    </div>
+    <div class="step-visual" aria-hidden="true" title="Kurgu">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M4 6h10a2 2 0 0 1 2 2v10H6a2 2 0 0 1-2-2V6Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
+        <path d="M16 10l4-2v10l-4-2" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7 10h6M7 14h6" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="step reveal" style="--d: 360ms;">
+    <div class="step-left">
+      <div class="step-no">4</div>
+      <h3>Teslim</h3>
+      <p>Reels / yatay / reklam formatlarında teslim edilir. Gerekirse revize süreci yönetilir.</p>
+    </div>
+    <div class="step-visual" aria-hidden="true" title="Teslim">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M7 12l3 3 7-7" stroke="rgba(202,168,78,.95)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 6h16v14H4V6Z" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+
+</div>
+</section>
 
   <!-- PACKAGES -->
   <section class="section" id="paketler">
