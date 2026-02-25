@@ -1188,195 +1188,7 @@
   margin-left:auto;
   margin-right:auto;
 }
-    /* ===================================================
-   SÜREÇ — TIMELINE + BOŞLUK DOLDURMA (PC + Mobil)
-   =================================================== */
 
-/* Süreç kutularını daha premium yap */
-#surec .steps{
-  margin-top: 18px;
-}
-
-/* Emoji ikon boyutu */
-#surec .step-emoji{
-  font-size: 34px;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
-}
-
-/* PC’de Timeline çizgisi: adımların solunda ince altın çizgi */
-@media (min-width: 901px){
-  #surec .steps{
-    position: relative;
-  }
-
-  /* Dikey çizgi */
-  #surec .steps::before{
-    content:"";
-    position:absolute;
-    left: 18px;
-    top: 10px;
-    bottom: 10px;
-    width: 1px;
-    background: linear-gradient(
-      180deg,
-      rgba(202,168,78,0),
-      rgba(202,168,78,.35),
-      rgba(202,168,78,0)
-    );
-  }
-
-  /* Adım numarası çizgiye otursun */
-  #surec .step-no{
-    position: relative;
-  }
-  #surec .step-no::before{
-    content:"";
-    position:absolute;
-    left: -18px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    background: rgba(202,168,78,.95);
-    box-shadow: 0 0 0 6px rgba(202,168,78,.12);
-  }
-}
-
-/* Mobilde ikon kutusu alt satıra düşsün (boşluk kalkar) */
-@media (max-width: 900px){
-  #surec .step{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #surec .step-visual{
-    width: 100%;
-    height: 62px;
-    border-radius: 16px;
-    justify-content:flex-start;
-    padding-left: 14px;
-  }
-
-  #surec .step-emoji{
-    font-size: 28px;
-  }
-}
-    /* ===================================================
-   GERÇEK ZIG-ZAG TIMELINE SÜREÇ TASARIMI
-   =================================================== */
-
-/* süreç alanı ortalanır */
-#surec .steps{
-  display:flex;
-  flex-direction:column;
-  gap:26px;
-  position:relative;
-}
-
-/* ortadaki altın timeline çizgisi */
-@media (min-width: 901px){
-  #surec .steps::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:0;
-    bottom:0;
-    width:2px;
-    transform:translateX(-50%);
-    background:linear-gradient(
-      180deg,
-      rgba(202,168,78,0),
-      rgba(202,168,78,.45),
-      rgba(202,168,78,0)
-    );
-  }
-}
-
-/* kartlar */
-#surec .step{
-  width:48%;
-  padding:22px;
-  position:relative;
-}
-
-/* SOL taraftakiler */
-@media (min-width:901px){
-  #surec .step:nth-child(odd){
-    align-self:flex-start;
-    margin-right:auto;
-  }
-}
-
-/* SAĞ taraftakiler */
-@media (min-width:901px){
-  #surec .step:nth-child(even){
-    align-self:flex-end;
-    margin-left:auto;
-  }
-}
-
-/* numara noktası timeline'a bağlanır */
-@media (min-width:901px){
-  #surec .step-no{
-    position:absolute;
-    top:18px;
-    width:34px;
-    height:34px;
-    border-radius:12px;
-    background: rgba(202,168,78,.12);
-    border:1px solid rgba(202,168,78,.45);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:700;
-  }
-
-  /* sol kartlar */
-  #surec .step:nth-child(odd) .step-no{
-    right:-55px;
-  }
-
-  /* sağ kartlar */
-  #surec .step:nth-child(even) .step-no{
-    left:-55px;
-  }
-}
-
-/* ikon kutusu */
-#surec .step-visual{
-  margin-top:14px;
-  width:80px;
-  height:80px;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background: rgba(202,168,78,.10);
-  border:1px solid rgba(202,168,78,.45);
-
-  box-shadow:
-    0 0 0 1px rgba(202,168,78,.20),
-    0 0 20px rgba(202,168,78,.25),
-    inset 0 0 14px rgba(202,168,78,.12);
-}
-
-/* mobilde alt alta normal akış */
-@media (max-width:900px){
-  #surec .step{
-    width:100%;
-  }
-
-  #surec .steps::before{
-    display:none;
-  }
-
-  #surec .step-no{
-    position:static;
-    margin-bottom:8px;
-  }
-}
     /* ===================================================
    SÜREÇ — GRID TIMELINE (PC: sağ/sol hizalı, Mobil: alt alta)
    =================================================== */
@@ -1596,10 +1408,11 @@
 }
 
 .shot-btn{
-  position:relative;
-  display:block;
-  width:100%;
-  height:100%;
+  border:0;
+  padding:0;
+  background:transparent;
+  cursor: zoom-in;
+  text-align:inherit;
 }
   </style>
 </head>
@@ -1928,7 +1741,6 @@
   <span>Planlı Çekim</span>
   <span>Teslim: 3-8 Gün</span>
 </div>
-            </center>
             <p>Markanız için güven veren kurumsal anlatım: mekan + hizmet + deneyim odaklı kurgu.</p>
             <ul>
               <li>Reklam kurgusu (15/30/60 sn)</li>
@@ -1958,10 +1770,6 @@
     <h3>Planlama (Randevu)</h3>
     <p>İlçe, tarih, çekim hedefi ve teslim formatları netleşir. Program oluşturulur.</p>
   </div>
-
-  <div class="step-visual" aria-hidden="true" title="Planlama">
-    <span class="step-emoji">🗓️</span>
-  </div>
 </div>
           <div class="step-visual" aria-hidden="true" title="Planlama">
             <svg viewBox="0 0 24 24" fill="none">
@@ -1978,10 +1786,6 @@
     <div class="step-no">2</div>
     <h3>Çekim</h3>
     <p>Akışa uygun kadraj planı ile drone çekimi gerçekleştirilir.</p>
-  </div>
-
-  <div class="step-visual" aria-hidden="true" title="Çekim">
-    <span class="step-emoji">🚁</span>
   </div>
 </div>
           <div class="step-visual" aria-hidden="true" title="Çekim">
@@ -2000,10 +1804,6 @@
     <h3>Kurgu</h3>
     <p>Renk düzenleme, stabilizasyon, tempo, müzik ve gerekli başlık/kapaklar hazırlanır.</p>
   </div>
-
-  <div class="step-visual" aria-hidden="true" title="Kurgu">
-    <span class="step-emoji">🎬</span>
-  </div>
 </div>
           <div class="step-visual" aria-hidden="true" title="Kurgu">
             <svg viewBox="0 0 24 24" fill="none">
@@ -2019,10 +1819,6 @@
     <div class="step-no">4</div>
     <h3>Teslim</h3>
     <p>Reels / yatay / reklam formatlarında teslim edilir. Gerekirse revize süreci yönetilir.</p>
-  </div>
-
-  <div class="step-visual" aria-hidden="true" title="Teslim">
-    <span class="step-emoji">✅</span>
   </div>
 </div>
           <div class="step-visual" aria-hidden="true" title="Teslim">
@@ -2484,85 +2280,49 @@
       });
     });
   });
-
-  // ✅ Lightbox
-  const lightbox = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lbImg");
-  const lbClose = document.getElementById("lbClose");
-  const lbCaption = document.getElementById("lbCaption");
-
-  function openLightbox(src, caption){
-    lbImg.src = src;
-    lbCaption.textContent = caption || "Portföy";
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden","false");
-    document.body.style.overflow = "hidden";
-  }
-  function closeLightbox(){
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden","true");
-    lbImg.src = "";
-    document.body.style.overflow = "";
-  }
-
-  document.querySelectorAll(".shot img").forEach(img => {
-    img.addEventListener("click", () => {
-      const full = img.getAttribute("data-full") || img.src;
-      const cap = img.closest(".shot")?.querySelector(".cap")?.textContent?.trim() || "Portföy";
-      openLightbox(full, cap);
-    });
-  });
-
-  lbClose?.addEventListener("click", closeLightbox);
-  lightbox?.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
-  });
-  // ✅ Portföy Lightbox (Sağlam sürüm)
+// ✅ Lightbox (TEK SÜRÜM)
 const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
+const lbImg = document.getElementById("lbImg");
+const lbClose = document.getElementById("lbClose");
+const lbCaption = document.getElementById("lbCaption");
 
-function openLightbox(src, altText="") {
-  if (!lightbox || !lightboxImg || !src) return;
-  lightboxImg.src = src;
-  lightboxImg.alt = altText || "Portföy görseli";
+function openLightbox(src, caption){
+  if (!lightbox || !lbImg || !src) return;
+  lbImg.src = src;
+  lbCaption.textContent = caption || "Portföy";
   lightbox.classList.add("open");
-  lightbox.setAttribute("aria-hidden", "false");
+  lightbox.setAttribute("aria-hidden","false");
   document.body.style.overflow = "hidden";
 }
 
-function closeLightbox() {
+function closeLightbox(){
   if (!lightbox) return;
   lightbox.classList.remove("open");
-  lightbox.setAttribute("aria-hidden", "true");
+  lightbox.setAttribute("aria-hidden","true");
+  lbImg.src = "";
   document.body.style.overflow = "";
-  if (lightboxImg) {
-    lightboxImg.src = "";
-    lightboxImg.alt = "";
-  }
 }
 
-/* Event delegation: butonun içindeki her tıklamayı yakalar */
+// ✅ Event delegation: shot-btn tıklayınca aç
 document.getElementById("portfolioGrid")?.addEventListener("click", (e) => {
   const btn = e.target.closest(".shot-btn");
   if (!btn) return;
 
   const src = btn.getAttribute("data-full");
-  const img = btn.querySelector("img");
-  openLightbox(src, img?.alt || "");
+  const cap = btn.querySelector(".cap")?.textContent?.trim() || "Portföy";
+  openLightbox(src, cap);
 });
 
-/* Kapatma: arka plan veya X */
+lbClose?.addEventListener("click", closeLightbox);
+
+// Arka plana tıklayınca kapat
 lightbox?.addEventListener("click", (e) => {
-  const t = e.target;
-  if (t?.dataset?.close) closeLightbox();
+  if (e.target === lightbox) closeLightbox();
 });
 
-/* ESC ile kapat */
+// ESC ile kapat
 window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeLightbox();
+  if (e.key === "Escape" && lightbox?.classList.contains("open")) closeLightbox();
 });
 </script>
 </body>
