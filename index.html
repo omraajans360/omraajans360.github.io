@@ -1410,6 +1410,34 @@
 
   .hero-video .video-wrap{ display:none !important; }
 }
+    /* MOBİLDE HERO GÖRSELİ AYDINLAT */
+@media (max-width: 900px){
+
+  /* video alanını tamamen kapat */
+  .hero-video .video-wrap{
+    display:none !important;
+  }
+
+  /* üstteki siyah overlayi kaldır */
+  .hero-video .overlay{
+    display:none !important;
+  }
+
+  /* poster görseli daha parlak kullan */
+  .hero-video{
+    background-image: url("hero-poster.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* kartın kendi karartmasını azalt */
+  .hero-card{
+    background: rgba(10,10,10,.55);
+    backdrop-filter: blur(6px);
+  }
+
+}
   </style>
 </head>
 
