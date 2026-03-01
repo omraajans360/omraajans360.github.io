@@ -1633,6 +1633,43 @@
   color: rgba(255,255,255,.70);
   text-align:center;
 }
+    /* ✅ FIX: Süreç mobil ikon şeridi (Planlama/Çekim/Kurgu/Teslim) */
+@media (max-width: 900px){
+  #surec .step{
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #surec .step-left{
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  #surec .step-no{
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #surec .step-visual{
+    width: fit-content !important;   /* %100 şerit olmasın */
+    height: 56px !important;
+    padding: 0 18px !important;
+    justify-content: center !important;
+    align-self: center !important;
+    margin-top: 10px !important;
+    border-radius: 16px !important;
+  }
+
+  #surec .step-visual svg{
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  #surec .step p{
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
   </style>
 </head>
 
