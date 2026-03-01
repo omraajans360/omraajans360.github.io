@@ -1523,6 +1523,116 @@
     margin-right: auto;
   }
 }
+    /* ✅ Mobil sabit CTA bar */
+.mobile-cta{ display:none; }
+@media (max-width: 900px){
+  .mobile-cta{
+    display:flex;
+    position:fixed;
+    left:12px;
+    right:12px;
+    bottom:12px;
+    gap:10px;
+    z-index: 10002;
+  }
+  .mcta{
+    flex:1;
+    border-radius: 16px;
+    padding: 14px 14px;
+    font-weight: 800;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(0,0,0,.72);
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 18px 40px rgba(0,0,0,.55);
+  }
+  .mcta-wa{
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+    border-color: transparent;
+  }
+  .mcta-quote{
+    background: rgba(202,168,78,.16);
+    border-color: rgba(202,168,78,.35);
+    cursor:pointer;
+  }
+
+  /* mevcut WhatsApp butonun alt barla çakışmasın */
+  .wa{ bottom: 80px; }
+}
+    /* ✅ Teklif popup */
+.quote-modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  padding: 14px;
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(8px);
+  z-index: 20010;
+}
+.quote-modal.open{ display:flex; }
+
+.quote-card{
+  width: min(520px, 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(10,10,10,.92);
+  box-shadow: 0 20px 70px rgba(0,0,0,.65);
+  padding: 14px;
+}
+
+.quote-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding: 4px 4px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.quote-title{ font-weight: 900; letter-spacing:.2px; }
+.quote-x{
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.55);
+  color:#fff;
+  font-weight: 900;
+  cursor:pointer;
+}
+
+.qfield{ display:grid; gap:6px; margin-top: 12px; }
+.qfield input, .qfield select{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.25);
+  color:#fff;
+  outline:none;
+  font-family:inherit;
+}
+.qsend{
+  margin-top: 14px;
+  width:100%;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 0;
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color:#fff;
+  font-weight: 900;
+  cursor:pointer;
+}
+.qnote{
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(255,255,255,.70);
+  text-align:center;
+}
   </style>
 </head>
 
@@ -2430,6 +2540,99 @@ lightbox?.addEventListener("click", (e) => {
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && lightbox?.classList.contains("open")) closeLightbox();
 });
+  // ✅ Mobil Teklif Popup
+const quoteModal = document.getElementById("quoteModal");
+const openQuote = document.getElementById("openQuote");
+const closeQuote = document.getElementById("closeQuote");
+const sendQuote = document.getElementById("sendQuote");
+
+function openQuoteModal(){
+  if(!quoteModal) return;
+  quoteModal.classList.add("open");
+  quoteModal.setAttribute("aria-hidden","false");
+  document.body.style.overflow = "hidden";
+}
+function closeQuoteModal(){
+  if(!quoteModal) return;
+  quoteModal.classList.remove("open");
+  quoteModal.setAttribute("aria-hidden","true");
+  document.body.style.overflow = "";
+}
+
+openQuote?.addEventListener("click", openQuoteModal);
+closeQuote?.addEventListener("click", closeQuoteModal);
+quoteModal?.addEventListener("click", (e) => {
+  if(e.target === quoteModal) closeQuoteModal();
+});
+
+sendQuote?.addEventListener("click", () => {
+  const ilce = document.getElementById("q_ilce")?.value?.trim() || "-";
+  const tarih = document.getElementById("q_tarih")?.value?.trim() || "-";
+  const hizmet = document.getElementById("q_hizmet")?.value || "-";
+  const format = document.getElementById("q_format")?.value || "-";
+
+  const msg =
+`Merhaba OMRA Ajans 360,
+İzmir’de drone çekimi için teklif almak istiyorum.
+
+İlçe: ${ilce}
+Tarih: ${tarih}
+Hizmet: ${hizmet}
+Format: ${format}`;
+
+  const url = "https://wa.me/905529226204?text=" + encodeURIComponent(msg);
+  window.open(url, "_blank", "noopener");
+  closeQuoteModal();
+});
+
+// ESC ile kapat
+window.addEventListener("keydown", (e) => {
+  if(e.key === "Escape" && quoteModal?.classList.contains("open")) closeQuoteModal();
+});
 </script>
+  <!-- ✅ Mini Teklif Popup -->
+<div class="quote-modal" id="quoteModal" aria-hidden="true">
+  <div class="quote-card" role="dialog" aria-label="Hızlı Teklif Formu">
+    <div class="quote-head">
+      <div class="quote-title">Hızlı Teklif</div>
+      <button class="quote-x" id="closeQuote" type="button" aria-label="Kapat">✕</button>
+    </div>
+
+    <div class="qfield">
+      <label for="q_ilce">İlçe</label>
+      <input id="q_ilce" placeholder="Örn: Karşıyaka">
+    </div>
+
+    <div class="qfield">
+      <label for="q_tarih">Tarih</label>
+      <input id="q_tarih" placeholder="Örn: 10 Mart">
+    </div>
+
+    <div class="qfield">
+      <label for="q_hizmet">Hizmet</label>
+      <select id="q_hizmet">
+        <option>Düğün / Nişan</option>
+        <option>Etkinlik</option>
+        <option>Emlak</option>
+        <option>Kafe / Restoran</option>
+        <option>Otel / Tesis</option>
+        <option>İşletme Tanıtımı</option>
+      </select>
+    </div>
+
+    <div class="qfield">
+      <label for="q_format">Format</label>
+      <select id="q_format">
+        <option>Reels (9:16)</option>
+        <option>Yatay (16:9)</option>
+        <option>Reels + Yatay</option>
+        <option>Reklam (15/30/60 sn)</option>
+      </select>
+    </div>
+
+    <button class="qsend" id="sendQuote" type="button">WhatsApp’tan Gönder</button>
+    <div class="qnote">Tek dokunuşla mesaj hazır gider. Yanıtı WhatsApp’tan alırsınız.</div>
+  </div>
+</div>
 </body>
 </html>
