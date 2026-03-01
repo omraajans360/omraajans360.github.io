@@ -6,7 +6,7 @@
   <title>OMRA Ajans 360 | İzmir Drone Çekimi & Tanıtım Filmleri</title>
   <meta name="description" content="İzmir’de drone çekimi ve kurumsal tanıtım filmi: düğün-nişan, organizasyon, emlak, kafe-restoran, otel ve işletme çekimleri. Randevulu, planlı ve güven veren prodüksiyon." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://omraajans360.github.io/" />
+  <link rel="canonical" href="https://omraajans360.com/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1383,33 +1383,79 @@
     flex-direction:column;
     align-items:flex-start;
   }
-
-  #surec .step-visual{
-    width:100%;
-    height:60px;
-    justify-content:flex-start;
-    padding-left:14px;
-  }
-
+  
   #surec .step-visual svg{
     width:34px;
     height:34px;
   }
 }
     .teklif-btn{ padding:10px 12px; }
-    @media (max-width: 900px){
+    /* MOBİLDE HERO GÖRSELİ AYDINLAT */
+@media (max-width: 900px){
+  .hero-video .video-wrap{ display:none !important; }
+  .hero-video .overlay{ display:none !important; }
+  .hero-video{ background-image: url("hero-poster.jpg"); ... }
+  .hero-card{ background: rgba(10,10,10,.55); ... }
+}
+    /* ✅ MOBİL HERO: Poster + daha aydınlık overlay (tek kaynak) */
+@media (max-width: 900px){
+  /* Video zaten JS ile kaldırılıyor + has-poster arka plan veriyor */
   .hero-video{
-    background:
-      linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.58)),
-      radial-gradient(closest-side, rgba(202,168,78,.12), rgba(202,168,78,0) 70%),
-      url("hero-poster.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    min-height: 72vh;
+    padding: 44px 0;
   }
 
-  .hero-video .video-wrap{ display:none !important; }
+  /* Mobilde overlay tamamen kalkmasın; sadece hafiflesin */
+  .overlay{
+    background:
+      radial-gradient(closest-side, rgba(202,168,78,.16), rgba(202,168,78,0) 70%),
+      linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35));
+  }
+
+  /* Kartı biraz daha “cam” yapıp yazıyı okunaklı tut */
+  .hero-card{
+    background: rgba(10,10,10,.42);
+    backdrop-filter: blur(8px);
+    border-color: rgba(255,255,255,.10);
+  }
+
+  h1{ font-size: 30px; line-height: 1.12; }
+  .subtitle{ font-size: 14px; line-height: 1.75; }
+
+  /* Üstteki drone svg'ler mobilde daha az dikkat dağıtsın */
+  .drone-fleet{ opacity: .35; }
 }
+    @media (max-width: 900px){
+  .mobile-nav{
+    max-height: calc(100vh - 78px);
+    overflow:auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-nav a{
+    border: 1px solid rgba(255,255,255,.06);
+    background: rgba(255,255,255,.02);
+    margin-bottom: 8px;
+  }
+}
+    .shot-btn{
+  display:block;
+  width:100%;
+}
+.shot-btn img{
+  display:block;
+  width:100%;
+  height:100%;
+}
+    @media (max-width: 520px){
+  .wa{
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
     /* MOBİLDE HERO GÖRSELİ AYDINLAT */
 @media (max-width: 900px){
 
@@ -1437,6 +1483,45 @@
     backdrop-filter: blur(6px);
   }
 
+}
+    /* ✅ SÜREÇ (MOBİL) — ikon şeridini daralt + ikonu ortala */
+@media (max-width:900px){
+
+  /* Kart içi hizalama kalsın */
+  #surec .step{
+    align-items: center;
+  }
+
+  /* Şerit gibi duran alanı tam genişlikten çıkar */
+  #surec .step-visual{
+    width: auto !important;              /* %100 olmasın */
+    height: 58px !important;
+    padding: 0 18px !important;          /* sağ/sol nefes */
+    border-radius: 16px !important;
+    justify-content: center !important;  /* ikon ortada */
+    align-self: center !important;       /* kart içinde ortala */
+    margin-top: 8px;
+  }
+
+  /* İkonun boyu dengeli olsun */
+  #surec .step-visual svg{
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  /* Numara + başlık kısmı ortalı dursun */
+  #surec .step-left{
+    width: 100%;
+    text-align: center;
+  }
+  #surec .step-no{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #surec .step p{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
   </style>
 </head>
