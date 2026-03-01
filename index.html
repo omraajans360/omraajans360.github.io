@@ -1670,6 +1670,36 @@
     margin-right: auto !important;
   }
 }
+    .cta-note{
+  margin-top:10px;
+  font-size:12px;
+  color: rgba(255,255,255,.65);
+  text-align:center;
+  letter-spacing:.2px;
+}
+    /* ===== MOBİL SABİT BUTONLAR ÇAKIŞMA DÜZELTME ===== */
+@media (max-width:900px){
+
+  /* Alttaki teklif barı sabit kalsın */
+  .mobile-cta{
+    bottom:12px;
+    z-index:10010;
+  }
+
+  /* WhatsApp onun üstüne çıksın */
+  .wa{
+    bottom:92px !important;   /* alt bardan yukarı kaldırdık */
+    right:14px !important;
+    z-index:10011 !important;
+  }
+
+  /* Üste dön en üste çıksın */
+  #backToTop{
+    bottom:162px !important;  /* WhatsApp'ın da üstüne aldık */
+    right:14px !important;
+    z-index:10012 !important;
+  }
+}
   </style>
 </head>
 
@@ -1784,6 +1814,9 @@
              target="_blank" rel="noopener">WhatsApp’tan Teklif Al</a>
           <a class="btn btn-ghost" href="#portfoy">Portföyü Gör</a>
         </div>
+        <div class="cta-note">
+  Ortalama yanıt süremiz 5–10 dakikadır • Fiyat sormak tamamen ücretsizdir
+</div>
 
         <div class="pill-row" aria-label="Hızlı Bilgiler">
           <div class="pill">
