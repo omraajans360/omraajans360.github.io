@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://omraajans360.com/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
 
   <url>
     <loc>https://omraajans360.com/#hizmetler</loc>
-    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <url>
     <loc>https://omraajans360.com/#portfoy</loc>
-    <priority>0.80</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
 
   <url>
     <loc>https://omraajans360.com/#iletisim</loc>
+    <changefreq>yearly</changefreq>
     <priority>0.80</priority>
   </url>
 
