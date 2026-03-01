@@ -1,13 +1,33 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://omraajans360.com/sitemap.xml">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
- <title>İzmir Drone Çekimi | Tanıtım Filmi Çekimi - OMRA Ajans 360</title>
-  <meta name="description" content="İzmir drone çekimi, emlak drone çekimi ve işletmeler için profesyonel tanıtım filmi hizmeti. OMRA Ajans 360 ile işletmenizi havadan ve sinematik olarak tanıtın.">
+
+  <title>İzmir Drone Çekimi | Tanıtım Filmi Çekimi - OMRA Ajans 360</title>
+  <meta name="description" content="İzmir genelinde randevulu drone çekimi, emlak drone çekimi ve işletmeler için profesyonel tanıtım filmi. Reels (9:16), 16:9 ve reklam formatlarında teslim." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://omraajans360.com/" />
+
+  <!-- ✅ WWW Standard -->
+  <link rel="canonical" href="https://www.omraajans360.com/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.omraajans360.com/sitemap.xml">
+
+  <!-- ✅ Favicon (varsa ekleyebilirsin)
+  <link rel="icon" href="/favicon.ico" />
+  -->
+
+  <!-- ✅ Social (OG/Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OMRA Ajans 360">
+  <meta property="og:title" content="İzmir Drone Çekimi | Tanıtım Filmi - OMRA Ajans 360">
+  <meta property="og:description" content="İzmir genelinde randevulu drone çekimi ve kurumsal tanıtım filmi. Reels (9:16), 16:9 ve reklam formatlarıyla teslim.">
+  <meta property="og:url" content="https://www.omraajans360.com/">
+  <meta property="og:image" content="https://www.omraajans360.com/hero-poster.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="İzmir Drone Çekimi | OMRA Ajans 360">
+  <meta name="twitter:description" content="Drone çekimi + kurumsal tanıtım filmi. Reels/16:9/Reklam formatlarında teslim.">
+  <meta name="twitter:image" content="https://www.omraajans360.com/hero-poster.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +70,22 @@
         "acceptedAnswer":{"@type":"Answer","text":"Güvenli uçuş esas alınır. Uygun olmayan hava koşullarında çekim, randevulu sistemle tekrar planlanır."}
       }
     ]
+  }
+  </script>
+
+  <!-- ✅ SEO: Professional Service Schema (WWW Standard) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "OMRA Ajans 360",
+    "image": "https://www.omraajans360.com/logo.png",
+    "url": "https://www.omraajans360.com/",
+    "telephone": "+905529226204",
+    "areaServed": { "@type": "City", "name": "İzmir" },
+    "address": { "@type": "PostalAddress", "addressLocality": "İzmir", "addressCountry": "TR" },
+    "sameAs": ["https://www.instagram.com/omraajans360/"],
+    "description": "İzmir drone çekimi, emlak drone çekimi ve tanıtım filmi prodüksiyon hizmeti sunan OMRA Ajans 360."
   }
   </script>
 
@@ -176,7 +212,7 @@
     }
     header.scrolled .brand img{ height: 46px; }
 
-    /* ===== HERO (Video + Poster + Drone Animations) ===== */
+    /* ===== HERO (Video + Poster) ===== */
     .hero-video{
       position:relative;
       overflow:hidden;
@@ -217,10 +253,10 @@
       pointer-events:none;
     }
 
-    /* Poster mode (mobil performans) */
+    /* Poster mode */
     .hero-video.has-poster{
       background:
-        linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.58)),
+        linear-gradient(180deg, rgba(0,0,0,.50), rgba(0,0,0,.40)),
         radial-gradient(closest-side, rgba(202,168,78,.12), rgba(202,168,78,0) 70%),
         url("hero-poster.jpg");
       background-size: cover;
@@ -243,7 +279,7 @@
       overflow:hidden;
     }
 
-    /* ✅ Hareketli “drone görselleri” (inline SVG, dosya gerektirmez) */
+    /* Drone animations (SVG) */
     .drone-fleet{
       position:absolute;
       inset:0;
@@ -337,6 +373,14 @@
     }
     .btn-ghost:hover{ background: rgba(202,168,78,.16); }
 
+    .cta-note{
+      margin-top:10px;
+      font-size:12px;
+      color: rgba(255,255,255,.65);
+      text-align:center;
+      letter-spacing:.2px;
+    }
+
     /* Trust strip */
     .trust{
       margin-top:16px;
@@ -373,7 +417,7 @@
       line-height:1.5;
     }
 
-    /* ===== Sections (Başlıkları ortaladık) ===== */
+    /* ===== Sections ===== */
     .section{ padding: 52px 0; }
 
     .section-title{
@@ -417,7 +461,7 @@
       box-shadow: 0 0 0 6px rgba(202,168,78,.12);
     }
 
-    /* Cards */
+    /* Grid + Cards */
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -433,7 +477,6 @@
       min-height: 210px;
     }
 
-    /* Hizmetler kart başlıklarını ortaladık */
     .card .top{
       display:flex;
       flex-direction:column;
@@ -466,9 +509,12 @@
       color: rgba(255,255,255,.76);
       font-size:13px;
       line-height:1.75;
+      max-width:70ch;
+      margin-left:auto;
+      margin-right:auto;
     }
 
-    /* Services: sağda görsel panel */
+    /* Services: media card */
     .card--media{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -489,13 +535,42 @@
         0 0 0 1.2px rgba(202,168,78,.18),
         0 0 22px rgba(202,168,78,.10);
     }
-    #hizmetler .card--media .card-media::before,
-    #hizmetler .card--media .card-media::after{
-      content:none !important;
-      display:none !important;
+
+    /* Hizmetler: tam genişlik şerit */
+    #hizmetler .grid{ grid-template-columns: 1fr !important; }
+    #hizmetler .card{ grid-column: 1 / -1 !important; padding: 24px !important; }
+    @media (min-width: 901px){
+      #hizmetler .card--media{ grid-template-columns: 1.3fr .7fr !important; align-items: center; }
+      #hizmetler .card--media .card-media{ min-height: 240px; }
+    }
+    @media (max-width: 900px){
+      #hizmetler .card--media{ grid-template-columns: 1fr !important; }
+      #hizmetler .card--media .card-media{ height: 180px !important; }
     }
 
-    /* ✅ Kurumsal bloklar: Neden OMRA / Paketler / Teslim */
+    /* Service meta badges */
+    .service-meta{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:10px 0 14px;
+    }
+    .service-meta span{
+      font-size:12px;
+      padding:7px 14px;
+      border-radius:999px;
+      color:#fff;
+      background: rgba(202,168,78,.10);
+      border: 1px solid rgba(202,168,78,.45);
+      box-shadow:
+        0 0 0 1px rgba(202,168,78,.20),
+        0 0 18px rgba(202,168,78,.25),
+        inset 0 0 10px rgba(202,168,78,.18);
+      letter-spacing:.3px;
+    }
+
+    /* Pills / features / pricing */
     .pill-row{
       display:flex;
       flex-wrap:wrap;
@@ -612,55 +687,84 @@
         0 0 0 1px rgba(202,168,78,.12),
         0 14px 40px rgba(0,0,0,.35);
     }
-    
-    .step{
+
+    /* Process (timeline) */
+    #surec .steps{
+      display:grid;
+      gap:40px;
       position:relative;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: var(--r);
-      padding: 18px;
-      box-shadow: 0 12px 35px rgba(0,0,0,.22);
-      min-height: 175px;
+      margin-top:30px;
+    }
+    @media (min-width:901px){
+      #surec .steps{ grid-template-columns: 1fr 80px 1fr; align-items:start; }
+      #surec .steps::before{
+        content:"";
+        position:absolute;
+        left:50%;
+        top:0; bottom:0;
+        width:2px;
+        transform:translateX(-50%);
+        background:linear-gradient(180deg, rgba(202,168,78,0), rgba(202,168,78,.65), rgba(202,168,78,0));
+      }
+      #surec .step:nth-of-type(odd){ grid-column:1; justify-self:end; }
+      #surec .step:nth-of-type(even){ grid-column:3; justify-self:start; }
+      #surec .step-no{ position:absolute; top:20px; z-index:3; }
+      #surec .step:nth-of-type(odd) .step-no{ right:-44px; }
+      #surec .step:nth-of-type(even) .step-no{ left:-44px; }
+    }
+
+    #surec .step{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
+      gap:22px;
+      padding:24px;
+      position:relative;
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
       overflow:hidden;
     }
-    .step-left{ min-width:0; }
-    .step-no{
-      width:34px;height:34px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;
-      background: rgba(202,168,78,.12);
-      border: 1px solid var(--line);
-      font-weight:700;
-      margin-bottom:10px;
-    }
-    .step h3{ margin:0; font-size:15px; }
-    .step p{ margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6; }
-
-    .step-visual{
-      flex:0 0 auto;
-      width:74px;
-      height:74px;
-      border-radius:18px;
-      border: 1px solid rgba(202,168,78,.22);
-      background: rgba(202,168,78,.08);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    #surec .step:hover{
+      border-color:rgba(202,168,78,.45);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,.05),
-        0 0 24px rgba(202,168,78,.10);
+        0 0 0 1px rgba(255,255,255,.08),
+        0 0 0 1.5px rgba(202,168,78,.35),
+        0 0 42px rgba(202,168,78,.18);
+      transform:translateY(-2px);
     }
-    .step-visual svg{
-      width:40px;
-      height:40px;
-      opacity:.92;
+    #surec .step-no{
+      width:36px; height:36px;
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:14px;
+      background:rgba(202,168,78,.18);
+      border:1px solid rgba(202,168,78,.45);
+      box-shadow:0 0 0 6px rgba(202,168,78,.12);
+    }
+    #surec .step-left{ min-width:0; padding-right:6px; }
+    #surec .step h3{ font-size:18px; font-weight:700; margin:0 0 8px; text-shadow:0 0 14px rgba(202,168,78,.18); }
+    #surec .step p{ font-size:14px; line-height:1.75; color:rgba(255,255,255,.78); max-width:46ch; margin:0; }
+
+    #surec .step-visual{
+      flex:0 0 auto;
+      width:86px; height:86px;
+      border-radius:18px;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(202,168,78,.10);
+      border:1px solid rgba(202,168,78,.45);
+      box-shadow:
+        0 0 0 1px rgba(202,168,78,.20),
+        0 0 22px rgba(202,168,78,.25),
+        inset 0 0 14px rgba(202,168,78,.14);
+    }
+    #surec .step-visual svg{
+      width:40px; height:40px; opacity:.92;
       filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
     }
 
-    /* Portfolio filters + grid */
+    /* Portfolio */
     .filterbar{
       display:flex;
       flex-wrap:wrap;
@@ -684,10 +788,7 @@
       user-select:none;
     }
     .filterbtn:hover{ background: rgba(202,168,78,.10); border-color: rgba(202,168,78,.22); }
-    .filterbtn.active{
-      background: rgba(202,168,78,.14);
-      border-color: rgba(202,168,78,.35);
-    }
+    .filterbtn.active{ background: rgba(202,168,78,.14); border-color: rgba(202,168,78,.35); }
 
     .shots{
       display:grid;
@@ -705,6 +806,7 @@
       cursor: zoom-in;
       position:relative;
     }
+    .shot-btn{ display:block; width:100%; border:0; padding:0; background:transparent; cursor: zoom-in; text-align:inherit; }
     .shot img{
       width:100%;
       height:100%;
@@ -714,17 +816,17 @@
     }
     .shot:hover img{ transform: scale(1.03); }
 
-    .shot .cap{
+    .cap{
       position:absolute;
       left:10px;
       bottom:10px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      background: rgba(0,0,0,.60);
-      border: 1px solid rgba(255,255,255,.10);
+      padding:6px 12px;
+      font-size:12px;
+      border-radius:999px;
+      background: rgba(0,0,0,.55);
+      border:1px solid rgba(202,168,78,.35);
+      backdrop-filter: blur(6px);
       color: rgba(255,255,255,.86);
-      font-size: 12px;
-      backdrop-filter: blur(8px);
     }
 
     /* Testimonials */
@@ -744,36 +846,13 @@
       min-height: 170px;
       overflow:hidden;
     }
-    .quote p{
-      margin:0;
-      color: rgba(255,255,255,.78);
-      font-size:13px;
-      line-height:1.7;
-    }
-    .quote .who{
-      margin-top:12px;
-      color: rgba(255,255,255,.92);
-      font-weight:700;
-      font-size:13px;
-    }
-    .quote .where{
-      margin-top:4px;
-      color: var(--muted);
-      font-size:12px;
-    }
-    .stars{
-      margin-top: 10px;
-      letter-spacing: 1px;
-      color: rgba(202,168,78,.95);
-      font-size: 12px;
-      text-align:left;
-    }
+    .quote p{ margin:0; color: rgba(255,255,255,.78); font-size:13px; line-height:1.7; }
+    .quote .who{ margin-top:12px; color: rgba(255,255,255,.92); font-weight:700; font-size:13px; }
+    .quote .where{ margin-top:4px; color: var(--muted); font-size:12px; }
+    .stars{ margin-top: 10px; letter-spacing: 1px; color: rgba(202,168,78,.95); font-size: 12px; text-align:left; }
 
-    /* FAQ (Kurumsal + ortalı) */
-    .faq-wrap{
-      max-width: 980px;
-      margin: 0 auto;
-    }
+    /* FAQ */
+    .faq-wrap{ max-width: 980px; margin: 0 auto; }
     details{
       position: relative;
       background: rgba(255,255,255,.04);
@@ -799,8 +878,7 @@
       line-height:1.75;
       text-align:center;
     }
-    details:hover,
-    details[open]{
+    details:hover, details[open]{
       border-color: rgba(202,168,78,.35);
       box-shadow:
         0 0 0 1px rgba(255,255,255,.07),
@@ -883,7 +961,7 @@
       color: rgba(255,255,255,.86);
     }
 
-    /* Fixed WhatsApp */
+    /* Fixed WhatsApp (desktop) */
     .wa{
       position:fixed;
       right:18px;
@@ -952,7 +1030,7 @@
       .drone{ animation:none !important; }
     }
 
-    /* ===== LIGHTBOX (Portföy büyütme) ===== */
+    /* Lightbox */
     .lightbox{
       position: fixed;
       inset: 0;
@@ -1019,6 +1097,38 @@
       background: rgba(202,168,78,.10);
     }
 
+    /* ✅ SEO Text box */
+    .seo-text .seo-box{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 12px 35px rgba(0,0,0,.22);
+    }
+    .seo-text .seo-box h3{
+      margin: 16px 0 8px;
+      font-size: 16px;
+      letter-spacing: -.2px;
+      text-align:center;
+    }
+    .seo-text .seo-box p{
+      margin: 0;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+      text-align:center;
+    }
+    .seo-text .seo-cta{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+
     /* ===== Responsive ===== */
     @media (max-width: 900px){
       .container{ width:min(1200px, calc(100% - 28px)); }
@@ -1043,33 +1153,75 @@
         background: rgba(0,0,0,.96);
         padding: 10px 16px 12px;
         border-top: 1px solid rgba(255,255,255,.08);
+        max-height: calc(100vh - 78px);
+        overflow:auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .mobile-nav a{
+        border: 1px solid rgba(255,255,255,.06);
+        background: rgba(255,255,255,.02);
+        margin-bottom: 8px;
       }
 
       header.scrolled .brand-mobile img{ height: 32px; }
 
       h1{ font-size: 32px; }
       .hero-card{ padding:18px; }
+
       .trust{ grid-template-columns: 1fr 1fr; }
       .cta-row .btn{ width:100%; }
-      .hero-video{ min-height: 68vh; }
-
-      .card{ grid-column: span 12; }
-      .card--media{ grid-template-columns: 1fr; }
-      .card--media .card-media{ height: 160px; }
+      .hero-video{ min-height: 72vh; padding:44px 0; }
 
       .feature-grid{ grid-template-columns: 1fr; }
       .pricing{ grid-template-columns: 1fr; }
-
-      .steps{ grid-template-columns: 1fr; }
-      .step{ flex-direction:column; align-items:flex-start; }
-      .step-visual{ width:100%; height:62px; border-radius:16px; justify-content:flex-start; padding-left:14px; }
-      .step-visual svg{ width:34px; height:34px; }
 
       .shots{ grid-template-columns: repeat(2, 1fr); }
       .shot{ min-height: 210px; }
 
       .testimonials{ grid-template-columns: 1fr; }
       .contact{ grid-template-columns: 1fr; }
+
+      /* Mobilde hero daha aydınlık overlay + cam kart */
+      .overlay{
+        background:
+          radial-gradient(closest-side, rgba(202,168,78,.16), rgba(202,168,78,0) 70%),
+          linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35));
+      }
+      .hero-card{
+        background: rgba(10,10,10,.42);
+        backdrop-filter: blur(8px);
+        border-color: rgba(255,255,255,.10);
+      }
+      .drone-fleet{ opacity:.35; }
+
+      /* Süreç mobil */
+      #surec .steps{ grid-template-columns:1fr; }
+      #surec .steps::before{ display:none; }
+      #surec .step{
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      #surec .step-left{
+        width: 100% !important;
+        text-align: center !important;
+      }
+      #surec .step-no{ margin-left:auto !important; margin-right:auto !important; position:static !important; }
+      #surec .step-visual{
+        width: fit-content !important;
+        height: 56px !important;
+        padding: 0 18px !important;
+        justify-content: center !important;
+        align-self: center !important;
+        margin-top: 10px !important;
+        border-radius: 16px !important;
+      }
+      #surec .step-visual svg{ width: 32px !important; height: 32px !important; }
+      #surec .step p{ margin-left:auto !important; margin-right:auto !important; }
+
+      /* Mobil sabit CTA */
+      .mobile-cta{ display:flex; }
+      .wa{ display:none !important; }
+      #backToTop{ bottom: 92px !important; right: 14px !important; }
     }
 
     @media (max-width: 520px){
@@ -1082,701 +1234,112 @@
       .brand-mobile{ display:none; }
       #backToTop{ display:none; }
     }
-    /* ===================================================
-   HİZMETLER BÖLÜMÜ — TAM GENİŞLİK ŞERİT TASARIM
-   =================================================== */
 
-/* Grid'i tek kolona çevir */
-#hizmetler .grid{
-  grid-template-columns: 1fr !important;
-}
-
-/* Kartlar tam genişlik */
-#hizmetler .card{
-  grid-column: 1 / -1 !important;
-  padding: 24px !important;
-}
-
-/* PC’de sağ görsel - sol metin */
-@media (min-width: 901px){
-
-  #hizmetler .card--media{
-    grid-template-columns: 1.3fr .7fr !important;
-    align-items: center;
-  }
-
-  #hizmetler .card--media .card-media{
-    min-height: 240px;
-  }
-}
-
-/* Mobilde görsel daha kısa */
-@media (max-width: 900px){
-  #hizmetler .card--media .card-media{
-    height: 180px !important;
-  }
-}
-/* ===== HİZMET GÜVEN ROZETLERİ — ALTIN PREMIUM ===== */
-
-.service-meta{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:10px 0 14px;
-}
-
-.service-meta span{
-  font-size:12px;
-  padding:7px 14px;
-  border-radius:999px;
-  color:#fff;
-
-  /* sinematik etiketi ile aynı stil */
-  background: rgba(202,168,78,.10);
-  border: 1px solid rgba(202,168,78,.45);
-
-  box-shadow:
-    0 0 0 1px rgba(202,168,78,.20),
-    0 0 18px rgba(202,168,78,.25),
-    inset 0 0 10px rgba(202,168,78,.18);
-
-  letter-spacing:.3px;
-}
-    #hizmetler .card .top{
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
-}
-
-#hizmetler .card h3{
-  text-align:center;
-}
-
-/* Başlıkları ortala */
-#hizmetler .card h3{
-  text-align:center;
-  width:100%;
-}
-
-#hizmetler .card .top{
-  justify-content:center !important;
-  flex-direction:column;
-  gap:6px;
-}
-
-#hizmetler .badge{
-  align-self:center;
-}
-
-/* Metin daha okunur */
-#hizmetler .card p{
-  max-width:80ch;
-  margin-left:auto;
-  margin-right:auto;
-  text-align:center;
-}
-
-#hizmetler .card ul{
-  max-width:70ch;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-    /* portföy yazı etiketi */
-.cap{
-  position:absolute;
-  left:10px;
-  bottom:10px;
-  padding:6px 12px;
-  font-size:12px;
-  border-radius:999px;
-
-  background: rgba(0,0,0,.55);
-  border:1px solid rgba(202,168,78,.35);
-  backdrop-filter: blur(6px);
-}
-
-/* buton tam kapsasın */
-.shot{
-  position:relative;
-}
-
-.shot-btn{
-  border:0;
-  padding:0;
-  background:transparent;
-  cursor: zoom-in;
-  text-align:inherit;
-}
-    /* ===================================================
-   OMRA AJANS 360 — SÜREÇ TIMELINE FINAL
-   =================================================== */
-
-/* timeline alanı */
-#surec .steps{
-  display:grid;
-  gap:40px;
-  position:relative;
-  margin-top:30px;
-}
-
-/* PC görünümü (sağlı sollu timeline) */
-@media (min-width:901px){
-
-  /* 3 kolon: kart | çizgi | kart */
-  #surec .steps{
-    grid-template-columns: 1fr 80px 1fr;
-    align-items:start;
-  }
-
-  /* ortadaki altın çizgi */
-  #surec .steps::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:0;
-    bottom:0;
-    width:2px;
-    transform:translateX(-50%);
-    background:linear-gradient(
-      180deg,
-      rgba(202,168,78,0),
-      rgba(202,168,78,.65),
-      rgba(202,168,78,0)
-    );
-  }
-
-  /* SOL KARTLAR (1 ve 3) */
-  #surec .step:nth-of-type(odd){
-    grid-column:1;
-    justify-self:end;
-  }
-
-  /* SAĞ KARTLAR (2 ve 4) */
-  #surec .step:nth-of-type(even){
-    grid-column:3;
-    justify-self:start;
-  }
-
-  /* numara balonunu ortadaki çizgiye oturt */
-  #surec .step-no{
-    position:absolute;
-    top:20px;
-    z-index:3;
-  }
-
-  #surec .step:nth-of-type(odd) .step-no{
-    right:-44px;
-  }
-
-  #surec .step:nth-of-type(even) .step-no{
-    left:-44px;
-  }
-}
-
-/* Mobil görünüm */
-@media (max-width:900px){
-
-  #surec .steps{
-    grid-template-columns:1fr;
-  }
-
-  #surec .steps::before{
-    display:none;
-  }
-
-  #surec .step{
-    width:100%;
-  }
-
-  #surec .step-no{
-    position:static;
-    margin-bottom:10px;
-  }
-}
-
-/* kart görünümü */
-#surec .step{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:22px;
-  padding:24px;
-  position:relative;
-  border-radius:18px;
-
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-
-  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-
-/* hover efekti */
-#surec .step:hover{
-  border-color:rgba(202,168,78,.45);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.08),
-    0 0 0 1.5px rgba(202,168,78,.35),
-    0 0 42px rgba(202,168,78,.18);
-  transform:translateY(-2px);
-}
-
-/* numara kutusu */
-#surec .step-no{
-  width:36px;
-  height:36px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
-  font-size:14px;
-  color:#fff;
-
-  background:rgba(202,168,78,.18);
-  border:1px solid rgba(202,168,78,.45);
-  box-shadow:0 0 0 6px rgba(202,168,78,.12);
-}
-
-/* metin alanı */
-#surec .step-left{
-  min-width:0;
-  padding-right:6px;
-}
-
-#surec .step h3{
-  font-size:18px;
-  font-weight:700;
-  margin:0 0 8px;
-  text-shadow:0 0 14px rgba(202,168,78,.18);
-}
-
-#surec .step p{
-  font-size:14px;
-  line-height:1.75;
-  color:rgba(255,255,255,.78);
-  max-width:46ch;
-}
-
-/* ikon kutusu */
-#surec .step-visual{
-  flex:0 0 auto;
-  width:86px;
-  height:86px;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:rgba(202,168,78,.10);
-  border:1px solid rgba(202,168,78,.45);
-
-  box-shadow:
-    0 0 0 1px rgba(202,168,78,.20),
-    0 0 22px rgba(202,168,78,.25),
-    inset 0 0 14px rgba(202,168,78,.14);
-}
-
-/* mobilde ikon altta şerit gibi */
-@media (max-width:900px){
-  #surec .step{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-  
-  #surec .step-visual svg{
-    width:34px;
-    height:34px;
-  }
-}
-    .teklif-btn{ padding:10px 12px; }
-    /* MOBİLDE HERO GÖRSELİ AYDINLAT */
-@media (max-width: 900px){
-  .hero-video .video-wrap{ display:none !important; }
-  .hero-video .overlay{ display:none !important; }
-  .hero-video{ background-image: url("hero-poster.jpg"); ... }
-  .hero-card{ background: rgba(10,10,10,.55); ... }
-}
-    /* ✅ MOBİL HERO: Poster + daha aydınlık overlay (tek kaynak) */
-@media (max-width: 900px){
-  /* Video zaten JS ile kaldırılıyor + has-poster arka plan veriyor */
-  .hero-video{
-    min-height: 72vh;
-    padding: 44px 0;
-  }
-
-  /* Mobilde overlay tamamen kalkmasın; sadece hafiflesin */
-  .overlay{
-    background:
-      radial-gradient(closest-side, rgba(202,168,78,.16), rgba(202,168,78,0) 70%),
-      linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35));
-  }
-
-  /* Kartı biraz daha “cam” yapıp yazıyı okunaklı tut */
-  .hero-card{
-    background: rgba(10,10,10,.42);
-    backdrop-filter: blur(8px);
-    border-color: rgba(255,255,255,.10);
-  }
-
-  h1{ font-size: 30px; line-height: 1.12; }
-  .subtitle{ font-size: 14px; line-height: 1.75; }
-
-  /* Üstteki drone svg'ler mobilde daha az dikkat dağıtsın */
-  .drone-fleet{ opacity: .35; }
-}
+    /* Mobile fixed CTA bar */
+    .mobile-cta{ display:none; }
     @media (max-width: 900px){
-  .mobile-nav{
-    max-height: calc(100vh - 78px);
-    overflow:auto;
-    -webkit-overflow-scrolling: touch;
-  }
+      .mobile-cta{
+        position:fixed;
+        left:12px;
+        right:12px;
+        bottom:12px;
+        gap:10px;
+        z-index: 10002;
+      }
+      .mcta{
+        flex:1;
+        border-radius: 16px;
+        padding: 14px 14px;
+        font-weight: 800;
+        font-size: 14px;
+        border: 1px solid rgba(255,255,255,.10);
+        background: rgba(0,0,0,.72);
+        color:#fff;
+        text-decoration:none;
+        text-align:center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 18px 40px rgba(0,0,0,.55);
+      }
+      .mcta-wa{
+        background: linear-gradient(135deg, #25D366, #1ebe5d);
+        border-color: transparent;
+      }
+      .mcta-quote{
+        background: rgba(202,168,78,.16);
+        border-color: rgba(202,168,78,.35);
+        cursor:pointer;
+      }
+    }
 
-  .mobile-nav a{
-    border: 1px solid rgba(255,255,255,.06);
-    background: rgba(255,255,255,.02);
-    margin-bottom: 8px;
-  }
-}
-    .shot-btn{
-  display:block;
-  width:100%;
-}
-.shot-btn img{
-  display:block;
-  width:100%;
-  height:100%;
-}
-    @media (max-width: 520px){
-  .wa{
-    right: 12px;
-    bottom: 12px;
-    padding: 12px 14px;
-    font-size: 14px;
-  }
-}
-
-    /* MOBİLDE HERO GÖRSELİ AYDINLAT */
-@media (max-width: 900px){
-
-  /* video alanını tamamen kapat */
-  .hero-video .video-wrap{
-    display:none !important;
-  }
-
-  /* üstteki siyah overlayi kaldır */
-  .hero-video .overlay{
-    display:none !important;
-  }
-
-  /* poster görseli daha parlak kullan */
-  .hero-video{
-    background-image: url("hero-poster.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  /* kartın kendi karartmasını azalt */
-  .hero-card{
-    background: rgba(10,10,10,.55);
-    backdrop-filter: blur(6px);
-  }
-
-}
-    /* ✅ SÜREÇ (MOBİL) — ikon şeridini daralt + ikonu ortala */
-@media (max-width:900px){
-
-  /* Kart içi hizalama kalsın */
-  #surec .step{
-    align-items: center;
-  }
-
-  /* Şerit gibi duran alanı tam genişlikten çıkar */
-  #surec .step-visual{
-    width: auto !important;              /* %100 olmasın */
-    height: 58px !important;
-    padding: 0 18px !important;          /* sağ/sol nefes */
-    border-radius: 16px !important;
-    justify-content: center !important;  /* ikon ortada */
-    align-self: center !important;       /* kart içinde ortala */
-    margin-top: 8px;
-  }
-
-  /* İkonun boyu dengeli olsun */
-  #surec .step-visual svg{
-    width: 32px !important;
-    height: 32px !important;
-  }
-
-  /* Numara + başlık kısmı ortalı dursun */
-  #surec .step-left{
-    width: 100%;
-    text-align: center;
-  }
-  #surec .step-no{
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #surec .step p{
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-    /* ✅ Mobil sabit CTA bar */
-.mobile-cta{ display:none; }
-@media (max-width: 900px){
-  .mobile-cta{
-    display:flex;
-    position:fixed;
-    left:12px;
-    right:12px;
-    bottom:12px;
-    gap:10px;
-    z-index: 10002;
-  }
-  .mcta{
-    flex:1;
-    border-radius: 16px;
-    padding: 14px 14px;
-    font-weight: 800;
-    font-size: 14px;
-    border: 1px solid rgba(255,255,255,.10);
-    background: rgba(0,0,0,.72);
-    color:#fff;
-    text-decoration:none;
-    text-align:center;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 18px 40px rgba(0,0,0,.55);
-  }
-  .mcta-wa{
-    background: linear-gradient(135deg, #25D366, #1ebe5d);
-    border-color: transparent;
-  }
-  .mcta-quote{
-    background: rgba(202,168,78,.16);
-    border-color: rgba(202,168,78,.35);
-    cursor:pointer;
-  }
-
-  /* mevcut WhatsApp butonun alt barla çakışmasın */
-  .wa{ bottom: 80px; }
-}
-    /* ✅ Teklif popup */
-.quote-modal{
-  position:fixed;
-  inset:0;
-  display:none;
-  align-items:flex-end;
-  justify-content:center;
-  padding: 14px;
-  background: rgba(0,0,0,.65);
-  backdrop-filter: blur(8px);
-  z-index: 20010;
-}
-.quote-modal.open{ display:flex; }
-
-.quote-card{
-  width: min(520px, 100%);
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(10,10,10,.92);
-  box-shadow: 0 20px 70px rgba(0,0,0,.65);
-  padding: 14px;
-}
-
-.quote-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding: 4px 4px 10px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.quote-title{ font-weight: 900; letter-spacing:.2px; }
-.quote-x{
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.55);
-  color:#fff;
-  font-weight: 900;
-  cursor:pointer;
-}
-
-.qfield{ display:grid; gap:6px; margin-top: 12px; }
-.qfield input, .qfield select{
-  width:100%;
-  padding: 12px 12px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.25);
-  color:#fff;
-  outline:none;
-  font-family:inherit;
-}
-.qsend{
-  margin-top: 14px;
-  width:100%;
-  padding: 14px 14px;
-  border-radius: 16px;
-  border: 0;
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color:#fff;
-  font-weight: 900;
-  cursor:pointer;
-}
-.qnote{
-  margin-top: 10px;
-  font-size: 12px;
-  color: rgba(255,255,255,.70);
-  text-align:center;
-}
-    /* ✅ FIX: Süreç mobil ikon şeridi (Planlama/Çekim/Kurgu/Teslim) */
-@media (max-width: 900px){
-  #surec .step{
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  #surec .step-left{
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  #surec .step-no{
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  #surec .step-visual{
-    width: fit-content !important;   /* %100 şerit olmasın */
-    height: 56px !important;
-    padding: 0 18px !important;
-    justify-content: center !important;
-    align-self: center !important;
-    margin-top: 10px !important;
-    border-radius: 16px !important;
-  }
-
-  #surec .step-visual svg{
-    width: 32px !important;
-    height: 32px !important;
-  }
-
-  #surec .step p{
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-    .cta-note{
-  margin-top:10px;
-  font-size:12px;
-  color: rgba(255,255,255,.65);
-  text-align:center;
-  letter-spacing:.2px;
-}
-    /* ===== MOBİL SABİT BUTONLAR ÇAKIŞMA DÜZELTME ===== */
-@media (max-width:900px){
-
-  /* Alttaki teklif barı sabit kalsın */
-  .mobile-cta{
-    bottom:12px;
-    z-index:10010;
-  }
-
-  /* WhatsApp onun üstüne çıksın */
-  .wa{
-    bottom:92px !important;   /* alt bardan yukarı kaldırdık */
-    right:14px !important;
-    z-index:10011 !important;
-  }
-
-  /* Üste dön en üste çıksın */
-  #backToTop{
-    bottom:162px !important;  /* WhatsApp'ın da üstüne aldık */
-    right:14px !important;
-    z-index:10012 !important;
-  }
-}
-    /* ✅ MOBİLDE SAĞ ALTTKİ WHATSAPP'I KALDIR */
-@media (max-width: 900px){
-  .wa{
-    display:none !important;
-  }
-
-  /* Üste dön butonunu alt barın üstüne al */
-  #backToTop{
-    bottom: 92px !important;
-    right: 14px !important;
-  }
-}
-    /* ✅ SEO Metin Bölümü (Google için içerik + tasarım uyumlu) */
-.seo-text .seo-box{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px;
-  border-radius: var(--r);
-  border: 1px solid rgba(255,255,255,.06);
-  background: rgba(255,255,255,.03);
-  box-shadow: 0 12px 35px rgba(0,0,0,.22);
-}
-
-.seo-text .seo-box h3{
-  margin: 16px 0 8px;
-  font-size: 16px;
-  letter-spacing: -.2px;
-  text-align:center;
-}
-
-.seo-text .seo-box p{
-  margin: 0;
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.85;
-  text-align:center;
-}
-
-.seo-text .seo-cta{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top: 14px;
-}
-
-@media (max-width: 900px){
-  .seo-text .seo-box{ padding: 16px; }
-  .seo-text .seo-cta .btn{ width:100%; }
-}
+    /* Teklif popup */
+    .quote-modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:flex-end;
+      justify-content:center;
+      padding: 14px;
+      background: rgba(0,0,0,.65);
+      backdrop-filter: blur(8px);
+      z-index: 20010;
+    }
+    .quote-modal.open{ display:flex; }
+    .quote-card{
+      width: min(520px, 100%);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(10,10,10,.92);
+      box-shadow: 0 20px 70px rgba(0,0,0,.65);
+      padding: 14px;
+    }
+    .quote-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: 4px 4px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .quote-title{ font-weight: 900; letter-spacing:.2px; }
+    .quote-x{
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.55);
+      color:#fff;
+      font-weight: 900;
+      cursor:pointer;
+    }
+    .qfield{ display:grid; gap:6px; margin-top: 12px; }
+    .qfield input, .qfield select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      color:#fff;
+      outline:none;
+      font-family:inherit;
+    }
+    .qsend{
+      margin-top: 14px;
+      width:100%;
+      padding: 14px 14px;
+      border-radius: 16px;
+      border: 0;
+      background: linear-gradient(135deg, #25D366, #1ebe5d);
+      color:#fff;
+      font-weight: 900;
+      cursor:pointer;
+    }
+    .qnote{
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(255,255,255,.70);
+      text-align:center;
+    }
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "OMRA Ajans 360",
-  "image": "https://www.omraajans360.com/logo.png",
-  "url": "https://www.omraajans360.com/",
-  "telephone": "+905529226204",
-  "areaServed": {
-    "@type": "City",
-    "name": "Izmir"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Izmir",
-    "addressCountry": "TR"
-  },
-  "sameAs": [
-    "https://www.instagram.com/omraajans360/"
-  ],
-  "description": "Izmir drone cekimi, emlak drone cekimi ve tanitim filmi prodüksiyon hizmeti sunan OMRA Ajans 360."
-}
-</script>
-  
 </head>
 
 <body>
@@ -1830,7 +1393,7 @@
 
 <main>
   <!-- HERO -->
-  <section class="hero-video" id="hero" aria-label="Omra Ajans 360 Video Hero">
+  <section class="hero-video" id="hero" aria-label="OMRA Ajans 360 Video Hero">
     <div class="video-wrap" aria-hidden="true">
       <iframe
         src="https://www.youtube-nocookie.com/embed/-7VPkpk3DE4?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&loop=1&playlist=-7VPkpk3DE4"
@@ -1881,7 +1444,7 @@
         <p class="subtitle">
           OMRA Ajans 360 olarak İzmir’in tüm ilçelerinde <strong>düğün-nişan</strong>, <strong>organizasyon-etkinlik</strong>, <strong>emlak</strong>,
           <strong>kafe-restoran</strong>, <strong>otel</strong> ve <strong>işletme tanıtımı</strong> için planlı ve randevulu drone çekimleri gerçekleştiriyoruz.
-          Markanızı veya özel anınızı sinematik bir dille anlatıyoruz.
+          <strong>Teklif → Çekim → Kurgu → Teslim</strong> sürecini tek kanaldan yönetiyoruz.
         </p>
 
         <div class="cta-row">
@@ -1890,9 +1453,7 @@
              target="_blank" rel="noopener">WhatsApp’tan Teklif Al</a>
           <a class="btn btn-ghost" href="#portfoy">Portföyü Gör</a>
         </div>
-        <div class="cta-note">
-  Ortalama yanıt süremiz 5–10 dakikadır • Fiyat sormak tamamen ücretsizdir
-</div>
+        <div class="cta-note">Ortalama yanıt süremiz 5–10 dakikadır • Fiyat sormak tamamen ücretsizdir</div>
 
         <div class="pill-row" aria-label="Hızlı Bilgiler">
           <div class="pill">
@@ -2003,18 +1564,18 @@
       <div class="grid">
         <div class="card card--media reveal" style="--d: 0ms; --img:url('srv-dugun.jpg');">
           <div class="card-content">
-           <div class="top">
-  <h3>Düğün / Nişan Drone Çekimi</h3>
-  <span class="badge">Sinematik</span>
-</div>
+            <div class="top">
+              <h3>Düğün / Nişan Drone Çekimi</h3>
+              <span class="badge">Sinematik</span>
+            </div>
 
-<div class="service-meta">
-  <span>İzmir Geneli</span>
-  <span>Planlı Çekim</span>
-  <span>Teslim: 3-8 Gün</span>
-</div>
+            <div class="service-meta">
+              <span>İzmir Geneli</span>
+              <span>Planlı Çekim</span>
+              <span>Teslim: 3–8 Gün</span>
+            </div>
 
-<p>Özel gününüz için mekan ve akışa uygun planla sinematik drone çekimleri.</p>
+            <p>Özel gününüz için mekan ve akışa uygun planla sinematik drone çekimleri.</p>
             <ul>
               <li>Giriş / yürüyüş / dış mekan sahneleri</li>
               <li>Reels formatında kısa klipler</li>
@@ -2028,10 +1589,10 @@
           <div class="card-content">
             <div class="top"><h3>Organizasyon / Etkinlik</h3><span class="badge">Etkinlik</span></div>
             <div class="service-meta">
-<span>İzmir Geneli</span>
-  <span>Planlı Çekim</span>
-  <span>Teslim: 3-8 Gün</span>
-</div>
+              <span>İzmir Geneli</span>
+              <span>Planlı Çekim</span>
+              <span>Teslim: 3–8 Gün</span>
+            </div>
             <p>Açılış, lansman, konser ve kalabalık etkinlikler için alanı güçlü gösteren çekimler.</p>
             <ul>
               <li>Kalabalık ve mekan ölçeği vurgusu</li>
@@ -2046,11 +1607,11 @@
           <div class="card-content">
             <div class="top"><h3>Emlak Drone Çekimi</h3><span class="badge">Gayrimenkul</span></div>
             <div class="service-meta">
-<span>İzmir Geneli</span>
-  <span>Planlı Çekim</span>
-  <span>Teslim: 3-8 Gün</span>
-</div>
-            
+              <span>İzmir Geneli</span>
+              <span>Planlı Çekim</span>
+              <span>Teslim: 3–8 Gün</span>
+            </div>
+
             <p>Villa, site, arsa ve projeler için konum + çevre avantajını net anlatan çekimler.</p>
             <ul>
               <li>Konum/çevre/ulaşım vurgusu</li>
@@ -2065,10 +1626,10 @@
           <div class="card-content">
             <div class="top"><h3>Kafe / Restoran Tanıtımı</h3><span class="badge">Mekan</span></div>
             <div class="service-meta">
-   <span>İzmir Geneli</span>
-  <span>Planlı Çekim</span>
-  <span>Teslim: 3-8 Gün</span>
-</div>
+              <span>İzmir Geneli</span>
+              <span>Planlı Çekim</span>
+              <span>Teslim: 3–8 Gün</span>
+            </div>
             <p>Mekanın atmosferini, lokasyonunu ve yoğunluğunu reklam diliyle öne çıkaran içerikler.</p>
             <ul>
               <li>Gündüz/gece konsept çekimi</li>
@@ -2079,14 +1640,15 @@
           <div class="card-media" aria-hidden="true"></div>
         </div>
 
-        <div class="card card--media reveal" style="--d: 360ms; --img:url('srv-otel.jpg');">
+        <!-- Not: srv-otel.jpg yoktu → geçici olarak srv-kurumsal.jpg kullandım -->
+        <div class="card card--media reveal" style="--d: 360ms; --img:url('srv-kurumsal.jpg');">
           <div class="card-content">
             <div class="top"><h3>Otel / Tesis Tanıtımı</h3><span class="badge">Turizm</span></div>
-            <div class="service-meta">  
-<span>İzmir Geneli</span>
-  <span>Planlı Çekim</span>
-  <span>Teslim: 3-8 Gün</span>
-</div>
+            <div class="service-meta">
+              <span>İzmir Geneli</span>
+              <span>Planlı Çekim</span>
+              <span>Teslim: 3–8 Gün</span>
+            </div>
             <p>Tesisin büyüklüğünü ve deneyimini havadan güçlü şekilde anlatan kurumsal tanıtım.</p>
             <ul>
               <li>Havuz, çevre, sosyal alanlar</li>
@@ -2101,11 +1663,10 @@
           <div class="card-content">
             <div class="top"><h3>İşletme Tanıtım Filmi</h3><span class="badge">Kurumsal</span></div>
             <div class="service-meta">
-             
-<span>İzmir Geneli</span>
-  <span>Planlı Çekim</span>
-  <span>Teslim: 3-8 Gün</span>
-</div>
+              <span>İzmir Geneli</span>
+              <span>Planlı Çekim</span>
+              <span>Teslim: 3–8 Gün</span>
+            </div>
             <p>Markanız için güven veren kurumsal anlatım: mekan + hizmet + deneyim odaklı kurgu.</p>
             <ul>
               <li>Reklam kurgusu (15/30/60 sn)</li>
@@ -2115,84 +1676,86 @@
           </div>
           <div class="card-media" aria-hidden="true"></div>
         </div>
+
       </div>
     </div>
   </section>
 
-<!-- PROCESS -->
-<section class="section" id="surec">
-  <div class="container">
-    <div class="section-title">
-      <h2>Süreç Nasıl İşliyor?</h2>
-      <div class="divider"></div>
-      <p class="lead">Kurumsal iş akışı ile ilerliyoruz: planlama, çekim, kurgu ve teslim.</p>
-    </div>
+  <!-- PROCESS -->
+  <section class="section" id="surec">
+    <div class="container">
+      <div class="section-title">
+        <h2>Süreç Nasıl İşliyor?</h2>
+        <div class="divider"></div>
+        <p class="lead">Kurumsal iş akışı ile ilerliyoruz: planlama, çekim, kurgu ve teslim.</p>
+      </div>
 
-    <div class="steps">
+      <div class="steps">
 
-  <div class="step reveal" style="--d: 0ms;">
-    <div class="step-left">
-      <div class="step-no">1</div>
-      <h3>Planlama (Randevu)</h3>
-      <p>İlçe, tarih, çekim hedefi ve teslim formatları netleşir. Program oluşturulur.</p>
-    </div>
-    <div class="step-visual" aria-hidden="true" title="Planlama">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M7 3v3M17 3v3" stroke="rgba(202,168,78,.95)" stroke-width="2" stroke-linecap="round"/>
-        <path d="M4.5 8.5h15" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
-        <path d="M6 6h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
-        <path d="M8 12h4M8 16h7" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-  </div>
+        <div class="step reveal" style="--d: 0ms;">
+          <div class="step-left">
+            <div class="step-no">1</div>
+            <h3>Planlama (Randevu)</h3>
+            <p>İlçe, tarih, çekim hedefi ve teslim formatları netleşir. Program oluşturulur.</p>
+          </div>
+          <div class="step-visual" aria-hidden="true" title="Planlama">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 3v3M17 3v3" stroke="rgba(202,168,78,.95)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M4.5 8.5h15" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 6h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
+              <path d="M8 12h4M8 16h7" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
 
-  <div class="step reveal" style="--d: 120ms;">
-    <div class="step-left">
-      <div class="step-no">2</div>
-      <h3>Çekim</h3>
-      <p>Akışa uygun kadraj planı ile drone çekimi gerçekleştirilir.</p>
-    </div>
-    <div class="step-visual" aria-hidden="true" title="Çekim">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M8 13c0-2 2-4 4-4s4 2 4 4v3H8v-3Z" stroke="rgba(202,168,78,.85)" stroke-width="2"/>
-        <path d="M6 11H3M21 11h-3" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="2.8" cy="11" r="2" stroke="rgba(202,168,78,.65)" stroke-width="2"/>
-        <circle cx="21.2" cy="11" r="2" stroke="rgba(202,168,78,.65)" stroke-width="2"/>
-      </svg>
-    </div>
-  </div>
+        <div class="step reveal" style="--d: 120ms;">
+          <div class="step-left">
+            <div class="step-no">2</div>
+            <h3>Çekim</h3>
+            <p>Akışa uygun kadraj planı ile drone çekimi gerçekleştirilir.</p>
+          </div>
+          <div class="step-visual" aria-hidden="true" title="Çekim">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M8 13c0-2 2-4 4-4s4 2 4 4v3H8v-3Z" stroke="rgba(202,168,78,.85)" stroke-width="2"/>
+              <path d="M6 11H3M21 11h-3" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="2.8" cy="11" r="2" stroke="rgba(202,168,78,.65)" stroke-width="2"/>
+              <circle cx="21.2" cy="11" r="2" stroke="rgba(202,168,78,.65)" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
 
-  <div class="step reveal" style="--d: 240ms;">
-    <div class="step-left">
-      <div class="step-no">3</div>
-      <h3>Kurgu</h3>
-      <p>Renk düzenleme, stabilizasyon, tempo, müzik ve gerekli başlık/kapaklar hazırlanır.</p>
-    </div>
-    <div class="step-visual" aria-hidden="true" title="Kurgu">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M4 6h10a2 2 0 0 1 2 2v10H6a2 2 0 0 1-2-2V6Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
-        <path d="M16 10l4-2v10l-4-2" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M7 10h6M7 14h6" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-  </div>
+        <div class="step reveal" style="--d: 240ms;">
+          <div class="step-left">
+            <div class="step-no">3</div>
+            <h3>Kurgu</h3>
+            <p>Renk düzenleme, stabilizasyon, tempo, müzik ve gerekli başlık/kapaklar hazırlanır.</p>
+          </div>
+          <div class="step-visual" aria-hidden="true" title="Kurgu">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 6h10a2 2 0 0 1 2 2v10H6a2 2 0 0 1-2-2V6Z" stroke="rgba(202,168,78,.75)" stroke-width="2"/>
+              <path d="M16 10l4-2v10l-4-2" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 10h6M7 14h6" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
 
-  <div class="step reveal" style="--d: 360ms;">
-    <div class="step-left">
-      <div class="step-no">4</div>
-      <h3>Teslim</h3>
-      <p>Reels / yatay / reklam formatlarında teslim edilir. Gerekirse revize süreci yönetilir.</p>
-    </div>
-    <div class="step-visual" aria-hidden="true" title="Teslim">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M7 12l3 3 7-7" stroke="rgba(202,168,78,.95)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4 6h16v14H4V6Z" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
-      </svg>
-    </div>
-  </div>
+        <div class="step reveal" style="--d: 360ms;">
+          <div class="step-left">
+            <div class="step-no">4</div>
+            <h3>Teslim</h3>
+            <p>Reels / yatay / reklam formatlarında teslim edilir. Gerekirse revize süreci yönetilir.</p>
+          </div>
+          <div class="step-visual" aria-hidden="true" title="Teslim">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 12l3 3 7-7" stroke="rgba(202,168,78,.95)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 6h16v14H4V6Z" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
 
-</div>
-</section>
+      </div>
+    </div>
+  </section>
 
   <!-- PACKAGES -->
   <section class="section" id="paketler">
@@ -2250,7 +1813,7 @@
     </div>
   </section>
 
-  <!-- DELIVERY CONTENT -->
+  <!-- DELIVERY -->
   <section class="section" id="teslim">
     <div class="container">
       <div class="section-title">
@@ -2303,10 +1866,9 @@
       <div class="section-title">
         <h2>Portföy</h2>
         <div class="divider"></div>
-        <p class="lead">KULLANILAN RESİMLER ÇEKİM ÖRNEKLERİDİR — Görsellere tıklayarak büyütebilirsiniz.</p>
+        <p class="lead">Kullanılan resimler çekim örnekleridir — görsellere tıklayarak büyütebilirsiniz.</p>
       </div>
 
-      <!-- ✅ Filtre -->
       <div class="filterbar" role="toolbar" aria-label="Portföy Filtreleri">
         <button class="filterbtn active" type="button" data-filter="all">Tümü</button>
         <button class="filterbtn" type="button" data-filter="dugun">Düğün / Nişan</button>
@@ -2316,100 +1878,71 @@
         <button class="filterbtn" type="button" data-filter="mekan">Kafe / Restoran</button>
       </div>
 
-      <!-- ✅ 3’lü ızgara: yeni görseller eklendikçe otomatik alt satıra iner -->
       <div class="shots" id="portfolioGrid">
-       <div class="shot reveal" style="--d: 0ms;" data-cat="dugun">
-  <button class="shot-btn" type="button" data-full="p1.png" aria-label="Düğün / Nişan görselini büyüt">
-    <img src="p1.png" alt="Düğün / Nişan drone çekimi örneği">
-    <div class="cap">Düğün / Nişan</div>
-  </button>
-</div>
-        <div class="shot reveal" style="--d: 120ms;" data-cat="emlak">
-  <button class="shot-btn" type="button" data-full="p2.png" aria-label="Emlak görselini büyüt">
-    <img src="p2.png" alt="Emlak drone çekimi örneği">
-    <div class="cap">Emlak</div>
-  </button>
-</div>
-        <div class="shot reveal" style="--d: 240ms;" data-cat="etkinlik">
-  <button class="shot-btn" type="button" data-full="p3.png" aria-label="Etkinlik görselini büyüt">
-    <img src="p3.png" alt="Etkinlik drone çekimi örneği">
-    <div class="cap">Etkinlik</div>
-  </button>
-</div>
-
-        <!-- Yeni görsel eklemek için örnek:
-        <div class="shot" data-cat="otel">
-          <img src="p4.png" alt="Otel/Tesis drone çekimi örneği" data-full="p4.png">
-          <div class="cap">Otel / Tesis</div>
+        <div class="shot reveal" style="--d: 0ms;" data-cat="dugun">
+          <button class="shot-btn" type="button" data-full="p1.png" aria-label="Düğün / Nişan görselini büyüt">
+            <img src="p1.png" loading="lazy" decoding="async" alt="Düğün / Nişan drone çekimi örneği">
+            <div class="cap">Düğün / Nişan</div>
+          </button>
         </div>
-        -->
+
+        <div class="shot reveal" style="--d: 120ms;" data-cat="emlak">
+          <button class="shot-btn" type="button" data-full="p2.png" aria-label="Emlak görselini büyüt">
+            <img src="p2.png" loading="lazy" decoding="async" alt="Emlak drone çekimi örneği">
+            <div class="cap">Emlak</div>
+          </button>
+        </div>
+
+        <div class="shot reveal" style="--d: 240ms;" data-cat="etkinlik">
+          <button class="shot-btn" type="button" data-full="p3.png" aria-label="Etkinlik görselini büyüt">
+            <img src="p3.png" loading="lazy" decoding="async" alt="Etkinlik drone çekimi örneği">
+            <div class="cap">Etkinlik</div>
+          </button>
+        </div>
       </div>
     </div>
   </section>
-  <!-- ✅ SEO Metin Bölümü -->
-<section class="section seo-text" id="seo-metin">
-  <div class="container">
-    <div class="section-title">
-      <h2>İzmir Drone Çekimi ve Tanıtım Filmi Hizmeti</h2>
-      <div class="divider"></div>
-      <p class="lead">İzmir genelinde randevulu drone çekimi, tanıtım filmi ve sosyal medya odaklı içerikler.</p>
-    </div>
 
-    <div class="seo-box">
-      <p>
-        OMRA Ajans 360 olarak İzmir’de profesyonel <strong>drone çekimi</strong> ve <strong>tanıtım filmi</strong> hizmeti sunuyoruz.
-        <strong>Emlak drone çekimi</strong>, <strong>otel / tesis tanıtımı</strong>, <strong>kafe / restoran</strong> ve <strong>işletme tanıtım filmi</strong>
-        gibi projelerde havadan çekimlerle markanızı daha güçlü ve kurumsal bir dille öne çıkarıyoruz.
-      </p>
+  <!-- SEO METIN (tek sürüm) -->
+  <section class="section seo-text" id="seo-metin">
+    <div class="container">
+      <div class="section-title">
+        <h2>İzmir Drone Çekimi ve Tanıtım Filmi Hizmeti</h2>
+        <div class="divider"></div>
+        <p class="lead">İzmir genelinde randevulu drone çekimi, tanıtım filmi ve sosyal medya odaklı içerikler.</p>
+      </div>
 
-      <h3>Emlak ve İşletmeler İçin Drone Çekimi</h3>
-      <p>
-        Drone çekimi, özellikle <strong>gayrimenkul</strong> ilanlarında konum, çevre ve ölçek avantajını net gösterir.
-        İzmir’de satılık/kiralık villa, site, arsa ve projeler için dikkat çeken video içerikler hazırlıyoruz.
-        İşletmeler için de web sitesi, Instagram Reels ve reklam kampanyalarında kullanılabilecek kısa/uzun format teslimler yapıyoruz.
-      </p>
+      <div class="seo-box">
+        <p>
+          OMRA Ajans 360 olarak İzmir’de profesyonel <strong>drone çekimi</strong> ve <strong>tanıtım filmi</strong> hizmeti sunuyoruz.
+          <strong>Emlak drone çekimi</strong>, <strong>otel / tesis tanıtımı</strong>, <strong>kafe / restoran</strong> ve <strong>işletme tanıtım filmi</strong>
+          gibi projelerde havadan çekimlerle markanızı daha güçlü ve kurumsal bir dille öne çıkarıyoruz.
+        </p>
 
-      <h3>İzmir Tanıtım Filmi Çekimi</h3>
-      <p>
-        Kurumsal tanıtım filmlerinde planlama, çekim ve kurgu sürecini tek akışta yönetiyoruz.
-        Renk düzenleme, stabilizasyon ve tempo ayarlarıyla içerikler “reklam gibi” görünür.
-        Teslimler Reels (9:16), Yatay (16:9) ve reklam formatlarında hazırlanabilir.
-      </p>
+        <h3>Emlak ve İşletmeler İçin Drone Çekimi</h3>
+        <p>
+          Drone çekimi, özellikle <strong>gayrimenkul</strong> ilanlarında konum, çevre ve ölçek avantajını net gösterir.
+          İzmir’de satılık/kiralık villa, site, arsa ve projeler için dikkat çeken video içerikler hazırlıyoruz.
+          İşletmeler için de web sitesi, Instagram Reels ve reklam kampanyalarında kullanılabilecek formatlarda teslim yapıyoruz.
+        </p>
 
-      <div class="seo-cta">
-        <a class="btn btn-primary"
-           href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20%C4%B0zmir%E2%80%99de%20drone%20%C3%A7ekimi%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
-           target="_blank" rel="noopener">WhatsApp’tan Teklif Al</a>
+        <h3>İzmir Tanıtım Filmi Çekimi</h3>
+        <p>
+          Kurumsal tanıtım filmlerinde planlama, çekim ve kurgu sürecini tek akışta yönetiyoruz.
+          Renk düzenleme, stabilizasyon ve tempo ayarlarıyla içerikler “reklam gibi” görünür.
+          Teslimler Reels (9:16), Yatay (16:9) ve reklam formatlarında hazırlanabilir.
+        </p>
 
-        <a class="btn btn-ghost" href="#iletisim">İletişim</a>
+        <div class="seo-cta">
+          <a class="btn btn-primary"
+             href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20%C4%B0zmir%E2%80%99de%20drone%20%C3%A7ekimi%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
+             target="_blank" rel="noopener">WhatsApp’tan Teklif Al</a>
+
+          <a class="btn btn-ghost" href="#iletisim">İletişim</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-  <section class="seo-text">
-  <div class="container">
-    <h2>İzmir Drone Çekimi ve Tanıtım Filmi Hizmeti</h2>
-    <p>
-      OMRA Ajans 360 olarak İzmir genelinde profesyonel drone çekimi ve tanıtım filmi hizmeti sunuyoruz.
-      Emlak çekimleri, otel tanıtımları, kafe ve restoran tanıtım videoları, fabrika ve işletme çekimleri
-      için sinematik görüntüler üretiyoruz. Havadan çekim teknikleri ile işletmenizi en etkili şekilde
-      tanıtmanızı sağlıyoruz.
-    </p>
-
-    <h3>Emlak ve İşletmeler İçin Drone Çekimi</h3>
-    <p>
-      Özellikle emlak sektöründe drone çekimi satış hızını artırır. İzmir’de satılık ve kiralık
-      gayrimenkuller için detaylı havadan görüntüler hazırlıyoruz. Ayrıca işletmeler için sosyal medya,
-      web sitesi ve reklam kampanyalarında kullanılabilecek profesyonel tanıtım filmleri hazırlıyoruz.
-    </p>
-
-    <h3>İzmir Tanıtım Filmi Çekimi</h3>
-    <p>
-      Markanızı öne çıkaracak kurumsal tanıtım filmi çekimleri gerçekleştiriyoruz. Senaryo planlama,
-      çekim ve kurgu süreçlerini profesyonel ekipmanlarla tamamlayarak kısa sürede teslim ediyoruz.
-    </p>
-  </div>
-</section>
+  </section>
 
   <!-- TESTIMONIALS -->
   <section class="section" id="yorumlar">
@@ -2459,40 +1992,25 @@
           <summary>İzmir’de hangi ilçelere hizmet veriyorsunuz?</summary>
           <p>İzmir’in tüm ilçelerinde hizmet veriyoruz. Çekim türüne ve lokasyona göre randevu planı WhatsApp üzerinden netleşir.</p>
         </details>
-
         <details>
           <summary>Teslim süresi kaç gün? Hızlı teslim mümkün mü?</summary>
           <p>Teslim süremiz projeye göre <strong>3–8 gün</strong> aralığındadır. Acil içerik ihtiyacınız varsa planlama aşamasında önceliklendirme yapılabilir.</p>
         </details>
-
         <details>
           <summary>Drone çekimi için izin gerekiyor mu?</summary>
           <p>Bazı bölgelerde ve bazı etkinliklerde izin gerekliliği doğabilir. Lokasyon ve proje detaylarına göre gerekli bilgilendirmeyi randevu aşamasında paylaşırız.</p>
         </details>
-
         <details>
           <summary>Hangi içerik formatlarında teslim alırım?</summary>
           <p>Reels (9:16), yatay video (16:9) ve reklam formatları için (15/30/60 sn) uygun çıktılar hazırlıyoruz.</p>
         </details>
-
-        <details>
-          <summary>Drone çekimi ne kadar sürer?</summary>
-          <p>Çekim süresi mekanın büyüklüğüne ve hedef içeriğe göre değişir. Planlama aşamasında süreyi netleştirip randevuyu ona göre oluştururuz.</p>
-        </details>
-
         <details>
           <summary>Hava şartları kötü olursa ne olur?</summary>
           <p>Güvenli uçuş esas alınır. Uygun olmayan hava koşullarında çekim, randevulu sistemle tekrar planlanır.</p>
         </details>
-
         <details>
           <summary>Revize (düzeltme) yapıyor musunuz?</summary>
           <p>Evet. Teslim öncesi kısa revize süreci ile içeriklerin marka dilinize uyumunu netleştiriyoruz.</p>
-        </details>
-
-        <details>
-          <summary>Reels için ideal video süresi nedir?</summary>
-          <p>Hedefe göre değişir; ama izlenme ve reklam performansı için çoğu projede kısa ve net kurgular daha etkilidir. İçerik setini buna göre hazırlarız.</p>
         </details>
       </div>
     </div>
@@ -2504,9 +2022,7 @@
       <div class="section-title">
         <h2>Instagram</h2>
         <div class="divider"></div>
-        <p class="lead">
-          @omraajans360 hesabımızdaki anlık paylaşımlar. Takip ederek yeni çekimleri ve örnek işleri görebilirsiniz.
-        </p>
+        <p class="lead">@omraajans360 hesabımızdaki paylaşımlar. Takip ederek yeni çekimleri ve örnek işleri görebilirsiniz.</p>
       </div>
 
       <div class="ig-box">
@@ -2572,21 +2088,22 @@
     <div class="container">
       <div>© <span id="y"></span> OMRA Ajans 360 • İzmir Drone Çekimi & Tanıtım Filmleri • Randevulu Çalışma</div>
       <div class="footer-links">
-        <a href="#" aria-label="KVKK">KVKK</a>
-        <a href="#" aria-label="Gizlilik Politikası">Gizlilik</a>
-        <a href="#" aria-label="Çerez Politikası">Çerezler</a>
+        <a href="kvkk.html" aria-label="KVKK">KVKK</a>
+        <a href="gizlilik.html" aria-label="Gizlilik Politikası">Gizlilik</a>
+        <a href="cerez.html" aria-label="Çerez Politikası">Çerezler</a>
       </div>
     </div>
   </footer>
 </main>
 
+<!-- Desktop WhatsApp -->
 <a class="wa"
    href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
    target="_blank" rel="noopener">WhatsApp</a>
 
 <button id="backToTop" aria-label="En üste dön" type="button">▲</button>
 
-<!-- ✅ Lightbox -->
+<!-- Lightbox -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <div class="lightbox-card" role="dialog" aria-label="Portföy görseli">
     <div class="lb-top">
@@ -2595,6 +2112,60 @@
     </div>
     <img id="lbImg" src="" alt="Portföy görseli büyük görünüm">
   </div>
+</div>
+
+<!-- Teklif Modal -->
+<div class="quote-modal" id="quoteModal" aria-hidden="true">
+  <div class="quote-card" role="dialog" aria-label="Hızlı Teklif Formu">
+    <div class="quote-head">
+      <div class="quote-title">Hızlı Teklif</div>
+      <button class="quote-x" id="closeQuote" type="button" aria-label="Kapat">✕</button>
+    </div>
+
+    <div class="qfield">
+      <label for="q_ilce">İlçe</label>
+      <input id="q_ilce" placeholder="Örn: Karşıyaka">
+    </div>
+
+    <div class="qfield">
+      <label for="q_tarih">Tarih</label>
+      <input id="q_tarih" placeholder="Örn: 10 Mart">
+    </div>
+
+    <div class="qfield">
+      <label for="q_hizmet">Hizmet</label>
+      <select id="q_hizmet">
+        <option>Düğün / Nişan</option>
+        <option>Etkinlik</option>
+        <option>Emlak</option>
+        <option>Kafe / Restoran</option>
+        <option>Otel / Tesis</option>
+        <option>İşletme Tanıtımı</option>
+      </select>
+    </div>
+
+    <div class="qfield">
+      <label for="q_format">Format</label>
+      <select id="q_format">
+        <option>Reels (9:16)</option>
+        <option>Yatay (16:9)</option>
+        <option>Reels + Yatay</option>
+        <option>Reklam (15/30/60 sn)</option>
+      </select>
+    </div>
+
+    <button class="qsend" id="sendQuote" type="button">WhatsApp’tan Gönder</button>
+    <div class="qnote">Tek dokunuşla mesaj hazır gider. Yanıtı WhatsApp’tan alırsınız.</div>
+  </div>
+</div>
+
+<!-- Mobil Alt CTA -->
+<div class="mobile-cta" aria-label="Hızlı işlemler">
+  <a class="mcta mcta-wa"
+     href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
+     target="_blank" rel="noopener">WhatsApp</a>
+
+  <button class="mcta mcta-quote" id="openQuote" type="button">Teklif Al</button>
 </div>
 
 <script>
@@ -2615,12 +2186,20 @@
     );
   }
 
-  // Mobilde video kapat + poster (performans)
-  const hero = document.getElementById("hero");
-  if (window.matchMedia("(max-width: 900px)").matches) {
-    hero?.classList.add("has-poster");
-    document.querySelector(".video-wrap iframe")?.remove();
+  // Hero poster mode (responsive)
+  const mq = window.matchMedia("(max-width: 900px)");
+  function syncHero(){
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+    if (mq.matches){
+      hero.classList.add("has-poster");
+      document.querySelector(".video-wrap iframe")?.remove();
+    } else {
+      hero.classList.remove("has-poster");
+    }
   }
+  syncHero();
+  mq.addEventListener?.("change", syncHero);
 
   // Header shrink on scroll
   window.addEventListener("scroll", () => {
@@ -2689,7 +2268,7 @@
     });
   }
 
-  // ✅ Portfolio Filters
+  // Portfolio Filters
   const filterButtons = document.querySelectorAll(".filterbtn");
   const shots = document.querySelectorAll(".shot");
 
@@ -2706,82 +2285,74 @@
       });
     });
   });
-// ✅ Lightbox (TEK SÜRÜM)
-const lightbox = document.getElementById("lightbox");
-const lbImg = document.getElementById("lbImg");
-const lbClose = document.getElementById("lbClose");
-const lbCaption = document.getElementById("lbCaption");
 
-function openLightbox(src, caption){
-  if (!lightbox || !lbImg || !src) return;
-  lbImg.src = src;
-  lbCaption.textContent = caption || "Portföy";
-  lightbox.classList.add("open");
-  lightbox.setAttribute("aria-hidden","false");
-  document.body.style.overflow = "hidden";
-}
+  // Lightbox
+  const lightbox = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbClose = document.getElementById("lbClose");
+  const lbCaption = document.getElementById("lbCaption");
 
-function closeLightbox(){
-  if (!lightbox) return;
-  lightbox.classList.remove("open");
-  lightbox.setAttribute("aria-hidden","true");
-  lbImg.src = "";
-  document.body.style.overflow = "";
-}
+  function openLightbox(src, caption){
+    if (!lightbox || !lbImg || !src) return;
+    lbImg.src = src;
+    lbCaption.textContent = caption || "Portföy";
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox(){
+    if (!lightbox) return;
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden","true");
+    lbImg.src = "";
+    document.body.style.overflow = "";
+  }
 
-// ✅ Event delegation: shot-btn tıklayınca aç
-document.getElementById("portfolioGrid")?.addEventListener("click", (e) => {
-  const btn = e.target.closest(".shot-btn");
-  if (!btn) return;
+  document.getElementById("portfolioGrid")?.addEventListener("click", (e) => {
+    const btn = e.target.closest(".shot-btn");
+    if (!btn) return;
+    const src = btn.getAttribute("data-full");
+    const cap = btn.querySelector(".cap")?.textContent?.trim() || "Portföy";
+    openLightbox(src, cap);
+  });
 
-  const src = btn.getAttribute("data-full");
-  const cap = btn.querySelector(".cap")?.textContent?.trim() || "Portföy";
-  openLightbox(src, cap);
-});
+  lbClose?.addEventListener("click", closeLightbox);
+  lightbox?.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
 
-lbClose?.addEventListener("click", closeLightbox);
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox?.classList.contains("open")) closeLightbox();
+  });
 
-// Arka plana tıklayınca kapat
-lightbox?.addEventListener("click", (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
+  // Mobil Teklif Popup
+  const quoteModal = document.getElementById("quoteModal");
+  const openQuote = document.getElementById("openQuote");
+  const closeQuote = document.getElementById("closeQuote");
+  const sendQuote = document.getElementById("sendQuote");
 
-// ESC ile kapat
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && lightbox?.classList.contains("open")) closeLightbox();
-});
-  // ✅ Mobil Teklif Popup
-const quoteModal = document.getElementById("quoteModal");
-const openQuote = document.getElementById("openQuote");
-const closeQuote = document.getElementById("closeQuote");
-const sendQuote = document.getElementById("sendQuote");
+  function openQuoteModal(){
+    if(!quoteModal) return;
+    quoteModal.classList.add("open");
+    quoteModal.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeQuoteModal(){
+    if(!quoteModal) return;
+    quoteModal.classList.remove("open");
+    quoteModal.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+  }
 
-function openQuoteModal(){
-  if(!quoteModal) return;
-  quoteModal.classList.add("open");
-  quoteModal.setAttribute("aria-hidden","false");
-  document.body.style.overflow = "hidden";
-}
-function closeQuoteModal(){
-  if(!quoteModal) return;
-  quoteModal.classList.remove("open");
-  quoteModal.setAttribute("aria-hidden","true");
-  document.body.style.overflow = "";
-}
+  openQuote?.addEventListener("click", openQuoteModal);
+  closeQuote?.addEventListener("click", closeQuoteModal);
+  quoteModal?.addEventListener("click", (e) => { if(e.target === quoteModal) closeQuoteModal(); });
 
-openQuote?.addEventListener("click", openQuoteModal);
-closeQuote?.addEventListener("click", closeQuoteModal);
-quoteModal?.addEventListener("click", (e) => {
-  if(e.target === quoteModal) closeQuoteModal();
-});
+  sendQuote?.addEventListener("click", () => {
+    const ilce = document.getElementById("q_ilce")?.value?.trim() || "-";
+    const tarih = document.getElementById("q_tarih")?.value?.trim() || "-";
+    const hizmet = document.getElementById("q_hizmet")?.value || "-";
+    const format = document.getElementById("q_format")?.value || "-";
 
-sendQuote?.addEventListener("click", () => {
-  const ilce = document.getElementById("q_ilce")?.value?.trim() || "-";
-  const tarih = document.getElementById("q_tarih")?.value?.trim() || "-";
-  const hizmet = document.getElementById("q_hizmet")?.value || "-";
-  const format = document.getElementById("q_format")?.value || "-";
-
-  const msg =
+    const msg =
 `Merhaba OMRA Ajans 360,
 İzmir’de drone çekimi için teklif almak istiyorum.
 
@@ -2790,67 +2361,14 @@ Tarih: ${tarih}
 Hizmet: ${hizmet}
 Format: ${format}`;
 
-  const url = "https://wa.me/905529226204?text=" + encodeURIComponent(msg);
-  window.open(url, "_blank", "noopener");
-  closeQuoteModal();
-});
+    const url = "https://wa.me/905529226204?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank", "noopener");
+    closeQuoteModal();
+  });
 
-// ESC ile kapat
-window.addEventListener("keydown", (e) => {
-  if(e.key === "Escape" && quoteModal?.classList.contains("open")) closeQuoteModal();
-});
+  window.addEventListener("keydown", (e) => {
+    if(e.key === "Escape" && quoteModal?.classList.contains("open")) closeQuoteModal();
+  });
 </script>
-  <!-- ✅ Mini Teklif Popup -->
-<div class="quote-modal" id="quoteModal" aria-hidden="true">
-  <div class="quote-card" role="dialog" aria-label="Hızlı Teklif Formu">
-    <div class="quote-head">
-      <div class="quote-title">Hızlı Teklif</div>
-      <button class="quote-x" id="closeQuote" type="button" aria-label="Kapat">✕</button>
-    </div>
-
-    <div class="qfield">
-      <label for="q_ilce">İlçe</label>
-      <input id="q_ilce" placeholder="Örn: Karşıyaka">
-    </div>
-
-    <div class="qfield">
-      <label for="q_tarih">Tarih</label>
-      <input id="q_tarih" placeholder="Örn: 10 Mart">
-    </div>
-
-    <div class="qfield">
-      <label for="q_hizmet">Hizmet</label>
-      <select id="q_hizmet">
-        <option>Düğün / Nişan</option>
-        <option>Etkinlik</option>
-        <option>Emlak</option>
-        <option>Kafe / Restoran</option>
-        <option>Otel / Tesis</option>
-        <option>İşletme Tanıtımı</option>
-      </select>
-    </div>
-
-    <div class="qfield">
-      <label for="q_format">Format</label>
-      <select id="q_format">
-        <option>Reels (9:16)</option>
-        <option>Yatay (16:9)</option>
-        <option>Reels + Yatay</option>
-        <option>Reklam (15/30/60 sn)</option>
-      </select>
-    </div>
-
-    <button class="qsend" id="sendQuote" type="button">WhatsApp’tan Gönder</button>
-    <div class="qnote">Tek dokunuşla mesaj hazır gider. Yanıtı WhatsApp’tan alırsınız.</div>
-  </div>
-</div>
-  <!-- ✅ MOBİL ALT SABİT CTA BAR -->
-<div class="mobile-cta" aria-label="Hızlı işlemler">
-  <a class="mcta mcta-wa"
-     href="https://wa.me/905529226204?text=Merhaba,%20OMRA%20Ajans%20360%20i%C3%A7in%20teklif%20almak%20istiyorum.%20%C4%B0l%C3%A7e:%20%20Tarih:%20%20Hizmet:%20"
-     target="_blank" rel="noopener">WhatsApp</a>
-
-  <button class="mcta mcta-quote" id="openQuote" type="button">Teklif Al</button>
-</div>
 </body>
 </html>
