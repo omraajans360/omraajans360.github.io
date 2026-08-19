@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { servicePages } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://omraajans360.com";
+  const base = "https://www.omraajans360.com";
   const now = new Date();
   const core: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
