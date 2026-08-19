@@ -24,8 +24,20 @@ function bad(message: string, status = 400) {
   return NextResponse.json({ error: message }, { status, headers: { "Cache-Control": "no-store" } });
 }
 
+function originAllowed(req: Request) {
+  const origin = req.headers.get("origin");
+  if (!origin) return true;
+  try {
+    const host = new URL(origin).hostname.toLowerCase();
+    return host === "www.omraajans360.com" || host === "omraajans360.com" || host.endsWith(".vercel.app") || host === "localhost";
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req: Request) {
   try {
+    if (!originAllowed(req)) return bad("İstek kaynağı doğrulanamadı.", 403);
     if (!req.headers.get("content-type")?.includes("application/json")) return bad("Geçersiz istek.", 415);
 
     const b = await req.json();
@@ -57,7 +69,7 @@ export async function POST(req: Request) {
       to: site.email,
       replyTo: email || undefined,
       subject: `Yeni Teklif Talebi — ${hizmet}`,
-      text: `OMRAAJANS360 YENİ TEKLİF TALEBİ\n\nAd Soyad: ${ad}\nTelefon/WhatsApp: ${tel}\nE-posta: ${email || "Belirtilmedi"}\nHizmet: ${hizmet}\nKonum: ${konum || "Belirtilmedi"}\nİşletme Adı: ${isletmeAdi || "Belirtilmedi"}\nİşletme Türü: ${isletmeTuru || "Belirtilmedi"}\nYaklaşık Ürün Sayısı: ${urunSayisi || "Belirtilmedi"}\nTarih: ${tarih || "Belirtilmedi"}\n\nPROJE DETAYI\n${mesaj}\n\nKVKK bilgilendirmesi: Okundu\nKaynak: omraajans360.com`,
+      text: `OMRAAJANS360 YENİ TEKLİF TALEBİ\n\nAd Soyad: ${ad}\nTelefon/WhatsApp: ${tel}\nE-posta: ${email || "Belirtilmedi"}\nHizmet: ${hizmet}\nKonum: ${konum || "Belirtilmedi"}\nİşletme Adı: ${isletmeAdi || "Belirtilmedi"}\nİşletme Türü: ${isletmeTuru || "Belirtilmedi"}\nYaklaşık Ürün Sayısı: ${urunSayisi || "Belirtilmedi"}\nTarih: ${tarih || "Belirtilmedi"}\n\nPROJE DETAYI\n${mesaj}\n\nKVKK bilgilendirmesi: Okundu\nKaynak: www.omraajans360.com`,
     });
 
     return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
