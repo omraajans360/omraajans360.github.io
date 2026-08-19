@@ -1,6 +1,6 @@
 export const site = {
   name: "OMRAAJANS360",
-  domain: "https://omraajans360.com",
+  domain: "https://www.omraajans360.com",
   email: "omraajans360@gmail.com",
   phoneDisplay: "0552 922 62 04",
   phoneE164: "+905529226204",
