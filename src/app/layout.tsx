@@ -3,6 +3,7 @@ import "./globals.css";
 import "./final-premium.css";
 import "./service-premium-overrides.css";
 import "./qr-premium-depth.css";
+import "./qr-menu/demo-premium.css";
 import { SiteChrome } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
