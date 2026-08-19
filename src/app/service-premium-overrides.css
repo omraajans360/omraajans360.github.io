@@ -1,0 +1,21 @@
+.service-detail-page{background:#070707;color:#f6f1e8}
+.service-detail-hero{min-height:780px;align-items:center}
+.service-detail-hero-copy{width:min(1420px,calc(100% - 64px));margin-inline:auto;padding-top:118px;padding-bottom:36px}
+.service-detail-hero-copy h1{max-width:790px;font-size:clamp(62px,6.4vw,104px);line-height:.92;letter-spacing:-.045em;margin:18px 0 24px}
+.service-detail-hero-copy>p{max-width:660px;font-size:17px;line-height:1.75;color:#d0c9bf}
+.service-detail-overlay{background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.94) 25%,rgba(5,5,5,.68) 48%,rgba(5,5,5,.12) 78%,rgba(5,5,5,.12) 100%),linear-gradient(0deg,rgba(0,0,0,.45),transparent 50%)}
+.service-detail-page>.section.wrap{padding-top:104px;padding-bottom:104px}
+.service-detail-intro{gap:96px;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+.service-detail-intro h2{max-width:650px;font-size:clamp(40px,4.4vw,64px);letter-spacing:-.03em}
+.service-detail-intro>p{max-width:620px;font-size:16px;line-height:1.85}
+.service-detail-page .section-kicker{margin-bottom:42px}
+.service-detail-page .section-kicker h2{max-width:760px}
+.service-detail-grid,.service-use-grid{gap:12px;background:transparent;border:0}
+.service-detail-grid article,.service-use-grid article{border:1px solid rgba(255,255,255,.1);border-radius:14px;background:linear-gradient(180deg,#0d0d0d,#090909);padding:34px 30px;box-shadow:0 12px 32px rgba(0,0,0,.18);transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.service-detail-grid article:hover,.service-use-grid article:hover{transform:translateY(-3px);border-color:rgba(194,160,100,.35);background:#0e0d0b}
+.service-detail-page .faq{max-width:100%;grid-template-columns:1fr 1fr;gap:12px}
+.service-detail-page .faq details{border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:0 20px;background:#0a0a0a}
+.service-detail-page .faq details:last-child{border-bottom:1px solid rgba(255,255,255,.1)}
+.service-detail-page .faq summary{padding:22px 0}
+@media(max-width:900px){.service-detail-hero{min-height:700px}.service-detail-hero-copy{width:min(100% - 40px,1420px);padding-top:120px;padding-bottom:28px}.service-detail-hero-copy h1{max-width:720px;font-size:clamp(54px,10vw,82px)}.service-detail-intro{gap:34px}.service-detail-page .faq{grid-template-columns:1fr}}
+@media(max-width:640px){.service-detail-hero{min-height:660px;align-items:flex-end}.service-detail-hero-copy{width:calc(100% - 32px);padding-top:128px;padding-bottom:48px}.service-detail-hero-copy h1{font-size:clamp(46px,13vw,66px);max-width:100%}.service-detail-hero-copy>p{font-size:15px;line-height:1.7}.service-detail-overlay{background:linear-gradient(90deg,rgba(5,5,5,.94),rgba(5,5,5,.58) 66%,rgba(5,5,5,.26)),linear-gradient(0deg,rgba(0,0,0,.72),transparent 58%)}.service-detail-page>.section.wrap{padding-top:76px;padding-bottom:76px}.service-detail-intro{border-bottom:0}.service-detail-grid,.service-use-grid{gap:10px}}
