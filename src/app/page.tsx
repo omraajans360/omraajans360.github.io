@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "İzmir Drone Çekimi & QR Menü",
   description: "İzmir ve çevresinde profesyonel drone çekimi, düğün, emlak, mekân ve tanıtım çekimleri. Türkiye genelinde QR Menü tasarımı.",
-  alternates: { canonical: "https://omraajans360.com" },
+  alternates: { canonical: "https://www.omraajans360.com" },
 };
 
 const services = [
