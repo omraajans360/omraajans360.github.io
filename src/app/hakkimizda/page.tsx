@@ -1,0 +1,173 @@
+import type {Metadata} from "next";
+import Link from "next/link";
+import {Eyebrow,FinalCta} from "@/components/Sections";
+export const metadata:Metadata={title:"Hakkımızda",description:"OMRAAJANS360; İzmir merkezli drone çekimi, tanıtım içerikleri ve Türkiye genelinde QR Menü çözümleri sunan görsel iletişim ajansıdır."};
+export default function About(){return <main>
+ <section className="about-hero"><div className="wrap about-hero-inner"><Eyebrow>OMRAAJANS360</Eyebrow><h1>Farklı Bir Açıdan <span>Bakıyoruz.</span></h1><p>OMRAAJANS360; yaratıcı bakış açısını kaliteli üretim ve net iletişimle birleştiren, İzmir merkezli bir görsel iletişim ajansıdır.</p></div></section>
+ <section className="section wrap about-story">
+  <div className="about-story-heading">
+    <Eyebrow>BİZ KİMİZ?</Eyebrow>
+    <h2>
+      Görüntünün Ötesinde
+      <br />
+      Bir Hikâye.
+    </h2>
+  </div>
+
+  <div className="about-story-content">
+    <p className="about-story-lead">
+      OMRAAJANS360; drone çekimleri, tanıtım içerikleri ve QR Menü
+      çözümleriyle markaların, işletmelerin ve özel projelerin kendilerini
+      daha güçlü şekilde anlatmasına yardımcı olan İzmir merkezli bir
+      görsel iletişim ajansıdır.
+    </p>
+
+    <p>
+      Her projeyi kullanım amacı ve ihtiyacı doğrultusunda ele alıyor;
+      gereksiz karmaşadan uzak, kontrollü ve güçlü bir görsel dil
+      oluşturuyoruz.
+    </p>
+
+    <div className="about-story-points">
+      <div>
+        <span>01</span>
+        <b>İzmir Merkezli</b>
+        <small>Çekim projelerinde İzmir ve çevresi.</small>
+      </div>
+
+      <div>
+        <span>02</span>
+        <b>Projeye Özel</b>
+        <small>Hazır kalıplar yerine ihtiyaca göre planlama.</small>
+      </div>
+
+      <div>
+        <span>03</span>
+        <b>Doğrudan İletişim</b>
+        <small>Planlamadan teslime kadar net süreç.</small>
+      </div>
+    </div>
+  </div>
+</section>
+<section className="section premium-benefits">
+  <div className="wrap">
+    <div className="section-kicker">
+      <Eyebrow>NE YAPIYORUZ?</Eyebrow>
+
+      <div>
+        <h2>Üç Ana Hizmet, Tek Kalite Standardı.</h2>
+        <p>
+          Her hizmeti ihtiyaca özel planlıyor; görsel kaliteyi,
+          kullanım amacını ve markanın duruşunu birlikte ele alıyoruz.
+        </p>
+      </div>
+    </div>
+
+    <div className="about-services">
+      <Link href="/drone-cekimi">
+        <span>01</span>
+        <h3>Drone & Hava Çekimleri</h3>
+        <p>
+          Düğün, organizasyon, emlak, mekân ve marka projeleri için
+          profesyonel hava çekimleri.
+        </p>
+        <b>Drone Çekimini İncele ↗</b>
+      </Link>
+
+      <Link href="/drone-cekimi#hizmetler">
+        <span>02</span>
+        <h3>Tanıtım & Reklam İçerikleri</h3>
+        <p>
+          Sosyal medya, web sitesi ve dijital reklamlar için markanıza
+          özel görsel içerikler.
+        </p>
+        <b>Hizmetleri İncele ↗</b>
+      </Link>
+
+      <Link href="/qr-menu">
+        <span>03</span>
+        <h3>QR Menü Çözümleri</h3>
+        <p>
+          İşletmenizin kimliğine uygun, modern ve kolay kullanılabilir
+          dijital menü çözümleri.
+        </p>
+        <b>QR Menü'yü İncele ↗</b>
+      </Link>
+    </div>
+  </div>
+</section>
+<section className="section wrap split-premium">
+  <div>
+    <Eyebrow>YAKLAŞIMIMIZ</Eyebrow>
+    <h2>Planlı. Yaratıcı. Profesyonel.</h2>
+  </div>
+
+  <div className="lead-copy">
+    <p>
+      Her projeye aynı kalıpla yaklaşmıyoruz. İhtiyacı, kullanım alanını
+      ve hedefi belirleyerek süreci baştan sona planlıyoruz.
+    </p>
+
+    <p>
+      Amacımız yalnızca iyi görünen işler üretmek değil; doğru yerde,
+      doğru amaçla kullanılabilecek güçlü ve özenli işler ortaya koymak.
+    </p>
+
+    <div className="principles">
+      <span>İhtiyaca özel planlama</span>
+      <span>Doğrudan iletişim</span>
+      <span>Özenli üretim</span>
+      <span>Net teslim süreci</span>
+    </div>
+  </div>
+</section>
+<section className="brand-promise">
+  <div className="wrap">
+    <Eyebrow>MARKA SÖZÜMÜZ</Eyebrow>
+
+    <div className="manifesto">
+      <div>
+        <h2>Yaratıcı.</h2>
+        <p>Fark yaratan fikirler için.</p>
+      </div>
+
+      <div>
+        <h2>Profesyonel.</h2>
+        <p>Her aşamada güven vermek için.</p>
+      </div>
+
+      <div>
+        <h2><span>Sonuç Odaklı.</span></h2>
+        <p>Ürettiğimiz her işin gerçek bir amaca hizmet etmesi için.</p>
+      </div>
+    </div>
+
+    <p className="manifesto-note">
+      Büyük sözlerden önce; iyi iş, net iletişim ve sürdürülebilir kalite.
+    </p>
+  </div>
+</section>
+<section className="section wrap about-region">
+  <div>
+    <Eyebrow>HİZMET BÖLGEMİZ</Eyebrow>
+    <h2>İzmir'den Türkiye'ye.</h2>
+  </div>
+
+  <div className="about-region-content">
+    <p>
+      <b>Drone & Çekim</b>
+      <span>İzmir ve çevresi</span>
+    </p>
+
+    <p>
+      <b>QR Menü</b>
+      <span>Türkiye geneli</span>
+    </p>
+  </div>
+</section>
+
+<FinalCta
+  title="Bir Projeniz mi Var? Birlikte Hayata Geçirelim."
+  text="Projenizi anlatın, ihtiyacınıza özel çözümü birlikte belirleyelim."
+  service="Genel"
+/> </main>}

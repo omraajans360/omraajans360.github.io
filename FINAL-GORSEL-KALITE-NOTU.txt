@@ -1,0 +1,10 @@
+OMRAAJANS360 ULTRA PREMIUM FINAL — GÖRSEL KALİTE TURU
+
+- Ana sayfa hero: yüksek çözünürlüklü PNG, yeniden sıkıştırma yok.
+- Drone hero: yüksek çözünürlüklü PNG.
+- İzmir hizmet bölgesi: yüksek çözünürlüklü PNG.
+- 6 ana hizmet kartı: yüksek kaliteli WebP (%96), 1960x1400.
+- Next/Image kalite seviyesi: 95.
+- Görsellerde blur/brightness/saturate filtreleri kaldırıldı.
+- Hero görselinde gereksiz scale kaldırıldı.
+- Logo oranları değiştirilmedi.

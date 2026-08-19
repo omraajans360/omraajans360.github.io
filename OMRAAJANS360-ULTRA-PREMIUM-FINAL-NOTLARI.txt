@@ -1,0 +1,23 @@
+OMRAAJANS360 — ULTRA PREMIUM FINAL
+
+Uygulanan ana kararlar:
+- Ana sayfa metinleri ve 6 kartlı hizmet yapısı güçlendirildi.
+- Header aktif durum ve premium sabit/bulanık yapı korundu/güçlendirildi.
+- Drone sayfası hizmet, süreç, kullanım alanı ve İzmir bölgesi içerikleri netleştirildi.
+- QR Menü sayfasına “Menünüz Değişir. QR Kodunuz Değişmez.” bölümü eklendi.
+- QR Menü hizmet kapsamı eklendi.
+- QR Menü SSS 8 satın alma sorusuna çıkarıldı.
+- 4 QR Menü demo tasarımı daha gerçek menü deneyimine yaklaştırıldı ve örnek olduğu açıkça belirtildi.
+- Hakkımızda sayfası ajans konumlandırmasına göre yeniden yazıldı.
+- Marka manifestosu ve hizmet bölgesi yeniden düzenlendi.
+- İletişim formu seçilen hizmete göre dinamik alanlar gösterecek şekilde geliştirildi.
+- QR Menü için işletme adı/türü/ürün sayısı alanları eklendi.
+- Tarih alanı isteğe bağlı bırakıldı.
+- Form başarı/hata mesajları iyileştirildi ve basit bot alanı eklendi.
+- Form e-posta içeriği yeni alanları kapsayacak şekilde güncellendi.
+- Mobil düzen ve hareket azaltma erişilebilirliği güçlendirildi.
+- SEO, sitemap, robots, favicon, KVKK/Gizlilik/Çerez altyapısı mevcut final yapıda korundu.
+
+ÖNEMLİ:
+Formun gerçek e-posta gönderebilmesi için sunucuda OMRA_GMAIL_APP_PASSWORD tanımlanmalıdır.
+Bu çalışma ortamında paket kurulumu ağ/çalışma süresi nedeniyle tamamlanamadığı için npm build burada doğrulanamadı. Projeyi kendi bilgisayarınızda açtıktan sonra npm install ve npm run build çalıştırın.
