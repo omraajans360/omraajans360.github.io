@@ -15,22 +15,24 @@ OMRAAJANS360'ı üst düzey, sade, güven veren ve satışa dönük premium ajan
 - [x] Arazi & Proje hizmet sayfası altyapısı
 - [x] Hizmet sayfaları için özel SEO metadata
 - [x] Premium hizmet sayfası mobil/masaüstü stil temeli
-- [ ] Ana sayfa final içerik ve bağlantı revizyonu
-- [ ] Drone ana hizmet sayfası final revizyonu
-- [ ] QR Menü final satış mimarisi
-- [ ] Hakkımızda final premium metin/düzen
-- [ ] İletişim ve teklif akışı final revizyonu
-- [ ] Form ilk yüklenme ve hata deneyimi
-- [ ] Header/Footer/mobil navigasyon final kontrolü
-- [ ] Sitemap ve canonical final kontrolü
-- [ ] Görsel performans optimizasyonu
-- [ ] Erişilebilirlik ve 404/link kontrolü
-- [ ] `npm run build`
-- [ ] `npm run typecheck`
-- [ ] Mobil + masaüstü kabul testleri
-- [ ] Teklif formu gerçek gönderim testi
+- [x] Ana sayfa final içerik ve bağlantı revizyonu
+- [x] Drone ana hizmet sayfası final revizyonu
+- [x] QR Menü satış kapsamları ve canonical yapısı
+- [x] Hakkımızda final premium metin/düzen
+- [x] İletişim ve teklif akışı final revizyonu
+- [x] Form ilk yüklenme ve hata deneyimi
+- [x] Header/Footer/mobil navigasyon teknik kontrolü
+- [x] Sitemap, robots ve canonical final kontrolü
+- [x] Temel erişilebilirlik odak durumları ve reduced-motion desteği
+- [x] Geçici geliştirme dosyalarının temizliği
+- [x] `npm run typecheck` — GitHub Actions PASS
+- [x] `npm run lint` — GitHub Actions PASS
+- [x] `npm run build` — GitHub Actions PASS
+- [x] Vercel preview build — PASS
+- [ ] Mobil + masaüstü görsel kabul testi
+- [ ] Teklif formu preview gerçek gönderim testi
 - [ ] Domain/SSL/www yönlendirme kabulü
 - [ ] FINAL PASS ve `main` birleştirme
 
 ## Yayın Kuralı
-Bu listedeki kritik kabul maddeleri tamamlanmadan `main` dalına merge yapılmaz.
+Kalan üç manuel kabul maddesi tamamlanmadan `main` dalına merge yapılmaz.
