@@ -1,116 +1,18 @@
 import type {Metadata} from "next"; import Image from "next/image"; import Link from "next/link"; import {Eyebrow,FinalCta} from "@/components/Sections";
-export const metadata:Metadata={title:"İzmir Drone Çekimi",description:"İzmir ve çevresinde düğün, emlak, mekân, organizasyon, reklam ve proje çekimleri için profesyonel drone çekimi."};
+export const metadata:Metadata={title:"İzmir Drone Çekimi",description:"İzmir ve çevresinde düğün, emlak, mekân, organizasyon, reklam ve proje çekimleri için profesyonel drone çekimi.",alternates:{canonical:"/drone-cekimi"}};
 const items=[
- ["Düğün & Nişan","/images/premium/service-wedding-premium.webp","Özel gününüzü mekânın atmosferiyle birlikte sinematik hava görüntüleriyle anlatıyoruz."],
- ["Emlak & Gayrimenkul","/images/premium/service-realestate-premium.webp","Villa, konut, arsa ve projeleri ölçek, çevre ve konumu gösterecek güçlü açılarla sunuyoruz."],
- ["Mekân & İşletme","/images/premium/service-venue-premium.webp","Otel, restoran, kafe ve işletmelerin konumunu ve atmosferini etkileyici biçimde yansıtıyoruz."],
- ["Organizasyon","/images/premium/service-event-premium.webp","Etkinlik, açılış ve özel organizasyonlara yukarıdan güçlü bir görsel değer katıyoruz."],
- ["Reklam & Tanıtım","/images/premium/service-advert-premium.webp","Markalara sosyal medya, web sitesi ve reklam kullanımına uygun tanıtım görüntüleri hazırlıyoruz."],
- ["Arazi & Proje Çekimleri","/images/premium/service-project-premium.webp","Arazi, şantiye ve proje alanlarını havadan kapsamlı biçimde görüntülüyoruz."],
+ ["Düğün & Nişan","/images/premium/service-wedding-premium.webp","Özel gününüzü mekânın atmosferiyle birlikte sinematik hava görüntüleriyle anlatıyoruz.","/hizmet/dugun-nisan-drone-cekimi"],
+ ["Emlak & Gayrimenkul","/images/premium/service-realestate-premium.webp","Villa, konut, arsa ve projeleri ölçek, çevre ve konumu gösterecek güçlü açılarla sunuyoruz.","/hizmet/emlak-drone-cekimi"],
+ ["Mekân & İşletme","/images/premium/service-venue-premium.webp","Otel, restoran, kafe ve işletmelerin konumunu ve atmosferini etkileyici biçimde yansıtıyoruz.","/hizmet/mekan-tanitim-drone-cekimi"],
+ ["Organizasyon","/images/premium/service-event-premium.webp","Etkinlik, açılış ve özel organizasyonlara yukarıdan güçlü bir görsel değer katıyoruz.","/hizmet/organizasyon-drone-cekimi"],
+ ["Reklam & Tanıtım","/images/premium/service-advert-premium.webp","Markalara sosyal medya, web sitesi ve reklam kullanımına uygun tanıtım görüntüleri hazırlıyoruz.","/hizmet/reklam-tanitim-drone-cekimi"],
+ ["Arazi & Proje Çekimleri","/images/premium/service-project-premium.webp","Arazi, şantiye ve proje alanlarını havadan kapsamlı biçimde görüntülüyoruz.","/hizmet/arazi-proje-drone-cekimi"],
 ];
 export default function DronePage(){return <main>
-<section className="premium-hero drone-hero">
-  <div className="premium-hero-media" />
-  <div className="premium-hero-shade" />
-
-  <div className="wrap premium-hero-content drone-hero-content">
-    <Eyebrow>İZMİR & ÇEVRESİ · PROFESYONEL DRONE ÇEKİMİ</Eyebrow>
-
-    <h1>
-      Dünyaya Bir de <span>Yukarıdan</span> Bakın.
-    </h1>
-
-    <p>
-      Düğünlerden gayrimenkule, organizasyonlardan marka tanıtımlarına kadar
-      projeye özel profesyonel hava çekimleri.
-    </p>
-
-    <div className="hero-actions">
-      <Link
-        href="/iletisim?hizmet=Drone%20%C3%87ekimi"
-        className="btn btn-gold"
-      >
-        ÇEKİM İÇİN TEKLİF AL →
-      </Link>
-
-      <Link href="#hizmetler" className="btn btn-dark">
-        HİZMETLERİ İNCELE
-      </Link>
-    </div>
-
-    <div className="drone-hero-proof">
-      <span>İzmir & Çevresi</span>
-      <span>Projeye Özel Planlama</span>
-      <span>Profesyonel Çekim</span>
-    </div>
-  </div>
-</section>
- <section className="section wrap" id="hizmetler"><div className="section-kicker"><Eyebrow>DRONE ÇEKİM HİZMETLERİ</Eyebrow><div><h2>Her Projeye Özel Çözümler.</h2><p>Çekim planı; lokasyona, kullanım amacına ve istenen anlatıma göre hazırlanır.</p></div></div><div className="premium-service-grid">{items.map((x,i)=><article className="premium-service" key={x[0]}><Image src={x[1]} alt={x[0]} fill sizes="33vw"/><div className="premium-service-shade"/><div className="premium-service-copy"><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[2]}</p></div></article>)}</div></section>
- <section className="section premium-benefits"><div className="wrap"><div className="section-kicker"><Eyebrow>ÇEKİMİN ÖTESİNDE</Eyebrow><div><h2>Süreç Nasıl İşliyor?</h2></div></div><div className="process-line">{[["Planlama","İhtiyacı ve lokasyonu analiz ederiz."],["Profesyonel Çekim","Planlanan hava görüntülerini üretiriz."],["Görüntü Seçimi","En güçlü görüntüleri belirleriz."],["Kurgu & Düzenleme","Renk, ritim ve kullanım amacına göre kurgularız."],["Teslim","Final içerikleri sosyal medya, web sitesi, reklam ve kurumsal kullanıma uygun formatlarda teslim ederiz."]].map((x,i)=><article key={x[0]}><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></div></section>
- <section className="section wrap drone-usage-section">
-  <div className="section-kicker">
-    <Eyebrow>KULLANIM ALANLARI</Eyebrow>
-
-    <div>
-      <h2>Tek Çekim, Birden Fazla Kullanım.</h2>
-
-      <p>
-        Üretilen görüntüleri farklı dijital ve kurumsal kullanım alanlarına
-        uygun şekilde değerlendirebilirsiniz.
-      </p>
-    </div>
-  </div>
-
-  <div className="drone-usage-grid">
-    {[
-      ["Sosyal Medya & Reels", "Dikey ve yatay sosyal medya içerikleri."],
-      ["Web Sitesi", "Ana sayfa, proje ve tanıtım alanları için görüntüler."],
-      ["Dijital Reklamlar", "Reklam kampanyalarında kullanılabilecek içerikler."],
-      ["Gayrimenkul İlanları", "Konut, villa, arsa ve projeler için hava görüntüleri."],
-      ["Kurumsal Tanıtım", "Marka ve işletme sunumlarında kullanılabilecek çekimler."],
-      ["Etkinlik Videoları", "Organizasyon ve etkinliklerin güçlü genel görüntüleri."]
-    ].map(([title, desc], i) => (
-      <article className="drone-usage-card" key={title}>
-        <span>0{i + 1}</span>
-        <h3>{title}</h3>
-        <p>{desc}</p>
-      </article>
-    ))}
-  </div>
-</section>
-<section className="section compact-region drone-region-premium">
-  <div className="wrap drone-region-inner">
-    <div className="drone-region-copy">
-      <Eyebrow>İZMİR & ÇEVRESİ</Eyebrow>
-
-      <h2>Yerel. Hızlı. Planlı.</h2>
-
-      <p>
-        İzmir merkezli olarak projelerinizi lokasyon, çekim koşulları
-        ve kullanım amacına göre planlıyoruz.
-      </p>
-
-      <div className="locations">
-        <span>İzmir</span>
-        <span>Çeşme</span>
-        <span>Urla</span>
-        <span>Alaçatı</span>
-        <span>Seferihisar</span>
-        <span>Foça</span>
-      </div>
-    </div>
-
-    <div className="drone-region-note">
-      <span>HİZMET YAKLAŞIMI</span>
-      <strong>Lokasyona göre planlama</strong>
-      <strong>Uygun hava koşulu takibi</strong>
-      <strong>Projeye özel çekim planı</strong>
-    </div>
-  </div>
-</section>
- <section className="section wrap"><div className="section-kicker"><Eyebrow>SIK SORULAN SORULAR</Eyebrow><div><h2>Merak Edilenler.</h2></div></div><div className="faq">{[["Çekim ne kadar sürüyor?","Projenin kapsamına, lokasyona ve istenen görüntü sayısına göre değişir."],["Teslim süresi nedir?","Proje kapsamına göre teklif aşamasında net teslim zamanı paylaşılır."],["Hava şartları çekimi etkiler mi?","Evet. Uçuş güvenliği ve görüntü kalitesi için uygun olmayan hava koşullarında tarih yeniden planlanabilir."],["Ham görüntüler teslim ediliyor mu?","Ham görüntü teslimi proje kapsamına göre ayrıca kararlaştırılır."],["Şehir dışında çekim yapıyor musunuz?","Ana hizmet bölgemiz İzmir ve çevresidir. Farklı bölgeler proje bazında değerlendirilir."],["Fiyat nasıl belirleniyor?","Lokasyon, çekim süresi, kurgu ihtiyacı ve kullanım alanına göre özel teklif hazırlanır."]].map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></section>
- <FinalCta
-  title="Projenizi Gökyüzüne Taşıyalım."
-  text="Düğün, emlak, işletme, organizasyon veya marka projeniz için çekim planını birlikte oluşturalım."
-  service="Drone Çekimi"
-/> </main>}
+<section className="premium-hero drone-hero"><div className="premium-hero-media" /><div className="premium-hero-shade" /><div className="wrap premium-hero-content drone-hero-content"><Eyebrow>İZMİR & ÇEVRESİ · PROFESYONEL DRONE ÇEKİMİ</Eyebrow><h1>Dünyaya Bir de <span>Yukarıdan</span> Bakın.</h1><p>Düğünlerden gayrimenkule, organizasyonlardan marka tanıtımlarına kadar projeye özel profesyonel hava çekimleri.</p><div className="hero-actions"><Link href="/iletisim?hizmet=Drone%20%C3%87ekimi" className="btn btn-gold">ÇEKİM İÇİN TEKLİF AL →</Link><Link href="#hizmetler" className="btn btn-dark">HİZMETLERİ İNCELE</Link></div><div className="drone-hero-proof"><span>İzmir & Çevresi</span><span>Projeye Özel Planlama</span><span>Profesyonel Çekim</span></div></div></section>
+<section className="section wrap" id="hizmetler"><div className="section-kicker"><Eyebrow>DRONE ÇEKİM HİZMETLERİ</Eyebrow><div><h2>Her Projeye Özel Çözümler.</h2><p>Çekim planı; lokasyona, kullanım amacına ve istenen anlatıma göre hazırlanır.</p></div></div><div className="premium-service-grid">{items.map((x,i)=><article className="premium-service" key={x[0]}><Image src={x[1]} alt={x[0]} fill sizes="(max-width: 640px) 100vw, 33vw"/><div className="premium-service-shade"/><div className="premium-service-copy"><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[2]}</p><Link className="text-link" href={x[3]}>Detaylı incele <span>↗</span></Link></div></article>)}</div></section>
+<section className="section premium-benefits"><div className="wrap"><div className="section-kicker"><Eyebrow>ÇEKİMİN ÖTESİNDE</Eyebrow><div><h2>Süreç Nasıl İşliyor?</h2></div></div><div className="process-line">{[["Planlama","İhtiyacı ve lokasyonu analiz ederiz."],["Profesyonel Çekim","Planlanan hava görüntülerini üretiriz."],["Görüntü Seçimi","En güçlü görüntüleri belirleriz."],["Kurgu & Düzenleme","Renk, ritim ve kullanım amacına göre kurgularız."],["Teslim","Final içerikleri sosyal medya, web sitesi, reklam ve kurumsal kullanıma uygun formatlarda teslim ederiz."]].map((x,i)=><article key={x[0]}><span>0{i+1}</span><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></div></section>
+<section className="section wrap drone-usage-section"><div className="section-kicker"><Eyebrow>KULLANIM ALANLARI</Eyebrow><div><h2>Tek Çekim, Birden Fazla Kullanım.</h2><p>Üretilen görüntüleri farklı dijital ve kurumsal kullanım alanlarına uygun şekilde değerlendirebilirsiniz.</p></div></div><div className="drone-usage-grid">{[["Sosyal Medya & Reels", "Dikey ve yatay sosyal medya içerikleri."],["Web Sitesi", "Ana sayfa, proje ve tanıtım alanları için görüntüler."],["Dijital Reklamlar", "Reklam kampanyalarında kullanılabilecek içerikler."],["Gayrimenkul İlanları", "Konut, villa, arsa ve projeler için hava görüntüleri."],["Kurumsal Tanıtım", "Marka ve işletme sunumlarında kullanılabilecek çekimler."],["Etkinlik Videoları", "Organizasyon ve etkinliklerin güçlü genel görüntüleri."]].map(([title, desc], i) => <article className="drone-usage-card" key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{desc}</p></article>)}</div></section>
+<section className="section compact-region drone-region-premium"><div className="wrap drone-region-inner"><div className="drone-region-copy"><Eyebrow>İZMİR & ÇEVRESİ</Eyebrow><h2>Yerel. Hızlı. Planlı.</h2><p>İzmir merkezli olarak projelerinizi lokasyon, çekim koşulları ve kullanım amacına göre planlıyoruz.</p><div className="locations"><span>İzmir</span><span>Çeşme</span><span>Urla</span><span>Alaçatı</span><span>Seferihisar</span><span>Foça</span></div></div><div className="drone-region-note"><span>HİZMET YAKLAŞIMI</span><strong>Lokasyona göre planlama</strong><strong>Uygun hava koşulu takibi</strong><strong>Projeye özel çekim planı</strong></div></div></section>
+<section className="section wrap"><div className="section-kicker"><Eyebrow>SIK SORULAN SORULAR</Eyebrow><div><h2>Merak Edilenler.</h2></div></div><div className="faq">{[["Çekim ne kadar sürüyor?","Projenin kapsamına, lokasyona ve istenen görüntü sayısına göre değişir."],["Teslim süresi nedir?","Proje kapsamına göre teklif aşamasında net teslim zamanı paylaşılır."],["Hava şartları çekimi etkiler mi?","Evet. Uçuş güvenliği ve görüntü kalitesi için uygun olmayan hava koşullarında tarih yeniden planlanabilir."],["Ham görüntüler teslim ediliyor mu?","Ham görüntü teslimi proje kapsamına göre ayrıca kararlaştırılır."],["Şehir dışında çekim yapıyor musunuz?","Ana hizmet bölgemiz İzmir ve çevresidir. Farklı bölgeler proje bazında değerlendirilir."],["Fiyat nasıl belirleniyor?","Lokasyon, çekim süresi, kurgu ihtiyacı ve kullanım alanına göre özel teklif hazırlanır."]].map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></section>
+<FinalCta title="Projenizi Gökyüzüne Taşıyalım." text="Düğün, emlak, işletme, organizasyon veya marka projeniz için çekim planını birlikte oluşturalım." service="Drone Çekimi"/> </main>}
