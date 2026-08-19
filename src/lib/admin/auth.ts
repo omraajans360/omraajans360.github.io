@@ -1,0 +1,7 @@
+import{cookies}from'next/headers';import{createHmac,timingSafeEqual}from'node:crypto';import{redirect}from'next/navigation';
+const COOKIE='omra_admin_session',TTL=43200;function secret(){const v=process.env.ADMIN_SESSION_SECRET;if(!v||v.length<32)throw new Error('ADMIN_SESSION_SECRET eksik.');return v}function sign(p:string){return createHmac('sha256',secret()).update(p).digest('hex')}
+export async function createAdminSession(){const p=String(Math.floor(Date.now()/1000)),s=await cookies();s.set(COOKIE,`${p}.${sign(p)}`,{httpOnly:true,secure:process.env.NODE_ENV==='production',sameSite:'lax',path:'/',maxAge:TTL})}
+export async function clearAdminSession(){const s=await cookies();s.set(COOKIE,'',{path:'/',maxAge:0})}
+export async function isAdminAuthenticated(){const t=(await cookies()).get(COOKIE)?.value;if(!t)return false;const[p,s]=t.split('.');if(!p||!s)return false;const e=sign(p),a=Buffer.from(s),b=Buffer.from(e);return a.length===b.length&&timingSafeEqual(a,b)&&Math.floor(Date.now()/1000)-Number(p)<=TTL}
+export async function requireAdmin(){if(!(await isAdminAuthenticated()))redirect('/admin/login')}
+export function credentialsMatch(email:string,password:string){const ee=process.env.ADMIN_EMAIL??'',ep=process.env.ADMIN_PASSWORD??'';if(!ee||!ep)return false;const a=Buffer.from(email.trim().toLowerCase()),b=Buffer.from(ee.trim().toLowerCase()),c=Buffer.from(password),d=Buffer.from(ep);return a.length===b.length&&c.length===d.length&&timingSafeEqual(a,b)&&timingSafeEqual(c,d)}
