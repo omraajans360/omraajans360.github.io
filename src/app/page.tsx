@@ -2,6 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLink, Eyebrow, FinalCta } from "@/components/Sections";
 import { site } from "@/lib/site";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "İzmir Drone Çekimi & QR Menü",
+  description:
+    "İzmir ve çevresinde profesyonel drone çekimi, düğün, emlak, mekan ve tanıtım çekimleri. Türkiye genelinde QR Menü tasarımı.",
+  alternates: {
+    canonical: "https://omraajans360.com",
+  },
+};
 const services=[
  {title:"Drone Çekimi",img:"/images/premium/service-drone-premium.webp",desc:"İzmir ve çevresinde profesyonel hava çekimleri."},
  {title:"Düğün & Nişan",img:"/images/premium/service-wedding-premium.webp",desc:"Özel anlarınızı sinematik görüntülerle ölümsüzleştirin."},
