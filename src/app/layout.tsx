@@ -40,5 +40,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#070707", colorScheme: "dark" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="tr" suppressHydrationWarning><body suppressHydrationWarning><SiteChrome />{children}</body></html>;
+  return <html lang="tr" suppressHydrationWarning><body suppressHydrationWarning><SiteChrome>{children}</SiteChrome></body></html>;
 }
