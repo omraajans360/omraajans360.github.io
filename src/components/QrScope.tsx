@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Eyebrow } from "./Sections";
 
 const scopes = [
@@ -23,6 +26,9 @@ const scopes = [
 ];
 
 export function QrScope() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/qr-menu/demo/")) return null;
+
   return <section className="section wrap qr-scope-section" aria-labelledby="qr-scope-title">
     <div className="section-kicker"><Eyebrow>HİZMET KAPSAMLARI</Eyebrow><div><h2 id="qr-scope-title">İşletmenize Uygun Kapsamı Seçin.</h2><p>Hazır fiyat dayatmak yerine menü yapınıza, ürün sayınıza ve tasarım ihtiyacınıza göre doğru kapsamı belirliyoruz.</p></div></div>
     <div className="qr-scope-grid">{scopes.map((scope) => <article className="qr-scope-card" key={scope.title}><span>{scope.no}</span><h3>{scope.title}</h3><p>{scope.text}</p><ul>{scope.items.map((item) => <li key={item}>{item}</li>)}</ul><Link className="text-link" href={`/iletisim?hizmet=${encodeURIComponent("QR Menü")}`}>Bu kapsam için teklif al <span>↗</span></Link></article>)}</div>
