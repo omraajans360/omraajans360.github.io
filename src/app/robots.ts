@@ -1,2 +1,9 @@
-import type {MetadataRoute} from "next";
-export default function robots():MetadataRoute.Robots{return {rules:{userAgent:"*",allow:"/",disallow:["/api/"]},sitemap:"https://omraajans360.com/sitemap.xml",host:"https://omraajans360.com"}}
+import type { MetadataRoute } from "next";
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: { userAgent: "*", allow: "/", disallow: ["/api/"] },
+    sitemap: "https://www.omraajans360.com/sitemap.xml",
+    host: "https://www.omraajans360.com",
+  };
+}
