@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://omraajans360.com"),
+  metadataBase: new URL("https://www.omraajans360.com"),
   title: {
     default: "OMRAAJANS360 | İzmir Drone Çekimi & QR Menü",
     template: "%s | OMRAAJANS360",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: "Hikâyenizi gökyüzünden anlatıyoruz.",
     type: "website",
     locale: "tr_TR",
-    url: "https://omraajans360.com",
+    url: "https://www.omraajans360.com",
     images: [{ url: "/images/og-omraajans360.jpg", width: 1200, height: 630, alt: "OMRAAJANS360" }],
   },
   twitter: { card: "summary_large_image", images: ["/images/og-omraajans360.jpg"] },
