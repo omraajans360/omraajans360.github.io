@@ -3,3 +3,4 @@ async function request<T>(path:string,init?:RequestInit):Promise<T>{const{url,ke
 export async function select<T>(table:string,query='select=*'){return request<T[]>(`${table}?${query}`)}
 export async function insert<T>(table:string,values:Record<string,unknown>){const rows=await request<T[]>(table,{method:'POST',body:JSON.stringify(values)});return rows[0]}
 export async function update<T>(table:string,query:string,values:Record<string,unknown>){return request<T[]>(`${table}?${query}`,{method:'PATCH',body:JSON.stringify(values)})}
+export async function remove<T>(table:string,query:string){return request<T[]>(`${table}?${query}`,{method:'DELETE'})}
