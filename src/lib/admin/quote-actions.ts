@@ -1,0 +1,4 @@
+'use server';
+import{revalidatePath}from'next/cache';import{requireAdmin}from'./auth';import{select,update}from'./db';import type{Quote}from'./types';
+const text=(f:FormData,k:string)=>String(f.get(k)??'').trim();
+export async function setQuoteStatusAction(f:FormData){await requireAdmin();const id=text(f,'id'),status=text(f,'status'),allowed=['taslak','gonderildi','reddedildi','iptal'];if(!allowed.includes(status))throw new Error('Geçersiz teklif durumu.');const q=(await select<Quote>('quotes',`id=eq.${encodeURIComponent(id)}&select=*`))[0];if(!q)throw new Error('Teklif bulunamadı.');if(q.status==='kabul')throw new Error('İşe dönüşmüş teklifin durumu değiştirilemez.');await update('quotes',`id=eq.${encodeURIComponent(id)}`,{status});revalidatePath('/admin/teklif');revalidatePath('/admin');if(q.client_id)revalidatePath(`/admin/musteriler/${q.client_id}`)}

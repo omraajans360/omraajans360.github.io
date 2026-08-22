@@ -1,0 +1,6 @@
+function config(){const url=process.env.SUPABASE_URL,key=process.env.SUPABASE_SECRET_KEY??process.env.SUPABASE_SERVICE_ROLE_KEY;if(!url||!key)throw new Error('Supabase ayarları eksik.');return{url:url.replace(/\/$/,''),key};}
+async function request<T>(path:string,init?:RequestInit):Promise<T>{const{url,key}=config();const headers:Record<string,string>={apikey:key,'Content-Type':'application/json',Prefer:'return=representation'};if(!key.startsWith('sb_secret_'))headers.Authorization=`Bearer ${key}`;const r=await fetch(`${url}/rest/v1/${path}`,{...init,headers:{...headers,...(init?.headers??{})},cache:'no-store'});if(!r.ok)throw new Error(`Veritabanı hatası: ${r.status} ${await r.text()}`);const t=await r.text();return(t?JSON.parse(t):null)as T;}
+export async function select<T>(table:string,query='select=*'){return request<T[]>(`${table}?${query}`)}
+export async function insert<T>(table:string,values:Record<string,unknown>){const rows=await request<T[]>(table,{method:'POST',body:JSON.stringify(values)});return rows[0]}
+export async function update<T>(table:string,query:string,values:Record<string,unknown>){return request<T[]>(`${table}?${query}`,{method:'PATCH',body:JSON.stringify(values)})}
+export async function remove<T>(table:string,query:string){return request<T[]>(`${table}?${query}`,{method:'DELETE'})}

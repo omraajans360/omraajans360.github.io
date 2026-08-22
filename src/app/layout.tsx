@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./final-premium.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { FloatingContact } from "@/components/FloatingContact";
+import "./service-premium-overrides.css";
+import "./qr-premium-depth.css";
+import "./qr-menu/demo-premium.css";
+import { SiteChrome } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.omraajans360.com"),
@@ -42,5 +43,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#070707", colorScheme: "dark" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="tr" suppressHydrationWarning><body suppressHydrationWarning><Header />{children}<FloatingContact /><Footer /></body></html>;
+  return <html lang="tr" suppressHydrationWarning><body suppressHydrationWarning><SiteChrome>{children}</SiteChrome></body></html>;
 }
