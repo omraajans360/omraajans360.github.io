@@ -12,6 +12,7 @@ function ServiceLinks() {
     <Link href="/hizmet/reklam-tanitim-drone-cekimi">Reklam & Tanıtım</Link>
     <Link href="/hizmet/arazi-proje-drone-cekimi">Arazi & Proje</Link>
     <Link href="/qr-menu">QR Menü</Link>
+    <Link href="/dijital">Dijital Marka Sayfası</Link>
   </>;
 }
 
@@ -28,6 +29,7 @@ function RegionLinks() {
   return <>
     <p>Drone: İzmir ve çevresi</p>
     <p>QR Menü: Türkiye geneli</p>
+    <p>Dijital Marka: Türkiye geneli</p>
     <Link href="/iletisim">Projeniz için teklif alın →</Link>
   </>;
 }
@@ -35,7 +37,7 @@ function RegionLinks() {
 function FooterBrand() {
   return <div className="footer-brand">
     <BrandLogo />
-    <p className="footer-copy">İzmir ve çevresinde profesyonel drone çekimleri, tanıtım içerikleri ve Türkiye genelinde QR Menü çözümleri.</p>
+    <p className="footer-copy">İzmir ve çevresinde profesyonel drone çekimleri; Türkiye genelinde QR Menü ve dijital marka sayfası çözümleri.</p>
     <div className="footer-social">
       <a href={site.instagramUrl} target="_blank" rel="noreferrer">Instagram {site.instagramHandle}</a>
       <a href={site.whatsappUrl()} target="_blank" rel="noreferrer">WhatsApp</a>
