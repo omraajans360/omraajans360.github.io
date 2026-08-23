@@ -5,7 +5,7 @@ import { useState } from "react";
 import { BrandLogo } from "./BrandLogo";
 import { site } from "@/lib/site";
 
-const links = [["Ana Sayfa", "/"], ["Drone Çekimi", "/drone-cekimi"], ["QR Menü", "/qr-menu"], ["Hakkımızda", "/hakkimizda"], ["İletişim", "/iletisim"]] as const;
+const links = [["Ana Sayfa", "/"], ["Drone Çekimi", "/drone-cekimi"], ["QR Menü", "/qr-menu"], ["Dijital Marka", "/dijital"], ["Hakkımızda", "/hakkimizda"], ["İletişim", "/iletisim"]] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
