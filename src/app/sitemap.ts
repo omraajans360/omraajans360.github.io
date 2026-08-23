@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/drone-cekimi`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/qr-menu`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/dijital`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/iletisim`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/hakkimizda`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/kvkk`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
