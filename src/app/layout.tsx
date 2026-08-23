@@ -9,10 +9,10 @@ import { SiteChrome } from "@/components/SiteChrome";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.omraajans360.com"),
   title: {
-    default: "OMRAAJANS360 | İzmir Drone Çekimi & QR Menü",
+    default: "OMRAAJANS360 | İzmir Drone Çekimi, QR Menü & Dijital Marka",
     template: "%s | OMRAAJANS360",
   },
-  description: "İzmir ve çevresinde profesyonel drone çekimi, tanıtım içerikleri ve Türkiye genelinde QR Menü çözümleri.",
+  description: "İzmir ve çevresinde profesyonel drone çekimi; Türkiye genelinde QR Menü ve dijital marka sayfası çözümleri.",
   keywords: [
     "İzmir drone çekimi",
     "drone çekimi İzmir",
@@ -20,11 +20,13 @@ export const metadata: Metadata = {
     "emlak drone çekimi",
     "mekan tanıtım çekimi",
     "QR menü",
+    "dijital marka sayfası",
+    "QR bağlantı sayfası",
     "İzmir tanıtım filmi",
   ],
   openGraph: {
     title: "OMRAAJANS360",
-    description: "Hikâyenizi gökyüzünden anlatıyoruz.",
+    description: "Drone çekimi, QR Menü ve dijital marka çözümleri.",
     type: "website",
     locale: "tr_TR",
     url: "https://www.omraajans360.com",
