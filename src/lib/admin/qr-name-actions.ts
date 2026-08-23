@@ -1,0 +1,4 @@
+'use server';
+import{revalidatePath}from'next/cache';import{requireAdmin}from'./auth';import{select,update}from'./db';import type{QrMenu}from'./types';
+const text=(f:FormData,k:string)=>String(f.get(k)??'').trim();
+export async function updateQrNameAction(f:FormData){await requireAdmin();const id=text(f,'id'),qrName=text(f,'qr_name');if(!id||!qrName)throw new Error('QR adı boş olamaz.');const menu=(await select<QrMenu>('qr_menus',`id=eq.${encodeURIComponent(id)}&select=id,slug&limit=1`))[0];if(!menu)throw new Error('QR Menü bulunamadı.');await update('qr_menus',`id=eq.${encodeURIComponent(id)}`,{qr_name:qrName,updated_at:new Date().toISOString()});revalidatePath('/admin/qr-menu');revalidatePath(`/admin/qr-menu/${id}`);revalidatePath(`/admin/qr-menu/${id}/operasyon`);revalidatePath(`/menu/${menu.slug}`)}
