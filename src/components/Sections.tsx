@@ -34,6 +34,12 @@ export function FinalCta({
   text?: string;
   service?: string;
 }) {
+  const isGeneral = service === "Genel";
+  const contactHref = isGeneral ? "/iletisim" : `/iletisim?hizmet=${encodeURIComponent(service)}`;
+  const whatsappText = isGeneral
+    ? "Merhaba OMRAAJANS360, projem için bilgi ve özel teklif almak istiyorum."
+    : `Merhaba OMRAAJANS360, ${service} hizmeti için teklif almak istiyorum.`;
+
   return (
     <section className="final-cta">
       <div className="wrap final-cta-inner">
@@ -46,18 +52,13 @@ export function FinalCta({
         </div>
 
         <div className="cta-actions">
-          <Link
-            href={`/iletisim?hizmet=${encodeURIComponent(service)}`}
-            className="btn btn-gold"
-          >
+          <Link href={contactHref} className="btn btn-gold">
             ÖZEL TEKLİF AL <span>→</span>
           </Link>
 
           <a
             className="btn btn-dark"
-            href={site.whatsappUrl(
-              `Merhaba OMRAAJANS360, ${service} hizmeti için teklif almak istiyorum.`
-            )}
+            href={site.whatsappUrl(whatsappText)}
             target="_blank"
             rel="noreferrer"
           >
