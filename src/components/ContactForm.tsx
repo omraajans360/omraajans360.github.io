@@ -12,6 +12,7 @@ const services = [
   "Arazi & Proje",
   "Drone Çekimi",
   "QR Menü",
+  "Dijital Marka Sayfası",
   "Diğer",
 ] as const;
 
@@ -23,6 +24,7 @@ export function ContactForm({ defaultService = "" }: Props) {
   const [msg, setMsg] = useState("");
 
   const isQr = service === "QR Menü";
+  const isDigital = service === "Dijital Marka Sayfası";
   const isDrone = service === "Drone Çekimi" || ["Düğün & Nişan", "Emlak & Gayrimenkul", "Mekân Tanıtımı", "Organizasyon", "Arazi & Proje"].includes(service);
   const isPromo = service === "Reklam & Tanıtım";
 
@@ -55,10 +57,10 @@ export function ContactForm({ defaultService = "" }: Props) {
     <label className="hp-field" aria-hidden="true">Web sitesi<input name="website" tabIndex={-1} autoComplete="off" /></label>
     <div className="form-intro-line"><span>01</span><p>İletişim bilgilerinizi ve ihtiyacınızı paylaşın. Size özel kapsamı birlikte netleştirelim.</p></div>
     <div className="field-row"><label>Ad Soyad<input name="adSoyad" autoComplete="name" placeholder="Adınız Soyadınız" required minLength={2} /></label><label>Telefon / WhatsApp<input name="telefon" inputMode="tel" autoComplete="tel" placeholder="05xx xxx xx xx" required pattern="[0-9 +()-]{10,20}" /></label></div>
-    <div className="field-row"><label>Hizmet<select name="hizmet" value={service} onChange={(e) => setService(e.target.value)} required><option value="">Hizmet seçin</option>{services.map((x) => <option key={x} value={x}>{x}</option>)}</select></label>{!isQr && <label>Planlanan Tarih <small>(isteğe bağlı)</small><input type="date" name="tarih" /></label>}</div>
-    <div className="field-row"><label>E-posta <small>(isteğe bağlı)</small><input type="email" name="email" autoComplete="email" placeholder="ornek@email.com" /></label>{!isQr && <label>{isPromo ? "İşletme / Marka Adı" : isDrone ? "Çekim Yeri" : "İşletme / Proje Konumu"}<input name="konum" placeholder={isPromo ? "Marka veya işletme adı" : isDrone ? "Örn. Urla / Çeşme" : "Varsa konum veya işletme adı"} /></label>}</div>
+    <div className="field-row"><label>Hizmet<select name="hizmet" value={service} onChange={(e) => setService(e.target.value)} required><option value="">Hizmet seçin</option>{services.map((x) => <option key={x} value={x}>{x}</option>)}</select></label>{!isQr && !isDigital && <label>Planlanan Tarih <small>(isteğe bağlı)</small><input type="date" name="tarih" /></label>}</div>
+    <div className="field-row"><label>E-posta <small>(isteğe bağlı)</small><input type="email" name="email" autoComplete="email" placeholder="ornek@email.com" /></label>{!isQr && <label>{isDigital ? "Marka / İşletme Adı" : isPromo ? "İşletme / Marka Adı" : isDrone ? "Çekim Yeri" : "İşletme / Proje Konumu"}<input name="konum" placeholder={isDigital ? "Markanızın veya işletmenizin adı" : isPromo ? "Marka veya işletme adı" : isDrone ? "Örn. Urla / Çeşme" : "Varsa konum veya işletme adı"} /></label>}</div>
     {isQr && <div className="qr-form-fields"><div className="field-row"><label>İşletme Adı<input name="isletmeAdi" placeholder="İşletmenizin adı" /></label><label>İşletme Türü<input name="isletmeTuru" placeholder="Restoran, kafe, otel..." /></label></div><label>Yaklaşık Ürün Sayısı<input name="urunSayisi" inputMode="numeric" placeholder="Örn. 60" /></label></div>}
-    <label className="message-field">Proje Hakkında<textarea name="mesaj" rows={7} placeholder="İhtiyacınızı, kullanım amacınızı ve varsa özel taleplerinizi kısaca anlatın." required minLength={10} /></label>
+    <label className="message-field">Proje Hakkında<textarea name="mesaj" rows={7} placeholder={isDigital ? "Instagram, Trendyol, web sitesi, WhatsApp gibi eklemek istediğiniz kanalları ve özel taleplerinizi yazın." : "İhtiyacınızı, kullanım amacınızı ve varsa özel taleplerinizi kısaca anlatın."} required minLength={10} /></label>
     <label className="consent"><input type="checkbox" name="kvkk" value="on" required /><span><a href="/kvkk" target="_blank">KVKK Aydınlatma Metni'ni</a> okudum. İletişim talebimin yanıtlanması için paylaştığım bilgilerin işlenmesi hakkında bilgilendirildim.</span></label>
     <div className="form-actions"><button className="btn btn-gold" disabled={status === "sending"} type="submit">{status === "sending" ? "GÖNDERİLİYOR..." : "TEKLİF İSTE"} <span>→</span></button><a className="btn btn-dark" target="_blank" rel="noreferrer" href={site.whatsappUrl(service ? `Merhaba OMRAAJANS360, ${service} hizmeti için teklif almak istiyorum.` : "Merhaba OMRAAJANS360, özel teklif almak istiyorum.")}>WHATSAPP'TAN YAZ</a></div>
     {msg && <p className={`form-status ${status}`}>{msg}</p>}
