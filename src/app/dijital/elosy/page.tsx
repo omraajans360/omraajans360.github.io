@@ -5,6 +5,8 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: { absolute: "Elosy Shoes | Resmî Bağlantılar" },
   description: "Elosy Shoes dünyasını keşfedin. Yeni modelleri inceleyin, koleksiyonu takip edin ve resmî satış kanalına doğrudan ulaşın.",
+  keywords: ["Elosy Shoes", "Elosy Shoes resmi bağlantılar", "Elosy Shoes Trendyol", "Elosy Shoes Instagram"],
+  manifest: null,
   robots: { index: false, follow: true },
   icons: { icon: "/images/digital-brands/elosy/logo.svg" },
   openGraph: {
