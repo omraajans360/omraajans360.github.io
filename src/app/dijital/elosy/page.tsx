@@ -3,9 +3,21 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Elosy Shoes | Resmî Bağlantılar",
+  title: { absolute: "Elosy Shoes | Resmî Bağlantılar" },
   description: "Elosy Shoes dünyasını keşfedin. Yeni modelleri inceleyin, koleksiyonu takip edin ve resmî satış kanalına doğrudan ulaşın.",
   robots: { index: false, follow: true },
+  icons: { icon: "/images/digital-brands/elosy/logo.svg" },
+  openGraph: {
+    title: "Elosy Shoes | Resmî Bağlantılar",
+    description: "Elosy Shoes dünyasını keşfedin. Yeni modelleri inceleyin, koleksiyonu takip edin ve resmî satış kanalına doğrudan ulaşın.",
+    type: "website",
+    locale: "tr_TR",
+  },
+  twitter: {
+    card: "summary",
+    title: "Elosy Shoes | Resmî Bağlantılar",
+    description: "Elosy Shoes dünyasını keşfedin ve resmî satış kanallarına ulaşın.",
+  },
 };
 
 function TrendyolIcon() {
