@@ -3,7 +3,7 @@ export const YUUN_DEFAULTS = {
   title: 'Güzel adımlarda buluşalım.',
   description: 'Siparişiniz için teşekkür ederiz.\nYUUN’u tercih ettiğiniz için mutluyuz.',
   accent: '#310911', accent_soft: '#b99a65',
-  logo_url: '/images/digital-brands/yuun/logo.png',
+  logo_url: '/images/digital-brands/yuun/logo-hd.webp',
   footer_note: 'Her adımınızda yanınızdayız.', qr_name: 'YUUN', status: 'taslak',
 } as const;
 
