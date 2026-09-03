@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const brand = await getDigitalBrand('yuun');
   const title = `${brand?.qrName || 'YUUN'} | Teşekkürler`;
   const description = brand?.description || 'YUUN';
-  const logo = brand?.logoSrc || '/images/digital-brands/yuun/logo.png';
+  const logo = brand?.logoSrc || '/images/digital-brands/yuun/logo-hd.webp';
   return {
     title: { absolute: title }, description, manifest: null,
     robots: { index: false, follow: true },
