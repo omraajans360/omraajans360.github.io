@@ -1,0 +1,10 @@
+import{select}from'./db';
+export type AgencyProjectStatus='teklif'|'planlandi'|'gelistiriliyor'|'test'|'musteri_onayi'|'teslim_edildi'|'beklemede'|'iptal';
+export type AgencyProject={id:string;client_id:string|null;brand_name:string;project_name:string;project_type:string;domain:string|null;live_url:string|null;admin_url:string|null;github_url:string|null;vercel_url:string|null;supabase_url:string|null;price:number;paid:number;start_date:string|null;delivery_date:string|null;status:AgencyProjectStatus;maintenance_date:string|null;notes:string|null;created_at:string;updated_at:string};
+export type CustomerPageRecord={id:string;client_id:string|null;brand_name:string;page_type:'tesekkur'|'degerlendirme'|'tesekkur_degerlendirme'|'link_sayfasi'|'diger';page_url:string|null;price:number;paid:number;created_date:string|null;delivery_date:string|null;status:'taslak'|'hazirlaniyor'|'yayinda'|'pasif';instagram:string|null;trendyol:string|null;website:string|null;whatsapp:string|null;review_url:string|null;notes:string|null;created_at:string;updated_at:string};
+type Setting<T>={key:string;value:T};
+const now=()=>new Date().toISOString();
+const lolukSeed:AgencyProject={id:'seed-loluk-moda',client_id:null,brand_name:'Lölük Moda',project_name:'Lölük Moda E-Ticaret Sitesi',project_type:'E-Ticaret Web Sitesi',domain:'lolukmoda.com',live_url:null,admin_url:null,github_url:null,vercel_url:null,supabase_url:null,price:0,paid:0,start_date:'2026-09-01',delivery_date:null,status:'gelistiriliyor',maintenance_date:null,notes:'OMRAAJANS360 tarafından geliştirilen Lölük Moda e-ticaret projesi.',created_at:now(),updated_at:now()};
+async function read<T>(key:string,fallback:T):Promise<T>{try{const row=(await select<Setting<T>>('app_settings',`key=eq.${encodeURIComponent(key)}&select=key,value&limit=1`))[0];return row?.value??fallback}catch{return fallback}}
+export async function getAgencyProjects(){const rows=await read<AgencyProject[]>('agency_projects',[]);return rows.length?rows:[lolukSeed]}
+export async function getCustomerPages(){return read<CustomerPageRecord[]>('customer_pages',[])}
